@@ -3,10 +3,25 @@ import "./index.scss";
 import Drawer from "react-modern-drawer";
 import "react-modern-drawer/dist/index.css";
 import { DatePickerComp2 } from "../customerInfo/DatePickerComp2";
-import { Slider } from "@material-tailwind/react";
 import InventoryProfile from "./InventoryProfile";
+import Slider, { Range } from 'rc-slider';
+import 'rc-slider/assets/index.css';
+import './SliderRangeFilter.css';
 const InventoryFilter = ({ closeDrawer, open }) => {
   const [openProfile, setOpenProfile] = useState(false);
+  
+  const [range, setRange] = useState([10, 60]);
+
+  const handleRangeChange = (newRange) => {
+    setRange(newRange);
+    console.log('Selected range: ', newRange);
+  };
+  const [range1, setRange1] = useState([10, 60]);
+
+  const handleRangeChange1 = (newRange) => {
+    setRange1(newRange);
+    console.log('Selected range: ', newRange);
+  };
   return (
     <React.Fragment>
       <Drawer
@@ -63,32 +78,35 @@ const InventoryFilter = ({ closeDrawer, open }) => {
 
               <div className="mt-4">
                 <p className="text-lg font-semibold pb-4">Pricing</p>
-                <div className="relative mb-8">
-                  <label for="labels-range-input" className="sr-only">
-                    Labels range
-                  </label>
-                  {/* <input id="labels-range-input" type="range" value="1000" min="100" max="1500" className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer dark:bg-gray-700" /> */}
-                  <Slider color="blue" defaultValue={50} />
-                  <span className="text-sm text-black dark:text-gray-400 absolute start-0 -bottom-9">
-                    £0
-                  </span>
-                  <span className="text-sm text-black dark:text-gray-400 absolute start-1/4 -translate-x-1/2 rtl:translate-x-1/2 -bottom-9">
-                    £500
-                  </span>
-                  <span className="text-sm text-black dark:text-gray-400 absolute start-2/4 -translate-x-1/2 rtl:translate-x-1/2 -bottom-9">
-                    £1,000
-                  </span>
-                  <span className="text-sm text-black dark:text-gray-400 absolute start-3/4 -translate-x-1/2 rtl:translate-x-1/2 -bottom-9">
-                    £5,000
-                  </span>
-                  <span className="text-sm text-black dark:text-gray-400 absolute end-0 -bottom-9">
-                    £10,000
-                  </span>
-                </div>
+              
+                <div class="relative mb-8">
+        
+        <div className="flex items-center gap-2">
+         {/* <span className="text-[#000000B2] text-[14px] font-[500]">Min.</span> */}
+           <Slider range  min={0} max={100} value={range} onChange={handleRangeChange} allowCross={false}/>
+           {/* <span className="text-[#000000B2] text-[14px] font-[500]">Max</span> */}
+        </div>
+  
+ <span className="text-sm text-black dark:text-gray-400 absolute start-0 -bottom-8 font-[500]">
+               0
+             </span>
+             <span className="text-sm text-black font-[500] dark:text-gray-400 absolute start-1/4 -translate-x-1/2 rtl:translate-x-1/2 -bottom-8">
+               £500
+             </span>
+             <span className="text-sm text-black font-[500] dark:text-gray-400 absolute start-2/4 -translate-x-1/2 rtl:translate-x-1/2 -bottom-8">
+               £1000
+             </span>
+             <span className="text-sm text-black font-[500] dark:text-gray-400 absolute start-3/4 -translate-x-1/2 rtl:translate-x-1/2 -bottom-8">
+               £5,000
+             </span>
+             <span className="text-sm text-black font-[500] dark:text-gray-400 absolute end-0 -bottom-8">
+               £10,000
+             </span>
+ </div>
               </div>
-              <div className="mt-[60px]">
+              <div className="mt-[60px] relative">
                 <p className="text-lg font-semibold pb-4">Category</p>
-                <div className="flex items-center px-6 h-12 input-loyalty">
+                <div className="flex items-center px-6 h-12 input-loyalty cursor-pointer" onClick={() => setOpenProfile(!openProfile)}>
                   <img
                     src="./image 2 (3).svg"
                     alt="search"
@@ -96,8 +114,9 @@ const InventoryFilter = ({ closeDrawer, open }) => {
                   />
                   <input type="text" className="search" placeholder="Search" />
                 </div>
+                {openProfile && <InventoryProfile />}
               </div>
-              <div className="mt-4 relative flex gap-4 text-sm">
+              {/* <div className="mt-4 relative flex gap-4 text-sm">
                 <div className="flex gap-4 items-center pl-6 h-12 input-loyalty">
                   <p>Lorem Ipsum</p>
                   <img src="./image 675.png" alt="search" className="w-6 h-6" />
@@ -109,38 +128,41 @@ const InventoryFilter = ({ closeDrawer, open }) => {
               </div>
               <div
                 className="mt-6 cursor-pointer flex justify-center items-center gap-3 rounded-lg py-2 border border-[#0070BC] text-[#0070BC]"
-                onClick={() => setOpenProfile(!openProfile)}
+                
               >
                 <img src="./Mask group (10).png" alt="" className="w-7 h-7" />
                 <p className="font-semibold text-lg">ADD</p>
-              </div>
+              </div> */}
               <div className="mt-8">
                 <p className="text-lg font-semibold pb-4">Stock Availibiity</p>
-                <div className="relative mb-8">
-                  <label for="labels-range-input" className="sr-only">
-                    Labels range
-                  </label>
-                  {/* <input id="labels-range-input" type="range" value="1000" min="100" max="1500" className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer dark:bg-gray-700" /> */}
-                  <Slider color="blue" defaultValue={50} />
-                  <span className="text-sm text-black dark:text-gray-400 absolute start-0 -bottom-9">
+                <div class="relative mb-8">
+        
+        <div className="flex items-center gap-2">
+         {/* <span className="text-[#000000B2] text-[14px] font-[500]">Min.</span> */}
+           <Slider range  min={0} max={100} value={range1} onChange={handleRangeChange1} allowCross={false}/>
+           {/* <span className="text-[#000000B2] text-[14px] font-[500]">Max</span> */}
+        </div>
+  
+        <span className="text-sm font-[500] text-black dark:text-gray-400 absolute start-0 -bottom-9">
                     0%
                   </span>
-                  <span className="text-sm text-black dark:text-gray-400 absolute start-1/4 -translate-x-1/2 rtl:translate-x-1/2 -bottom-9">
+                  <span className="text-sm font-[500] text-black dark:text-gray-400 absolute start-1/4 -translate-x-1/2 rtl:translate-x-1/2 -bottom-9">
                     20%
                   </span>
-                  <span className="text-sm text-black dark:text-gray-400 absolute start-2/4 -translate-x-1/2 rtl:translate-x-1/2 -bottom-9">
+                  <span className="text-sm font-[500] text-black dark:text-gray-400 absolute start-2/4 -translate-x-1/2 rtl:translate-x-1/2 -bottom-9">
                     50%
                   </span>
-                  <span className="text-sm text-black dark:text-gray-400 absolute start-3/4 -translate-x-1/2 rtl:translate-x-1/2 -bottom-9">
+                  <span className="text-sm font-[500] text-black dark:text-gray-400 absolute start-3/4 -translate-x-1/2 rtl:translate-x-1/2 -bottom-9">
                     80%
                   </span>
-                  <span className="text-sm text-black dark:text-gray-400 absolute end-0 -bottom-9">
+                  <span className="text-sm font-[500] text-black dark:text-gray-400 absolute end-0 -bottom-9">
                     100%
                   </span>
-                </div>
+ </div>
+            
               </div>
 
-              {openProfile && <InventoryProfile />}
+           
             </div>
           </div>
           <div className="button-container">
