@@ -80,6 +80,7 @@ const CustomizedBGift = ({ handleOpen }) => {
         <button
           className="menuButton"
           // onClick={()=>handleCreateUserRewards(id, "BirthDay")}
+          onClick={()=>setOpenOffer(true) }
         >
           Save & Next
         </button>
