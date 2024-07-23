@@ -166,7 +166,7 @@ const CreatePromo = ({ open, setOpen, handleOpen, edit=false }) => {
                 />
               </div>
             </div>
-            <div className="my-4 grid grid-cols-2 gap-4">
+            {/* <div className="my-4 grid grid-cols-2 gap-4">
               {selectStaff?.map((d, i)=>(
               <div className="flex justify-between items-center px-6 h-12 input-loyalty">
                 <div className="flex gap-6">
@@ -182,6 +182,30 @@ const CreatePromo = ({ open, setOpen, handleOpen, edit=false }) => {
 
               ))}
          
+            </div> */}
+            <div className="my-4 grid grid-cols-2 gap-4">
+              <div className="flex justify-between items-center px-6 h-12 input-loyalty">
+                <div className="flex gap-6">
+                  <img
+                    src="./Ellipse 11.png"
+                    alt="search"
+                    className="w-6 h-6"
+                  />
+                  <p>Lorem Ipsum</p>
+                </div>
+                <img src="./image 675.png" alt="search" className="w-6 h-6" />
+              </div>
+              <div className="flex justify-between items-center px-6 h-12 input-loyalty">
+                <div className="flex gap-6">
+                  <img
+                    src="./Ellipse 11.png"
+                    alt="search"
+                    className="w-6 h-6"
+                  />
+                  <p>Lorem Ipsum</p>
+                </div>
+                <img src="./image 675.png" alt="search" className="w-6 h-6" />
+              </div>
             </div>
             <div onClick={() => setOpenProfile(true)} className="mt-6 cursor-pointer flex justify-center items-center gap-3 rounded-lg py-2 border border-[#0070BC] text-[#0070BC]">
               <img src="./Mask group (10).png" alt="" className="w-7 h-7"  />
