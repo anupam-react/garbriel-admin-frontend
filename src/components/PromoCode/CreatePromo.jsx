@@ -1,10 +1,9 @@
 import React, { useState } from "react";
 import "../Transaction.jsx/index.css";
 import { DialogDefault } from "../common/DilogBox";
-import  DatePickerComp  from "../common/DatePickerComp";
+import  {DatePickerComp}  from "../common/DatePickerComp";
 import AddProfile from "../DigitalReceipt/AddProfile";
-import usePromoCode from "../../hooks/usePromoCode";
-import { calculateDateGap, formatDate2 } from "../../utiils";
+
 
 const CreatePromo = ({ open, setOpen, handleOpen, edit=false }) => {
   const [openSuccess, setOpenSuccess] = useState(false);
@@ -124,7 +123,7 @@ const CreatePromo = ({ open, setOpen, handleOpen, edit=false }) => {
                 </div>
               </div>
               <p className="font-semibold text-sm">
-                <span className="text-[#000000B2] ">DURATION</span> :{calculateDateGap(formatDate2(activationDate),formatDate2(expiryDate) )} Days
+                <span className="text-[#000000B2] ">DURATION</span> :30 Days
               </p>
             </div>
             <div className="mt-6">
@@ -187,7 +186,7 @@ const CreatePromo = ({ open, setOpen, handleOpen, edit=false }) => {
             <div onClick={() => setOpenProfile(true)} className="mt-6 cursor-pointer flex justify-center items-center gap-3 rounded-lg py-2 border border-[#0070BC] text-[#0070BC]">
               <img src="./Mask group (10).png" alt="" className="w-7 h-7"  />
               <p className="font-semibold text-lg">ADD</p>
-                 {openProfile && <AddProfile data={staff} selectStaff={selectStaff} setSelectStaff={setSelectStaff}  onClose={() => setOpenProfile(false)}
+                 {openProfile && <AddProfile  selectStaff={selectStaff} setSelectStaff={setSelectStaff}  onClose={() => setOpenProfile(false)}
                     show={openProfile}/>}
             </div>
             <p className="py-4 text-[#000000B2] text-sm font-semibold">
