@@ -3,10 +3,18 @@ import "./index.scss";
 import Drawer from "react-modern-drawer";
 import "react-modern-drawer/dist/index.css";
 import { DatePickerComp2 } from "../customerInfo/DatePickerComp2";
-import { Slider } from "@material-tailwind/react";
+import Slider, { Range } from 'rc-slider';
+import 'rc-slider/assets/index.css';
+import './SliderRangeFilter.css';
 import AddProfile from "./AddProfile";
 const ReceiptFilter = ({ closeDrawer, open }) => {
   const [openProfile, setOpenProfile] = useState(false);
+  const [range, setRange] = useState([10, 60]);
+
+  const handleRangeChange = (newRange) => {
+    setRange(newRange);
+    console.log("Selected range: ", newRange);
+  };
   return (
     <React.Fragment>
       <Drawer
@@ -73,20 +81,20 @@ const ReceiptFilter = ({ closeDrawer, open }) => {
                     Labels range
                   </label>
                   {/* <input id="labels-range-input" type="range" value="1000" min="100" max="1500" className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer dark:bg-gray-700" /> */}
-                  <Slider color="blue" defaultValue={50} />
-                  <span className="text-sm text-[#000000] dark:text-gray-400 absolute start-0 -bottom-8">
+                  <Slider range  min={0} max={100} value={range}  allowCross={false}/>
+                  <span className="text-sm font-[500] text-[#000000] dark:text-gray-400 absolute start-0 -bottom-8">
                     0
                   </span>
-                  <span className="text-sm text-[#000000] dark:text-gray-400 absolute start-1/4 -translate-x-1/2 rtl:translate-x-1/2 -bottom-8">
+                  <span className="text-sm font-[500] text-[#000000] dark:text-gray-400 absolute start-1/4 -translate-x-1/2 rtl:translate-x-1/2 -bottom-8">
                     5 Mb
                   </span>
-                  <span className="text-sm text-[#000000] dark:text-gray-400 absolute start-2/4 -translate-x-1/2 rtl:translate-x-1/2 -bottom-8">
+                  <span className="text-sm font-[500] text-[#000000] dark:text-gray-400 absolute start-2/4 -translate-x-1/2 rtl:translate-x-1/2 -bottom-8">
                     10Mb
                   </span>
-                  <span className="text-sm text-[#000000] dark:text-gray-400 absolute start-3/4 -translate-x-1/2 rtl:translate-x-1/2 -bottom-8">
+                  <span className="text-sm font-[500] text-[#000000] dark:text-gray-400 absolute start-3/4 -translate-x-1/2 rtl:translate-x-1/2 -bottom-8">
                     20Mb
                   </span>
-                  <span className="text-sm text-[#000000] dark:text-gray-400 absolute end-0 -bottom-8">
+                  <span className="text-sm font-[500] text-[#000000] dark:text-gray-400 absolute end-0 -bottom-8">
                     +30Mb
                   </span>
                 </div>
