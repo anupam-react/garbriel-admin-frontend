@@ -3,9 +3,17 @@ import "./index.scss";
 import Drawer from "react-modern-drawer";
 import "react-modern-drawer/dist/index.css";
 import { DatePickerComp2 } from "../customerInfo/DatePickerComp2";
-import { Slider } from "@material-tailwind/react";
+import Slider, { Range } from 'rc-slider';
+import 'rc-slider/assets/index.css';
+import './SliderRangeFilter.css';
 const LoyaltyFilter = ({ closeDrawer, open }) => {
   const [isActive, setActive] = useState(1);
+  const [range, setRange] = useState([10, 60]);
+
+  const handleRangeChange = (newRange) => {
+    setRange(newRange);
+    console.log('Selected range: ', newRange);
+  };
   return (
     <React.Fragment>
       <Drawer
@@ -108,36 +116,34 @@ const LoyaltyFilter = ({ closeDrawer, open }) => {
               <div className="mt-4">
                 <p className="text-lg font-semibold pb-4">Amount</p>
                 <div class="relative mb-10">
-                  <label for="labels-range-input" className="sr-only">
-                    Labels range
-                  </label>
+              
                   {/* <input id="labels-range-input" type="range" value="1000" min="100" max="1500" className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer dark:bg-gray-700" /> */}
-                  <Slider color="blue" defaultValue={50} />
-                  <span className="text-sm text-black dark:text-gray-400 absolute start-0 -bottom-8">
+                  <Slider range  min={0} max={100} value={range} onChange={handleRangeChange} allowCross={false}/>
+                  <span className="text-sm font-[500] text-black dark:text-gray-400 absolute start-0 -bottom-8">
                     0
                   </span>
-                  <span className="text-sm text-black dark:text-gray-400 absolute start-1/4 -translate-x-1/2 rtl:translate-x-1/2 -bottom-8">
+                  <span className="text-sm font-[500] text-black dark:text-gray-400 absolute start-1/4 -translate-x-1/2 rtl:translate-x-1/2 -bottom-8">
                     £100
                   </span>
-                  <span className="text-sm text-black dark:text-gray-400 absolute start-2/4 -translate-x-1/2 rtl:translate-x-1/2 -bottom-8">
+                  <span className="text-sm font-[500] text-black dark:text-gray-400 absolute start-2/4 -translate-x-1/2 rtl:translate-x-1/2 -bottom-8">
                     £500
                   </span>
-                  <span className="text-sm text-black dark:text-gray-400 absolute start-3/4 -translate-x-1/2 rtl:translate-x-1/2 -bottom-8">
+                  <span className="text-sm font-[500] text-black dark:text-gray-400 absolute start-3/4 -translate-x-1/2 rtl:translate-x-1/2 -bottom-8">
                     £1,000
                   </span>
-                  <span className="text-sm text-black dark:text-gray-400 absolute end-0 -bottom-8">
+                  <span className="text-sm font-[500] text-black dark:text-gray-400 absolute end-0 -bottom-8">
                     £5,000
                   </span>
                 </div>
               </div>
               <div className="calender" style={{ marginTop: "60px" }}>
                 <div>
-                  <p>Min.</p>
-                  <DatePickerComp2 />
+                  <p>From</p>
+                 <input type="text" className="input-loyalty" placeholder="£100"/>
                 </div>
                 <div>
-                  <p>Max.</p>
-                  <DatePickerComp2 />
+                  <p>To</p>
+                  <input type="text" className="input-loyalty" placeholder="£1,000"/>
                 </div>
               </div>
               <div className="mt-4">

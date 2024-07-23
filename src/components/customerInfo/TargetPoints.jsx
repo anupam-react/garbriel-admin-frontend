@@ -18,7 +18,7 @@ const TargetPoints = ({handleOpen}) => {
      ];
   return (
   <div className="gift-container">
-      <div className="gift-main">
+      <div className="gift-main no-scrollbar">
         <p className="title">Send Target Promotions</p>
         <img
           src="./Mask group (2).png"

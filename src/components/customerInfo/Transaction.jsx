@@ -107,6 +107,9 @@ const Transaction = () => {
                 <DialogDefault open={openPoint} handleOpen={setOpenPoint}>
                   <AwardCustomer handleOpen={setOpenPoint} />
                 </DialogDefault>
+                <DialogDefault open={openTransaction} handleOpen={setOpenTransaction}>
+                  <TransactionDetails handleOpen={setOpenTransaction} />
+                </DialogDefault>
     </div>
   );
 };

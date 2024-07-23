@@ -27,7 +27,7 @@ const PromotionsTable = () => {
             <td>
               <div>BUY 1 GET 1 Free</div>
             </td>
-            <td>
+            <td className="flex justify-center items-center">
               <img
                 src="./Group 38188.png"
                 alt=""
@@ -54,7 +54,7 @@ const PromotionsTable = () => {
             <td>
               <div>Percentage Discount, 50%</div>
             </td>
-            <td>
+            <td className="flex justify-center items-center">
               <img
                 src="./Group 571.png"
                 alt=""

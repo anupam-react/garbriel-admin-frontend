@@ -21,7 +21,7 @@ const TransactionDiscount = ({ handleOpen }) => {
       <table className="table3">
         <thead>
           <tr>
-            <th>Percentage Discount</th>
+            <th className="">Percentage Discount</th>
             <th>Type</th>
           </tr>
         </thead>
@@ -36,7 +36,7 @@ const TransactionDiscount = ({ handleOpen }) => {
                   className="cursor-pointer"
                   onClick={() => setProductInfo(true)}
                 />
-                <div>
+                <div className="text-left">
                   Purchased , Yesterday, 10:30 pm <br />
                   <span
                     className="text-[#0070BC] underline cursor-pointer"
@@ -71,10 +71,10 @@ const TransactionDiscount = ({ handleOpen }) => {
                   className="cursor-pointer"
                   onClick={() => setProductInfo(true)}
                 />
-                <div>
+                <div className="text-left">
                   Purchased , Yesterday, 10:30 pm <br />
                   <span
-                    className="text-[#0070BC] underline cursor-pointer"
+                    className="text-[#0070BC] underline cursor-pointer "
                     onClick={() => {
                       setProduct(true);
                     }}
@@ -106,7 +106,7 @@ const TransactionDiscount = ({ handleOpen }) => {
                   className="cursor-pointer"
                   onClick={() => setProductInfo(true)}
                 />
-                <div>
+                <div className="text-left">
                   Purchased , Yesterday, 10:30 pm <br />
                   <span
                     className="text-[#0070BC] underline cursor-pointer"

@@ -4,7 +4,7 @@ import MenuCard3 from "./MenuCard3";
 import HistoryDetails from "./HistoryDetails";
 import { DialogDefault } from "../common/DilogBox";
 
-const BookMark = ({ handleOpen }) => {
+const BookMark = ({ handleOpen , setOpenInfo }) => {
     const [openMenu , setOpenMenu ] = useState(false)
     const [openTransaction , setOpenTransaction ] = useState(false)
   return (
@@ -20,7 +20,7 @@ const BookMark = ({ handleOpen }) => {
       </div>
       <hr className="hr2" />
       <InfoHeader />
-      <div style={{ paddingTop: "30px", paddingBottom: "20px" }}>
+      <div className="cursor-pointer" onClick={() => handleOpen(false)} style={{ paddingTop: "30px", paddingBottom: "20px" }}>
         <p style={{ color: "#0070BC", fontWeight: 600 }}>BOOK MARKS</p>
         <hr className="hr3" style={{ width: "120px" }} />
       </div>
@@ -35,7 +35,7 @@ const BookMark = ({ handleOpen }) => {
         </thead>
         <tbody>
           <tr>
-                      <td>
+                      <td className="">
                           <div className="bookmarkImage">
                               <img src="./image 713 (3).png" alt="" className="image1" />
                               <div className="bookmarkText">
@@ -45,7 +45,7 @@ const BookMark = ({ handleOpen }) => {
                               </div>
                               <img src="./charm_menu-meatball.png" alt="" className="dot-image" onClick={()=>setOpenMenu(!openMenu)}/>
                           </div>
-                          {openMenu && <MenuCard3 />}
+                          {openMenu && <MenuCard3 setOpenInfo={setOpenInfo}/>}
             </td>
             <td>10/12/2023</td>
             <td>

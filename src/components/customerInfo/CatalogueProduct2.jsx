@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { DialogDefault } from "../common/DilogBox";
 import ProductDetails from "./ProductDetails";
 import InventoryProduct2 from "./InventoryProduct2";
@@ -8,11 +8,30 @@ const CatalogueProduct2 = () => {
   const [openView , setOpenView] = useState()
   const [isSelect , setSelect] = useState()
   const [openDetails , setDetails] = useState()
+
+  const divRef = useRef(null);
   const product = [
     {id:1, image:"../Frame 38302.png" , name:"Buy 9 Hot Drinks , Get 1 Free"},
      {id:1, image:"../Frame 38302.png" , name:"Buy 5 Porridges , Get 1 Free"},
 
     ]
+    useEffect(() => {
+      const handleClickOutside = (event) => {
+        if (divRef.current && !divRef.current.contains(event.target)) {
+          setView(-1);
+        }
+      };
+  
+      if (isView !== -1) {
+        document.addEventListener("mousedown", handleClickOutside);
+      } else {
+        document.removeEventListener("mousedown", handleClickOutside);
+      }
+  
+      return () => {
+        document.removeEventListener("mousedown", handleClickOutside);
+      };
+    }, [isView]);
   return (
     <div className="catalogue-container">
       <p className="view-all cursor-pointer" onClick={()=> setOpenView(true)} >View All</p>

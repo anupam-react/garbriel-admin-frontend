@@ -110,14 +110,14 @@ const FeedBack = () => {
                       </div>
                     </td>
 
-                    <td className="text-sm w-[300px] ">
+                    <td className="text-sm w-[300px] cursor-pointer"  onClick={() => setOpen(true)}>
                       <p className="font-bold pb-2 text-left">Lorem Ipsum Heading!</p>
                       <p className=" text-[#00000099] text-left">
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                         Pellentesque efficitur eu magna et malesuada. Null.....
                         <span
-                          className="text-[#0070BC] font-semibold cursor-pointer"
-                          onClick={() => setOpen(true)}
+                          className="text-[#0070BC] font-semibold "
+                         
                         >
                           READ MORE
                         </span>

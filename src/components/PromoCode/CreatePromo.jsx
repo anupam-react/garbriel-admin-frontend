@@ -1,20 +1,35 @@
-import React from "react";
+import React, { useState } from "react";
 import "../Transaction.jsx/index.css";
 import { DialogDefault } from "../common/DilogBox";
-import { DatePickerComp } from "../common/DatePickerComp";
+import  DatePickerComp  from "../common/DatePickerComp";
+import AddProfile from "../DigitalReceipt/AddProfile";
+import usePromoCode from "../../hooks/usePromoCode";
+import { calculateDateGap, formatDate2 } from "../../utiils";
 
 const CreatePromo = ({ open, setOpen, handleOpen, edit=false }) => {
-  const reportData = [
-    { title: "Sales Report over time" },
-    { title: "ROAS vs Campaign Performance Report" },
-    { title: "Product Performance Comparison Report" },
-  ];
+  const [openSuccess, setOpenSuccess] = useState(false);
+  const [openProfile, setOpenProfile] = useState(false);
+  const [selectStaff, setSelectStaff] = useState([])
+ 
+
+  console.log(edit)
 
   const discountOptions = [
-    { label: "Buy One Get One Free", value: "Buy One Get One Free" },
-    { label: "Flat Amount Discount", value: "Flat Amount Discount" },
-    { label: "Percentage Off", value: "Percentage Off" },
+    { label: "Buy One Get One Free", value: "buyOneGetOneFree" },
+    { label: "Flat Amount Discount", value: "fixed" },
+    { label: "Percentage Off", value: "percentage" },
   ];
+
+  const toggleStaffSelection = (staff) => {
+    const isSelected = selectStaff.includes(staff);
+    if (isSelected) {
+      setSelectStaff(selectStaff?.filter(d => d?._id !== staff?._id));
+    
+    } else {
+      setSelectStaff([...selectStaff, staff]);
+    
+    }
+  };
   return (
     <div>
       <DialogDefault open={open} handleOpen={handleOpen}>
@@ -42,14 +57,18 @@ const CreatePromo = ({ open, setOpen, handleOpen, edit=false }) => {
               <div className="mb-4">
                 <p className="text-[#0070BC] pb-2">TITLE</p>
                 <input
-                  value="Enter Lorem Ipsum"
+                  // value={promocodeData?.title}
+                  // onChange={handleChange}
+                  name="title"
                   className="rounded shadow-md text-[#000000B2] text-sm  border-none block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                 />
               </div>
               <div className="mb-4">
                 <p className="text-[#0070BC] pb-2">PROMO-CODE ID</p>
                 <input
-                  value="Enter Lorem Ipsum"
+              //  value={promocodeData?.promoCodeId}
+              //  onChange={handleChange}
+               name="promoCodeId"
                   className="rounded shadow-md text-[#000000B2] text-sm  border-none block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                 />
               </div>
@@ -57,9 +76,9 @@ const CreatePromo = ({ open, setOpen, handleOpen, edit=false }) => {
                 <p className="text-[#0070BC] pb-2">DESCRIPTION</p>
                 <textarea
                   className="rounded shadow-md text-[#000000B2] text-sm  border-none block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                  value="Type Here......"
-                  name=""
-                  id=""
+              //     value={promocodeData?.description}
+              //  onChange={handleChange}
+               name="description"
                   rows="5"
                 ></textarea>
               </div>
@@ -70,8 +89,9 @@ const CreatePromo = ({ open, setOpen, handleOpen, edit=false }) => {
                 </p>
                 <select
                   id="countries"
-                  // value={selectedOption}
+                  // value={promocodeData?.discountType}
                   // onChange={handleChange}
+                  name="discountType"
                   className="rounded shadow-md text-[#000000B2] text-sm  border-none block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                 >
                   <option value="pdf" disabled className="font-semibold mb-2">
@@ -96,7 +116,7 @@ const CreatePromo = ({ open, setOpen, handleOpen, edit=false }) => {
               <div className="calender">
                 <div>
                   <p className="text-[#0070BC]">FROM</p>
-                  <DatePickerComp />
+                  <DatePickerComp  />
                 </div>
                 <div>
                   <p className="text-[#0070BC]">TO</p>
@@ -104,7 +124,7 @@ const CreatePromo = ({ open, setOpen, handleOpen, edit=false }) => {
                 </div>
               </div>
               <p className="font-semibold text-sm">
-                <span className="text-[#000000B2] ">DURATION</span> : 6 MONTHS
+                <span className="text-[#000000B2] ">DURATION</span> :{calculateDateGap(formatDate2(activationDate),formatDate2(expiryDate) )} Days
               </p>
             </div>
             <div className="mt-6">
@@ -113,16 +133,15 @@ const CreatePromo = ({ open, setOpen, handleOpen, edit=false }) => {
                 Set limit on how many times this Promo-Code can be used by a
                 User
               </p>
-              <select
+              <input
                 id="countries"
-                // value={selectedOption}
+                // value={promocodeData?.promoCodeLimit}
                 // onChange={handleChange}
+                name="promoCodeLimit"
+                placeholder="Select Limit "
                 className="rounded shadow-md text-[#000000B2] text-sm  border-none block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-              >
-                <option value="pdf" className="font-semibold">
-                  Select Discount Type
-                </option>
-              </select>
+              />
+  
             </div>
             <div className="mt-6">
               <p className="font-semibold pb-3">Distribution</p>
@@ -137,16 +156,19 @@ const CreatePromo = ({ open, setOpen, handleOpen, edit=false }) => {
                   borderRadius: "12px",
                   color: "#8BA3CB",
                 }}
+                onClick={() => setOpenProfile(true)}
               >
                 <img src="./image 2 (3).svg" alt="search" className="w-6 h-6" />
                 <input
                   type="text"
                   className="border-none w-full bg-transparent outline-none focus:ring-0 focus:shadow-none focus:border-none"
                   placeholder="Search"
+
                 />
               </div>
             </div>
-            <div className="my-4 flex gap-4">
+            <div className="my-4 grid grid-cols-2 gap-4">
+              {selectStaff?.map((d, i)=>(
               <div className="flex justify-between items-center px-6 h-12 input-loyalty">
                 <div className="flex gap-6">
                   <img
@@ -154,25 +176,19 @@ const CreatePromo = ({ open, setOpen, handleOpen, edit=false }) => {
                     alt="search"
                     className="w-6 h-6"
                   />
-                  <p>Lorem Ipsum</p>
+                  <p>{d?.firstName + " " + d?.lastName}</p>
                 </div>
-                <img src="./image 675.png" alt="search" className="w-6 h-6" />
+                <img src="./image 675.png" alt="search" className="w-6 h-6 cursor-pointer" onClick={()=>toggleStaffSelection(d)}/>
               </div>
-              <div className="flex justify-between items-center px-6 h-12 input-loyalty">
-                <div className="flex gap-6">
-                  <img
-                    src="./Ellipse 11.png"
-                    alt="search"
-                    className="w-6 h-6"
-                  />
-                  <p>Lorem Ipsum</p>
-                </div>
-                <img src="./image 675.png" alt="search" className="w-6 h-6" />
-              </div>
+
+              ))}
+         
             </div>
-            <div className="mt-6 cursor-pointer flex justify-center items-center gap-3 rounded-lg py-2 border border-[#0070BC] text-[#0070BC]">
-              <img src="./Mask group (10).png" alt="" className="w-7 h-7" />
+            <div onClick={() => setOpenProfile(true)} className="mt-6 cursor-pointer flex justify-center items-center gap-3 rounded-lg py-2 border border-[#0070BC] text-[#0070BC]">
+              <img src="./Mask group (10).png" alt="" className="w-7 h-7"  />
               <p className="font-semibold text-lg">ADD</p>
+                 {openProfile && <AddProfile data={staff} selectStaff={selectStaff} setSelectStaff={setSelectStaff}  onClose={() => setOpenProfile(false)}
+                    show={openProfile}/>}
             </div>
             <p className="py-4 text-[#000000B2] text-sm font-semibold">
               Select the{" "}
@@ -186,8 +202,9 @@ const CreatePromo = ({ open, setOpen, handleOpen, edit=false }) => {
                   Email
                   <input
                     type="checkbox"
-                    // checked={isChecked}
-                    // onChange={handleCheckboxChange}
+                    name="isEmail"
+                    // checked={promocodeData?.isEmail}
+                    // onChange={handleChange}
                   />
                   <span class="checkmark"></span>
                 </label>
@@ -197,8 +214,9 @@ const CreatePromo = ({ open, setOpen, handleOpen, edit=false }) => {
                   SMS
                   <input
                     type="checkbox"
-                    // checked={isChecked}
-                    // onChange={handleCheckboxChange}
+                    name="isSms"
+                    // checked={promocodeData?.isSms}
+                    // onChange={handleChange}
                   />
                   <span class="checkmark"></span>
                 </label>
@@ -212,15 +230,16 @@ const CreatePromo = ({ open, setOpen, handleOpen, edit=false }) => {
                 In-App Notifications
                 <input
                   type="checkbox"
-                  // checked={isChecked}
-                  // onChange={handleCheckboxChange}
+                  name="isAppNotification"
+                  // checked={promocodeData?.isAppNotification}
+                  // onChange={handleChange}
                 />
                 <span class="checkmark"></span>
               </label>
             </div>
           </div>
           <div className="flex justify-center items-center gap-10 my-8">
-            <button className="sign-button w-48" onClick={() => setOpen(false)}>
+            <button className="sign-button w-48" >
             { edit ? "UPDATE" :  "CREATE"}
               
             </button>
@@ -232,6 +251,14 @@ const CreatePromo = ({ open, setOpen, handleOpen, edit=false }) => {
               <p className="text-[24px] cancel underline">Cancel</p>
             </div>
           </div>
+        </div>
+      </DialogDefault>
+      <DialogDefault open={openSuccess} handleOpen={setOpenSuccess}>
+        <div className="alert">
+          <img src="../Vector (2).png" alt="" />
+          <p className="text-center text-lg font-semibold">
+          {edit ? "Promo Code Successfully Updated " : "Promo Code Successfully Created"}
+          </p>
         </div>
       </DialogDefault>
     </div>

@@ -12,9 +12,12 @@ const ShopAdPreview = ({ isPay = false }) => {
     <div>
       <div className="flex justify-between items-center mb-6">
         <p className="text-2xl font-bold">
-          {isPay ? "Run Campaign" : "DIscount Ad Preview"}
+          {isPay ? "Run Campaign" : "Discount Ad Preview"}
         </p>
-        <button className="back" onClick={()=> navigate("/marketing")}> 
+        <button className="back" onClick={()=>  
+        isPay
+      ? navigate("/marketing/shop-ad")
+      : navigate("/marketing/review-shop")}> 
         <img src="../back.png" alt="" />
         Back</button>
       </div>

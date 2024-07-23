@@ -173,5 +173,36 @@ export function getDateFromISOString(dateString) {
   const month = ("0" + (date.getMonth() + 1)).slice(-2); // Months are zero-based
   const day = ("0" + date.getDate()).slice(-2);
 
+  return `${day}-${month}-${year}`;
+}
+export function formatDate2(date) {
+
+  const year = date.getFullYear();
+  const month = String(date.getMonth() + 1).padStart(2, '0'); // January is 0, so we add 1
+  const day = String(date.getDate()).padStart(2, '0');
+
   return `${year}-${month}-${day}`;
 }
+export function formatDate3(dateString) {
+  const date = new Date(dateString);
+
+  const year = date.getFullYear();
+  const month = String(date.getMonth() + 1).padStart(2, '0'); // January is 0, so we add 1
+  const day = String(date.getDate()).padStart(2, '0');
+
+  return `${year}-${month}-${day}`;
+}
+
+export function calculateDateGap(startDate, endDate) {
+  const start = new Date(startDate);
+  const end = new Date(endDate);
+
+  // Calculate the difference in milliseconds
+  const differenceInMillis = end - start;
+
+  // Convert milliseconds to days
+  const differenceInDays = differenceInMillis / (1000 * 60 * 60 * 24);
+
+  return differenceInDays;
+}
+

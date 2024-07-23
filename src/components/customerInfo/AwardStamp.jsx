@@ -1,12 +1,13 @@
 import React, { useState } from 'react'
 import { DialogDefault } from "../common/DilogBox";
 import "./index.scss";
-import CatalogueProduct from './CatalogueProduct';
+
 const AwardStamp = ({handleOpen}) => {
     const [openSuccess, setSuccess] = useState(false);
+    const [active , setActive] = useState(0)
   return (
- <div className="px-[24px] py-[16px] text-[black] font-[600]" >
-      <div className="gift-main">
+ <div className="px-[24px] py-[16px] text-[black] font-[600] no-scrollbar" >
+      <div className="gift-main ">
         <p className="title">Award Stamps</p>
         <img
           src="./Mask group (2).png"
@@ -18,18 +19,15 @@ const AwardStamp = ({handleOpen}) => {
         />
       </div>
           <hr className="hr" />
-           {/* <div className="catalogue2">
-           <label>Select Product from catalogue</label>
-        <CatalogueProduct />
-      </div> */}
+      
       <div className="button-group">
-        <button className="button1" style={{fontSize:"18px"}}>
+        <button className={active === 0 ? "button2" : "button1"} style={{fontSize:"18px"}} onClick={()=> setActive(0)}>
           5 Stamps
         </button>
-        <button className="button2" style={{fontSize:"18px"}}>
+        <button className={active === 1 ? "button2" : "button1"} style={{fontSize:"18px"}} onClick={()=> setActive(1)}>
           10 Stamps
         </button>
-        <button className="button1" style={{fontSize:"18px"}}>
+        <button className={active === 2 ? "button2" : "button1"} style={{fontSize:"18px"}} onClick={()=> setActive(2)}>
           20 Stamps
         </button>
           </div>

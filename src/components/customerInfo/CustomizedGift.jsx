@@ -2,7 +2,7 @@ import React from "react";
 import "./index.scss";
 const CustomizedGift = ({handleOpen}) => {
   return (
-    <div className="gift-container">
+    <div className="gift-container no-scrollbar">
       <div className="gift-main">
         <p className="title">Send Customized Birthday Offer</p>
         <img

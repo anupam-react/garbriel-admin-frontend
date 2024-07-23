@@ -7,15 +7,18 @@ import { useNavigate } from "react-router-dom";
 const ReportPage2 = ({ open, setOpen, handleOpen }) => {
   const navigate = useNavigate();
   const reportData = [
-    { title: "Sales Report over time" },
-    { title: "ROAS vs Campaign Performance Report" },
-    { title: "Product Performance Comparison Report" },
+    { title: "Total Revenue" },
+    { title: "Total transactions" },
+    { title: "AVERAGE TRANSACTION VALUE" },
+    { title: "Sales By OUTLET (LOCATION)" },
+    { title: "SALES BY CATEGORY / DEPARTMENT" },
+    { title: "SALES TREND OVER TIME" },
   ];
   return (
     <div>
       <DialogDefault open={open} handleOpen={handleOpen}>
         <div className="">
-          <div className="p-8 rounded-md text-black bg-[#F5F5F5] h-[70vh] overflow-auto">
+          <div className="p-8 rounded-md text-black bg-[#F5F5F5] h-[70vh] overflow-auto no-scrollbar">
             <div className="flex justify-between">
               <p className="font-semibold text-black text-xl">
                 Generate Sales Analytics Report

@@ -54,7 +54,7 @@ const Engagement = ({ handleOpen }) => {
           </div>
         </div>
       </div>
-      <div style={{ paddingTop: "30px", paddingBottom: "20px" }}>
+      <div className="cursor-pointer" style={{ paddingTop: "30px", paddingBottom: "20px" }}  onClick={() => handleOpen(false)}>
         <p
           style={{
             color: "#0070BC",

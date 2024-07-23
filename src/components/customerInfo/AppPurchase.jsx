@@ -41,7 +41,7 @@ const AppPurchase = () => {
               </span>
             </td>
             <td>13:30 pm</td>
-            <td>
+            <td className="flex justify-center">
               <div style={{ position: "relative", width: "120px" }}>
                 <img src="./Group 38061.png" alt="" />
                 <img
@@ -89,7 +89,7 @@ const AppPurchase = () => {
               </span>
             </td>
             <td>13:30 pm</td>
-            <td>
+            <td className="flex justify-center">
               <div style={{ position: "relative", width: "120px" }}>
                 <img src="./Group 38061.png" alt="" />
                 <img
@@ -137,7 +137,7 @@ const AppPurchase = () => {
               </span>
             </td>
             <td>13:30 pm</td>
-            <td>
+            <td className="flex justify-center">
               <div style={{ position: "relative", width: "120px" }}>
                 <img src="./Group 38061.png" alt="" />
                 <img

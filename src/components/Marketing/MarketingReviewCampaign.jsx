@@ -1,7 +1,10 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import useCampaign from "../../hooks/useCampaign";
+import { getDateFromISOString } from "../../utiils";
 
 const MarketingReviewCampaign = () => {
+  const { campaignData } = useCampaign()
   const navigate = useNavigate();
   const handleSubmit = () => {
     navigate("/marketing/ad-preview");
@@ -10,58 +13,52 @@ const MarketingReviewCampaign = () => {
   const data1 = [
     {
       title: "Campaign Type",
-      value: "Percentage DIscount",
+      value: "Percentage Discount",
       //   handleCLick: () => {
       //     setOpenCustom(true);
       //   },
     },
     {
       title: "Discount Value",
-      value: "50% discount coupon on all hot drinks",
+      value:  "50%",
       //   handleCLick: () => {
       //     setOpenCustom(true);
       //   },
     },
     {
       title: "Expriy Date",
-      value: "25-jan-2024",
+      value: "2024-10-16",
       //   handleCLick: () => {
       //     setOpenCustom(true);
       //   },
     },
     {
       title: "Add Conditions",
-      value: "Select specific product attached to Coupon ( Burger)",
+      value: "",
       //   handleCLick: () => {
       //     setOpenCustom(true);
       //   },
     },
-    {
-      title: "No of Points Reward",
-      value: "500 POints",
-      //   handleCLick: () => {
-      //     setOpenCustom(true);
-      //   },
-    },
-    {
-      title: "Add Conditions",
-      value: "Select specific product attached to Coupon ( Burger)",
-      //   handleCLick: () => {
-      //     setOpenCustom(true);
-      //   },
-    },
+    // {
+    //   title: "No of Points Reward",
+    //   value: "500 POints",
+    //   //   handleCLick: () => {
+    //   //     setOpenCustom(true);
+    //   //   },
+    // },
+
   ];
   const data2 = [
     {
       title: "Target Location",
-      value: "4517 Washington Ave. Manchester, Kentucky 39495",
+      value: "Kolkata",
       //   handleCLick: () => {
       //     setOpenCustom(true);
       //   },
     },
     {
       title: "Estimated  Reach",
-      value: "5000 Cutomers",
+      value:  "5000 Customers",
       //   handleCLick: () => {
       //     setOpenCustom(true);
       //   },
@@ -71,7 +68,7 @@ const MarketingReviewCampaign = () => {
     <div>
       <div className="flex justify-between items-center mb-6">
         <p className="text-2xl font-bold">Review Campaign</p>
-        <button className="back" onClick={()=> navigate("/marketing")}> 
+        <button className="back" onClick={()=> navigate("/marketing/newCampaign")}> 
         <img src="../back.png" alt="" />
         Back</button>
       </div>
@@ -79,6 +76,10 @@ const MarketingReviewCampaign = () => {
         <div className="mt-4">
           <p className="text-lg font-semibold pb-2">Ad Review</p>
           <div className="">
+          {/* <div className="cardContainer" style={{width:"480px"}}>
+        <img src={campaignData?.couponImage} alt="" className="w-[200px] h-[100px]" />
+        <p className="font-[600] text-2xl">{campaignData?.discountValue}% Discount</p>
+      </div> */}
             <img src="../Group 38237.png" alt="" />
           </div>
         </div>
@@ -95,7 +96,7 @@ const MarketingReviewCampaign = () => {
             <p>Customer</p>
             <span>:</span>
             <p className="flex items-center gap-3">
-              Active
+            Active
               <span className="live-dots"></span>
             </p>
             <button className="edit-button2">Edit</button>

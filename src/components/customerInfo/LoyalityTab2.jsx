@@ -3,7 +3,7 @@ import "./index.scss";
 import CurrentStamp from "./CurrentStamp";
 import RedeemedStamp from "./RedeemedStamp";
 import IncompleteStamp from "./IncompleteStamp";
-const LoyalityTab2 = () => {
+const LoyalityTab2 = ({handleOpen}) => {
   const [activeLink, setActiveLink] = useState(0);
   const handleLinkClick = (index) => {
     setActiveLink(index);
@@ -13,7 +13,14 @@ const LoyalityTab2 = () => {
       <div className="tabs2-container">
         <div
           style={{ paddingBottom: "30px" }}
-          onClick={() => handleLinkClick(0)}
+          onClick={() =>{
+            if(activeLink === 0) {
+              handleOpen(false)
+            }else{
+              handleLinkClick(0)
+            }
+          }
+           }
         >
           <p
             className={`${activeLink === 0 ? "activeButton1" : "normalButton"}`}
@@ -24,7 +31,14 @@ const LoyalityTab2 = () => {
         </div>
         <div
           style={{ paddingBottom: "30px" }}
-          onClick={() => handleLinkClick(1)}
+          onClick={() =>{
+            if(activeLink === 1) {
+              handleOpen(false)
+            }else{
+              handleLinkClick(1)
+            }
+          }
+           }
         >
           <p
             className={`${activeLink === 1 ? "activeButton1" : "normalButton"}`}
@@ -35,7 +49,14 @@ const LoyalityTab2 = () => {
         </div>
         <div
           style={{ paddingBottom: "30px" }}
-          onClick={() => handleLinkClick(2)}
+          onClick={() =>{
+            if(activeLink === 2) {
+              handleOpen(false)
+            }else{
+              handleLinkClick(2)
+            }
+          }
+           }
         >
           <p
             className={`${activeLink === 2 ? "activeButton1" : "normalButton"}`}

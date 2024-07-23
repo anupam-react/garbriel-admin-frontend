@@ -26,7 +26,7 @@ const Loyality = ({ handleOpen }) => {
               <button className={`${activeLink === 1 ? "activeButton" : ""}`} onClick={() => handleLinkClick(1)}>Stamp System</button>
           </div>
       {activeLink === 1 ?
-        <LoyalityTab2 /> : <LoyalityTab1 />
+        <LoyalityTab2 handleOpen={handleOpen}/> : <LoyalityTab1 handleOpen={handleOpen}/>
       }
     
     </div>

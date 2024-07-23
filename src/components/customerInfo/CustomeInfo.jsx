@@ -369,7 +369,7 @@ It factors in the revenue generated from a customer, the duration of the relatio
         <ProductDetails handleOpen={setOpenProd} />
       </DialogDefault>
       <DialogDefault open={openDemographic} handleOpen={setOpenDemographic}>
-        <Demographic handleOpen={setOpenDemographic} />
+        <Demographic handleOpen={setOpenDemographic}  setOpenInfo={handleOpen}/>
       </DialogDefault>
       <DialogDefault open={openLoyality} handleOpen={setOpenLoyality}>
         <Loyality handleOpen={setOpenLoyality} />

@@ -7,7 +7,12 @@ import { BarChart } from "./BarChart";
 import PaginatedTable from "./PaginatedTable";
 import Filter from "./Filter";
 import "./index.scss";
+import useCusomerInfo from "../../hooks/useCusomerInfo";
 const CustomerInfo = () => {
+  const {  
+    dashboard,
+  } = useCusomerInfo()
+
   const [isOpen, setIsOpen] = useState(false)
 
   const openDrawer = () => setIsOpen(true);
@@ -28,13 +33,13 @@ const CustomerInfo = () => {
     {
       title: "Total  Customers",
       image: "./fluent_people-team-24-filled.png",
-      amount: "1000",
+      amount: dashboard?.totalCustomer,
       showInfo: false,
     },
     {
       title: "Average Customer ATV",
       image: "./image 700.png",
-      amount: "£300",
+      amount: `£${dashboard?.averageCustomerATV}`,
       showInfo: true,
       text: `Customer Average Transaction Value (ATV) is a metric that measures the average amount spent per transaction by customers with a business, calculated by dividing total sales revenue by the number of transactions within a specific time frame. 
 It helps assess customer spending habits and business performance.`,
@@ -42,7 +47,7 @@ It helps assess customer spending habits and business performance.`,
     {
       title: "Average Total Spend",
       image: "./image 701.png",
-      amount: "5,000",
+      amount: dashboard?.averageTotalSpend,
       showInfo: true,
       text: `Customer average total spend is a metric indicating how much a customer spends over a specific period.
  
@@ -124,7 +129,7 @@ This metric is crucial for understanding revenue contributions per customer.`,
               data={{
                 title: "New Customers",
                 image: "./fluent_people-team-24-filled (1).png",
-                amount: "1000",
+                amount: dashboard?.newCustomer,
                 showInfo: false,
               }}
             />
@@ -132,7 +137,7 @@ This metric is crucial for understanding revenue contributions per customer.`,
               data={{
                 title: "Active Customers",
                 image: "./fluent_people-team-24-filled (2).png",
-                amount: "1000",
+                amount: dashboard?.activeCustomer,
                 showInfo: false,
               }}
             />
@@ -145,7 +150,7 @@ This metric is crucial for understanding revenue contributions per customer.`,
               data={{
                 title: "Total Points Redeemed",
                 image: "./image 699.png",
-                amount: "1000",
+                amount: dashboard?.totalPointsRedeemed,
                 showInfo: false,
               }}
             />
@@ -153,7 +158,7 @@ This metric is crucial for understanding revenue contributions per customer.`,
               data={{
                 title: "Total  Points Earned",
                 image: "./image 699 (3).png",
-                amount: "1000",
+                amount: dashboard?.totalPointEarned,
                 showInfo: false,
               }}
             />
@@ -161,7 +166,7 @@ This metric is crucial for understanding revenue contributions per customer.`,
               data={{
                 title: "Total  Average Points Balance",
                 image: "./image 701.png",
-                amount: "1000",
+                amount: dashboard?.totalAveragePointBalance,
                 showInfo: false,
               }}
             />
@@ -174,7 +179,7 @@ This metric is crucial for understanding revenue contributions per customer.`,
               data={{
                 title: "Total Stamps Redeemed",
                 image: "./image 699 (1).png",
-                amount: "1000",
+                amount: dashboard?.totalStampsRedeemed,
                 showInfo: false,
               }}
             />
@@ -187,7 +192,7 @@ This metric is crucial for understanding revenue contributions per customer.`,
               data={{
                 title: "CLV",
                 image: "./image 699 (2).png",
-                amount: "1000",
+                amount: dashboard?.CLV,
                 showInfo: true,
                 text: `Customer Lifetime Value (CLV) is a metric that estimates the total revenue a business can expect from a single customer account throughout the business relationship. 
 
@@ -203,7 +208,7 @@ It factors in the revenue generated from a customer, the duration of the relatio
               data={{
                 title: "Average Basket Size",
                 image: "./image 700 (1).png",
-                amount: "1000",
+                amount: dashboard?.averageBasketSize,
                 showInfo: true,
                 text: `Customer average basket size is a retail metric that represents the average number of items purchased by customers in a single transaction.
 
@@ -214,14 +219,14 @@ It's calculated by dividing the total number of items sold by the total number o
         </div>
       </div>
       <div className="flex justify-between my-6">
-      <RotaionProgress />
-      <LifeCycleStage />
+      <RotaionProgress data={dashboard?.retentionRate} />
+      <LifeCycleStage data={dashboard?.LifeCycleStage}/>
       </div>
       <div>
-        <Promotion />
+        <Promotion data={dashboard?.recommendedPromotionType}/>
       </div>
       <div className="my-6">
-        <BarChart />
+        <BarChart data={dashboard?.favouriteTimeOfTheDay}/>
       </div>
       <div>
         <PaginatedTable  />

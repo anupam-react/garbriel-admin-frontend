@@ -44,7 +44,7 @@ Location</th>
             </td>
             <td>Café Nero, Manches ter Spinning Fields, M6 3AJ</td>
             <td>13:30 pm</td>
-            <td>
+            <td className="flex justify-center">
               <div style={{ position: "relative", width: "120px" }}>
                 <img src="./Group 38061.png" alt="" />
                 <img
@@ -93,7 +93,7 @@ Location</th>
                       </td>
                          <td>Chapel Street, M7 6JG</td>
             <td>13:30 pm</td>
-            <td>
+            <td className="flex justify-center">
               <div style={{ position: "relative", width: "120px" }}>
                 <img src="./Group 38061.png" alt="" />
                 <img
@@ -142,7 +142,7 @@ Location</th>
             </td>
             <td>Oxford Road, M5 3AX</td>
             <td>13:30 pm</td>
-            <td>
+            <td className="flex justify-center">
               <div style={{ position: "relative", width: "120px" }}>
                 <img src="./Group 38061.png" alt="" />
                 <img

@@ -21,7 +21,7 @@ const Verification = ({ handleOpen }) => {
       <hr className="hr2" />
       <InfoHeader />
       <div style={{ paddingTop: "30px", paddingBottom: "20px" }}>
-        <p style={{ color: "#0070BC", fontWeight: 600 }}>
+        <p style={{ color: "#0070BC", fontWeight: 600 }}  className="cursor-pointer" onClick={()=> handleOpen(false)}>
           STUDENT VERIFICATION
         </p>
         <hr className="hr3" style={{ width: "205px" }} />

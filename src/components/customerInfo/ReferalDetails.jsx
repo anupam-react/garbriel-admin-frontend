@@ -8,7 +8,7 @@ const ReferalDetails = ({ handleOpen }) => {
   const [openSuccess, setSuccess] = useState(false);
 
   return (
-    <div className="gift-container">
+    <div className="gift-container no-scrollbar">
     <div className="gift-main">
       <p className="title">
       Referral Reward Invitation Link

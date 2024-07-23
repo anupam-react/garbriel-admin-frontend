@@ -67,6 +67,12 @@
   border-radius: 50%;
   background-color: #3bb54a;
 }
+.inActive {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background-color: gray;
+}
 .image {
   display: flex;
   justify-content: center;
@@ -86,7 +92,7 @@
   width: 280px;
   padding: 20px 14px;
   position: absolute;
-  top: 10%;
+  top: 40%;
   right: 10%;
   border-radius: 10px;
   z-index: 999;

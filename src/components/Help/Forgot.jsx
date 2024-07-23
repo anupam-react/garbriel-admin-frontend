@@ -37,7 +37,7 @@ const Forgot = () => {
                   name="email"
                   id="email"
                   style={{ color: "#0070BC" }}
-                  placeholder="EMAIL"
+                  placeholder="USER ID"
                   className="rounded shadow-md border-none text-sm block w-full pl-14 p-2.5 "
                   required
                   value={email}

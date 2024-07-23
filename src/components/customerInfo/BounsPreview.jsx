@@ -5,7 +5,7 @@ import "./index.scss";
 const BounsPreview = ({ handleOpen }) => {
   const [openSuccess, setSuccess] = useState(false);
   return (
-    <div className="gift-container" style={{height:"400px"}}>
+    <div className="gift-container no-scrollbar" style={{height:"400px"}}>
       <div className="gift-main">
         <p className="title">Award Free Bonus Preview</p>
         <img

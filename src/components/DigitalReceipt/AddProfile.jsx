@@ -1,8 +1,27 @@
-import React from 'react'
+import React, { useEffect, useRef } from 'react'
 import './index.scss'
-const AddProfile = () => {
+const AddProfile = ({onClose, show }) => {
+  const popupRef = useRef();
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (popupRef.current && !popupRef.current.contains(event.target)) {
+        onClose();
+      }
+    };
+
+    if (show) {
+      document.addEventListener('mousedown', handleClickOutside);
+    } else {
+      document.removeEventListener('mousedown', handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [show, onClose]);
   return (
-    <div className='profile-container'>
+    <div className='fixed inset-0 bg-gray-600 bg-opacity-50 z-50 flex justify-center items-center'>
+      <div  ref={popupRef} className="bg-white p-4 rounded shadow-lg w-[300px]">
              <div className="flex items-center px-6 h-12 input-loyalty">
                   <img
                     src="./image 2 (3).svg"
@@ -47,8 +66,9 @@ const AddProfile = () => {
               </div>
               <img src="./Mask group (10).png" alt="" className='w-6 h-6' />
           </div>
-              
           </div>
+              
+      </div>
     </div>
   )
 }

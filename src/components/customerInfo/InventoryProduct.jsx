@@ -1,13 +1,11 @@
 import React, { useEffect, useRef, useState } from "react";
 import "./index.scss";
 import { DialogDefault } from "../common/DilogBox";
-import BirthdayOffer from "./BirthdayOffer";
-import CatalogueProduct from "./CatalogueProduct";
 import ProductDetails from "./ProductDetails";
 const InventoryProduct = ({ handleOpen , isProdInfo = false }) => {
   const [isView , setView] = useState()
   const [openDetails , setDetails] = useState()
-  const [isSelect , setSelect] = useState(-1)
+  const [isSelect , setSelect] = useState([])
   const product = [
     {id:1, image:"../img/image 711.png" , name:"Chai Oatmilk latte"},
      {id:2, image:"../img/image 713 (1).png" , name:"Donuts"},
@@ -17,6 +15,17 @@ const InventoryProduct = ({ handleOpen , isProdInfo = false }) => {
      {id:6, image:"../img/image 713 (1).png" , name:"Donuts"},
 
     ]
+
+    const toggleProductSelection = (productId) => {
+      const isSelected = isSelect.includes(productId);
+      if (isSelected) {
+        setSelect(isSelect?.filter(id => id !== productId));
+        // setProductId(isSelect?.filter(id => id !== productId))
+      } else {
+        setSelect([...isSelect, productId]);
+        // setProductId([...isSelect, productId])
+      }
+    };
     const divRef = useRef(null);
     useEffect(() => {
       const handleClickOutside = (event) => {
@@ -42,7 +51,7 @@ const InventoryProduct = ({ handleOpen , isProdInfo = false }) => {
     <div className="gift-main">
       <p className="title">Inventory</p>
       <img
-        src="./Mask group (2).png"
+        src="../Mask group (2).png"
         alt=""
         className="cross-image"
         onClick={() => {
@@ -71,9 +80,9 @@ const InventoryProduct = ({ handleOpen , isProdInfo = false }) => {
         </div>
       <div className="catalogue-flex flex-wrap catalogue-container">
         {product?.map((d, i)=>(
-        <div className="catelogue-main"  key={i} onClick={()=> setSelect(i)}>
+        <div className="catelogue-main"  key={i} onClick={()=> toggleProductSelection(i)}>
           <div className="relative">
-            <img src={d?.image} alt="" className={isSelect === i  ? "border-4 rounded-xl  border-[#FE903C]" :"" }/>
+            <img src={d?.image} alt="" className={isSelect?.includes(i)  ? "border-4 rounded-xl  border-[#FE903C] w-full h-[100px]" :" w-full h-[100px]" }/>
             <img
               src="../Group (9).png"
               alt=""
@@ -86,7 +95,7 @@ const InventoryProduct = ({ handleOpen , isProdInfo = false }) => {
                       </div>
                     )}
           </div>
-          <p className={isSelect === i  ? "prod-name2" : "text-[#000000B2] text-center"} style={{ fontSize: "14px" }}>
+          <p className={isSelect?.includes(i)  ? "prod-name2" : "text-[#000000B2] text-center"} style={{ fontSize: "14px" }}>
            {d?.name}
           </p>
         </div>

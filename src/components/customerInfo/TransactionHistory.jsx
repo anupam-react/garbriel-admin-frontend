@@ -11,7 +11,7 @@ const TransactionHistory = ({handleOpen}) => {
   return (
     <div className="info-container">
             <div className="gift-main">
-        <p className="title" style={{color:"#000000B2"}}>Transaction  In App Purchase</p>
+        <p className="title" style={{color:"#000000B2"}}>{activeLink === 0 ? "Transaction  In App Purchase" : "Transaction  In Store Purchase"}</p>
         <img
           src="./Mask group (2).png"
           alt=""
@@ -28,7 +28,14 @@ const TransactionHistory = ({handleOpen}) => {
    <div className="tabs-container2">
         <div
           style={{ paddingBottom: "30px" }}
-          onClick={() => handleLinkClick(0)}
+          onClick={() =>{
+            if(activeLink === 0) {
+              handleOpen(false)
+            }else{
+
+              handleLinkClick(0)
+            }
+            }}
         >
           <p
             className={`${activeLink === 0 ? "activeButton1" : "normalButton"}`}
@@ -39,7 +46,14 @@ const TransactionHistory = ({handleOpen}) => {
         </div>
         <div
           style={{ paddingBottom: "30px" }}
-          onClick={() => handleLinkClick(1)}
+          onClick={() =>{ 
+            if(activeLink === 1) {
+              handleOpen(false)
+            }else{
+
+              handleLinkClick(1)
+            }
+          }}
         >
           <p
             className={`${activeLink === 1 ? "activeButton1" : "normalButton"}`}

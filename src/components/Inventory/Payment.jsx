@@ -19,7 +19,7 @@ const Payment = () => {
     }, 2000);
     setTimeout(() => {
       setLive(false);
-      // navigate("/inventory");
+      navigate("/inventory");
     }, 3000);
   };
 
@@ -38,8 +38,7 @@ const Payment = () => {
             Let’s Make Payment
           </p>
           <p className="pb-4">
-            To start your subscription, input your card details to make payment.
-            you will be redirected to your banks authorization page .{" "}
+          To pay for your ad campaign, enter your card details below. You may be redirected to your bank authorisation page to approve this payment. 
           </p>
           <div className="payment-input-container">
             <label htmlFor="">Cardholder’s Name</label>
@@ -75,7 +74,7 @@ const Payment = () => {
           </button>
         </div>
         <div className="payment-card">
-          <p>You’re paying,</p>
+          <p>You’re paying a total of</p>
           <p className="text-[24px] font-bold text-black pb-3">£450.00</p>
           <hr />
           <div className="flex justify-between font-bold text-black mt-2">
@@ -88,8 +87,7 @@ const Payment = () => {
         <div className="alert">
           <img src="../Vector (2).png" alt="" />
           <p className="text-center text-[20px]">
-            Successfully !!!! <br />
-            Payment has been Done
+          Payment Successfully
           </p>
         </div>
       </DialogDefault>
@@ -97,7 +95,7 @@ const Payment = () => {
         <div className="alert">
           <img src="../emojione-monotone_hourglass-not-done.png" alt="" />
           <p className="text-center text-[20px]">
-            Your #promotionName is under review
+          Thank you! Your ad is under review. We will let you know when it is Live.
           </p>
         </div>
       </DialogDefault>
@@ -105,7 +103,7 @@ const Payment = () => {
         <div className="alert">
           <img src="../Vector (2).png" alt="" />
           <p className="text-center text-[20px]">
-            Congratulations! Your #promotionName is Live!
+          Congratulations! Your ad is now Live.
           </p>
         </div>
       </DialogDefault>

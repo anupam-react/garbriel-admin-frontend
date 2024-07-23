@@ -7,17 +7,24 @@ import MoneyTransferTable from "./MoneyTransferTable";
 import RedemptionHistoryTable from "./RedemptionHistoryTable";
 import ClaimHistoryTable from "./ClaimHistoryTable";
 
-const LoyalityTab1 = () => {
+const LoyalityTab1 = ({handleOpen}) => {
   const [activeLink, setActiveLink] = useState(0);
   const handleLinkClick = (index) => {
     setActiveLink(index);
   };
   return (
     <div>
-      <div className="tabs1-container">
+      <div className="tabs1-container text-center">
         <div
           style={{ paddingBottom: "30px" }}
-          onClick={() => handleLinkClick(0)}
+          onClick={() =>{
+            if(activeLink === 0) {
+              handleOpen(false)
+            }else{
+              handleLinkClick(0)
+            }
+          }
+           }
         >
           <p
             className={`${activeLink === 0 ? "activeButton1" : "normalButton"}`}
@@ -28,7 +35,14 @@ const LoyalityTab1 = () => {
         </div>
         <div
           style={{ paddingBottom: "30px" }}
-          onClick={() => handleLinkClick(1)}
+          onClick={() =>{
+            if(activeLink === 1) {
+              handleOpen(false)
+            }else{
+              handleLinkClick(1)
+            }
+          }
+           }
         >
           <p
             className={`${activeLink === 1 ? "activeButton1" : "normalButton"}`}
@@ -39,7 +53,14 @@ const LoyalityTab1 = () => {
         </div>
         <div
           style={{ paddingBottom: "30px" }}
-          onClick={() => handleLinkClick(2)}
+          onClick={() =>{
+            if(activeLink === 2) {
+              handleOpen(false)
+            }else{
+              handleLinkClick(2)
+            }
+          }
+           }
         >
           <p
             className={`${activeLink === 2 ? "activeButton1" : "normalButton"}`}
@@ -51,7 +72,14 @@ const LoyalityTab1 = () => {
         <div style={{ paddingBottom: "30px" }}>
           <p
             className={`${activeLink === 3 ? "activeButton1" : "normalButton"}`}
-            onClick={() => handleLinkClick(3)}
+            onClick={() =>{
+              if(activeLink === 3) {
+                handleOpen(false)
+              }else{
+                handleLinkClick(3)
+              }
+            }
+             }
           >
             Points Earned from Money Transfer Reward
           </p>
@@ -60,7 +88,14 @@ const LoyalityTab1 = () => {
         <div style={{ paddingBottom: "30px" }}>
           <p
             className={`${activeLink === 4 ? "activeButton1" : "normalButton"}`}
-            onClick={() => handleLinkClick(4)}
+            onClick={() =>{
+              if(activeLink === 4) {
+                handleOpen(false)
+              }else{
+                handleLinkClick(4)
+              }
+            }
+             }
           >
             Point Claim History
           </p>
@@ -69,7 +104,14 @@ const LoyalityTab1 = () => {
         <div style={{ paddingBottom: "30px" }}>
           <p
             className={`${activeLink === 5 ? "activeButton1" : "normalButton"}`}
-            onClick={() => handleLinkClick(5)}
+            onClick={() =>{
+              if(activeLink === 5) {
+                handleOpen(false)
+              }else{
+                handleLinkClick(5)
+              }
+            }
+             }
           >
             Point Redemption History
           </p>
