@@ -34,7 +34,7 @@ const Navbar = ({data}) => {
         </div>
         <div className="flex gap-2 items-center cursor-pointer"  onClick={openDrawer}>
         <img
-          src={data?.image}
+          src="../Ellipse 1 (1).svg"
           alt="profile"
           className="rounded-full w-14 h-12"
           />

@@ -22,7 +22,7 @@ const Profile = ({ closeDrawer, open , data }) => {
         </div>
         <div className="flex flex-col items-center mb-6">
           <div className="relative">
-          <img src={data?.image} alt="" className="w-[120px] h-[120px] mb-4 rounded-full" />
+          <img src="../Ellipse 1 (1).svg" alt="" className="w-[120px] h-[120px] mb-4 rounded-full" />
             <img src="../tabler_edit.png" alt="" className="absolute bottom-4 right-2 cursor-pointer" onClick={()=> setUploadImage(true)} />
           </div>
           <p className="font-semibold pb-2">{data?.fullName}</p>
@@ -65,10 +65,19 @@ const Profile = ({ closeDrawer, open , data }) => {
                 <img src="../Vector (40).png" alt="" className="cursor-pointer" onClick={()=>setUploadImage(false)}/>
             </div>
             <div className="flex justify-around mt-4">
-            <div className="flex gap-2 cursor-pointer"  onClick={()=>setUploadImage(false)}>
-                <img src="../Vector (41).png" alt="" />
-                <p className="underline text-black font-[500]">Browse Image</p>
-            </div>
+            <label id="dropzone-file" className="flex gap-2 cursor-pointer">
+              <input
+                id="dropzone-file"
+                type="file"
+                className="hidden"
+                // onChange={(e) =>
+                //   setOfferData({ ...offerData, image: e.target.files[0] })
+                // }
+              />
+              <img src="../Vector (41).png" alt="" />
+              <p className="underline text-black font-[500]">Browse Image</p>
+            </label>
+          
             <div className="flex gap-2 cursor-pointer"  onClick={()=>setUploadImage(false)}>
                 <img src="../solar_gallery-bold.png" alt="" />
                 <p className="underline text-black font-[500]">Open Gallery</p>
