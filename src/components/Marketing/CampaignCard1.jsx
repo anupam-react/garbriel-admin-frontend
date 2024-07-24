@@ -42,6 +42,7 @@ const CampaignCard1 = ({
               isLive={isLive}
               isPause={isPause}
               isOfferCard={true}
+              onClose={()=> setOpenMenu(false)}
             />
           )}
           {isGift && (
@@ -66,7 +67,12 @@ const CampaignCard1 = ({
           </button>
         )}
         {isPause && (
-          <button className="unpause" onClick={() => setOpenunPause(true)}>
+          <button className="unpause" onClick={() =>{
+             setOpenunPause(true)
+             setTimeout(()=>{
+              setOpenunPause(false)
+             },1000)
+             }}>
             Unpause to continue run your ad campaign
           </button>
         )}

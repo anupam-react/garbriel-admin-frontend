@@ -7,6 +7,7 @@ const CampaignMenu = ({
   isPause = false,
   isOfferCard = false,
   isShop,
+  onClose
 }) => {
   const [openPause, setOpenPause] = useState(false);
   const [openunPause, setOpenunPause] = useState(false);
@@ -37,7 +38,13 @@ const CampaignMenu = ({
             Edit
           </p>
           {isPause ? (
-            <p className="cursor-pointer" onClick={() => setOpenunPause(true)}>
+            <p className="cursor-pointer" onClick={() =>{
+               setOpenunPause(true)
+               setTimeout(()=>{
+                setOpenPause(false)
+                onClose()
+              },1000)
+               }}>
               Un Pause
             </p>
           ) : (
@@ -78,13 +85,23 @@ const CampaignMenu = ({
           <div className="flex gap-4 mt-6">
             <button
               className="w-[120px] bg-[#0070BC] py-2 text-white rounded-md"
-              onClick={() => setOpenPause(true)}
+              onClick={() => {
+                setOpenPause(true)
+                setTimeout(()=>{
+                  setOpenPause(false)
+                  onClose()
+                },1000)
+              }}
             >
               Yes
             </button>
             <button
               className="w-[120px] bg-[#FEA82F] py-2 text-white rounded-md"
-              onClick={() => setOpenConfirm(false)}
+              onClick={() => {
+                setOpenConfirm(false)
+                onClose()
+               
+              }}
             >
               No
             </button>
