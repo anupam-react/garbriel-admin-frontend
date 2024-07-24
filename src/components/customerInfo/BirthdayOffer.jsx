@@ -4,7 +4,7 @@ import { DialogDefault } from "../common/DilogBox";
 
 import BirthdayOfferPreview from "./BirthdayOfferPreview";
 import BirthdayGiftPreview from "./BirthdayGiftPreview";
-const BirthdayOffer = ({ handleOpen, isOffer = false }) => {
+const BirthdayOffer = ({ handleOpen, isOffer = false , onClose}) => {
   const [openSuccess, setSuccess] = useState(false);
   const data = [
     {
@@ -59,9 +59,9 @@ const BirthdayOffer = ({ handleOpen, isOffer = false }) => {
 
       <DialogDefault open={openSuccess} handleOpen={setSuccess}>
         {isOffer ? (
-          <BirthdayOfferPreview handleOpen={setSuccess} />
+          <BirthdayOfferPreview handleOpen={setSuccess}/>
         ) : (
-          <BirthdayGiftPreview handleOpen={setSuccess} />
+          <BirthdayGiftPreview handleOpen={setSuccess} onClose={onClose}/>
         )}
       </DialogDefault>
     </div>

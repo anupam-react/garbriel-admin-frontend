@@ -155,7 +155,7 @@ It factors in the revenue generated from a customer, the duration of the relatio
         />
       </div>
       <hr className="hr2" />
-      <InfoHeader />
+      <InfoHeader onClose={() => handleOpen(false)}/>
       <div style={{ paddingTop: "40px", paddingBottom: "30px" }}>
         <p style={{ color: "#0070BC", fontWeight: 600 }}>CUSTOMER INSIGHTS</p>
         <hr className="hr3" />

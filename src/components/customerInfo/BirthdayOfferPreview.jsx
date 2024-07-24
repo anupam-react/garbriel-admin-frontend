@@ -3,7 +3,7 @@ import "./index.scss";
 import { DialogDefault } from "../common/DilogBox";
 import BirthdayGiftPay from "./BirthdayGiftPay";
 
-const BirthdayOfferPreview = ({ handleOpen }) => {
+const BirthdayOfferPreview = ({ handleOpen  }) => {
 
   const [openSuccess, setSuccess] = useState(false);
   const data = [

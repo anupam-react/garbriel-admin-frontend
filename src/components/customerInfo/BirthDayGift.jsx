@@ -3,7 +3,7 @@ import "./index.scss";
 import { DialogDefault } from "../common/DilogBox";
 import BirthdayOffer from "./BirthdayOffer";
 import CatalogueProduct from "./CatalogueProduct";
-const BirthDayGift = ({ handleOpen }) => {
+const BirthDayGift = ({ handleOpen , onClose}) => {
   const [openOffer, setOffer] = useState(false);
   const [openUploadImage, setUploadImage] = useState(false);
 
@@ -80,7 +80,7 @@ const BirthDayGift = ({ handleOpen }) => {
       </button>
     </div>
     <DialogDefault open={openOffer} handleOpen={setOffer}>
-  <BirthdayOffer handleOpen={setOffer}/>
+  <BirthdayOffer handleOpen={setOffer} onClose={onClose}/>
     </DialogDefault>
     <DialogDefault open={openUploadImage} handleOpen={setUploadImage}>
         <div className="p-6">

@@ -21,7 +21,7 @@ const MenuCard = ({onClose , setOpenInfo}) => {
        <button className="menuButton2" onClick={()=> setOpenBonus(true)}>Awared Free Bonus</button>
           <button className="menuButton2" onClick={()=> setOpenEvent(true)}>Send Special Event Invite</button>
           <DialogDefault open={openGift} handleOpen={setOpenGift}>
-            <BirthDayGift  handleOpen={setOpenGift} setOpenInfo={setOpenInfo}/>
+            <BirthDayGift  handleOpen={setOpenGift} onClose={onClose} setOpenInfo={setOpenInfo}/>
         </DialogDefault>
           <DialogDefault open={openOffer} handleOpen={setOpenOffer}>
             <CustomizedBGift  handleOpen={setOpenOffer}/>

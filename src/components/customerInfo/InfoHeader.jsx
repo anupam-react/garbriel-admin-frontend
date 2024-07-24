@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./index.scss";
 import MenuCard from "./MenuCard";
-const InfoHeader = () => {
+const InfoHeader = ({onClose}) => {
   const [isOpenMenu, setOpenMenu] = useState(false);
   return (
     <div className="header-container">
@@ -21,7 +21,7 @@ const InfoHeader = () => {
         </div>
         {isOpenMenu && (
           <div className="menu-Main2">
-            <MenuCard />
+            <MenuCard onClose={onClose}  setOpenInfo={setOpenMenu}/>
           </div>
         )}
         <div>

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./index.scss";
 import { DialogDefault } from "../common/DilogBox";
 
-const BirthdayGiftPreview = ({ handleOpen }) => {
+const BirthdayGiftPreview = ({ handleOpen , onClose}) => {
 
   const [openSuccess, setSuccess] = useState(false);
   const data = [
@@ -47,14 +47,19 @@ const BirthdayGiftPreview = ({ handleOpen }) => {
           </div>
         ))}
           </div>
-           <button className="menuButton4" onClick={()=> setSuccess(true)}>Send to Customer Offer folder</button>
+           <button className="menuButton4" onClick={()=>{
+             setSuccess(true)
+             setTimeout(()=>{
+              onClose()
+             },2000)
+             }}>Send to Customer Offer folder</button>
 
       </div>
          
            <DialogDefault open={openSuccess} handleOpen={setSuccess}>
               <div className="alert">
                   <img src="./Vector (2).png" alt="" />
-                  <p className="text-[32px] font-bold">Successfully !!!!
+                  <p className="text-[24px] text-center font-bold">Successfully !!!!
 Sent to customer offer folder</p>
 
             </div>
