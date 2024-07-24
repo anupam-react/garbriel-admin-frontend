@@ -100,8 +100,18 @@ const TransactionDetails = ({handleOpen , isButton= true}) => {
           <hr className='w-full bg-[#000000] my-6' />
          
         {isButton && <div className='button-container3'>
-              <button className='menuButton4' onClick={()=>setOpenDownload(true)}>Download Reciept</button>
-              <button className='menuButton4' onClick={()=>setOpenShare(true)}>Share Reciept</button>
+              <button className='menuButton4' onClick={()=>{
+                setOpenDownload(true)
+                setTimeout(()=>{
+                  setOpenDownload(false)
+                },2000)
+                }}>Download Reciept</button>
+              <button className='menuButton4' onClick={()=>{
+                setOpenShare(true)
+                setTimeout(()=>{
+                  setOpenShare(false)
+                },2000)
+                }}>Share Reciept</button>
           </div>}
           <DialogDefault open={openDownload} handleOpen={setOpenDownload}>
            <div className="alert">

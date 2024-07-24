@@ -147,55 +147,19 @@ const ReceiptFilter = ({ closeDrawer, open }) => {
                 </div>
               </div>
 
-              <div className="mt-12">
-                <p className="text-lg font-semibold pb-4">Uploaded By</p>
-                <div className="flex items-center px-6 h-12 input-loyalty">
-                  <img
-                    src="./image 2 (3).svg"
-                    alt="search"
-                    className="w-6 h-6"
-                  />
-                  <input type="text" className="search" placeholder="Search" />
-                </div>
-              </div>
-              <div className="mt-4 relative">
-                <div className="flex justify-between items-center px-6 h-12 input-loyalty">
-                  <div className="flex gap-6">
-                    <img
-                      src="./Ellipse 11.png"
-                      alt="search"
-                      className="w-6 h-6"
-                    />
-                    <p>Lorem Ipsum</p>
-                  </div>
-                  <img src="./image 675.png" alt="search" className="w-6 h-6" />
-                </div>
-              </div>
-              <div
-                className="mt-6 cursor-pointer flex justify-center items-center gap-3 rounded-lg py-2 border border-[#0070BC] text-[#0070BC]"
-                onClick={() => setOpenProfile(!openProfile)}
-              >
-                <img src="./Mask group (10).png" alt="" className="w-7 h-7" />
-                <p className="font-semibold text-lg">ADD</p>
-              </div>
-
-              {openProfile && <AddProfile />}
+          
             </div>
           </div>
           <div className="button-container">
             <button
               className="button2"
-              //   onClick={() => {
-              //     setOpenAlert(true);
-              //   }}
+              onClick={closeDrawer}
             >
               APPLY
             </button>
             <button
               className="button4"
-              //   onClick={() => {
-              //     setOpenAlert(true);
-              //   }}
+                onClick={closeDrawer}
             >
               RESET
             </button>
