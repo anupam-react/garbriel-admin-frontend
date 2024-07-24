@@ -110,11 +110,11 @@ function App() {
             path="/inventory/existing-outlate"
             element={<ExitingOutlate />}
           />
-          {/* <Route path="/inventory/adding-outlate" element={<AddOutlate2 />} /> */}
-          <Route path="/inventory/edit-product/:id" element={<EditProduct />} />
-          {/* <Route path="/inventory/edit-prod" element={<EditProduct2 />} /> */}
+          <Route path="/inventory/adding-outlate" element={<AddOutlate2 />} />
+          <Route path="/inventory/edit-product" element={<EditProduct />} />
+          <Route path="/inventory/edit-prod" element={<EditProduct2 />} />
           <Route
-            path="/inventory/product-details/:id"
+            path="/inventory/product-details"
             element={<ProductDetails />}
           />
           <Route path="/inventory/customer-gift" element={<CustomerGift />} />
