@@ -17,7 +17,7 @@ const BirthdayOffer = ({ handleOpen, isOffer = false }) => {
     },
   ];
   return (
-    <div className="gift-container">
+    <div className="gift-container no-scrollbar">
       <div className="gift-main">
         <p className="title">
           {isOffer ? "Birthday Offer ( Review )" : "Birthday Gift ( Review )"}

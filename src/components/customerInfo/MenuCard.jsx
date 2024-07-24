@@ -7,7 +7,7 @@ import AwardCustomer from './AwardCustomer'
 import Bouns from './Bouns'
 
 import Invitation from './Invitation';
-const MenuCard = () => {
+const MenuCard = ({onClose , setOpenInfo}) => {
     const [openGift , setOpenGift] = useState(false)
     const [openOffer , setOpenOffer] = useState(false)
     const [openPromotions , setOpenPromotions] = useState(false)
@@ -21,7 +21,7 @@ const MenuCard = () => {
        <button className="menuButton2" onClick={()=> setOpenBonus(true)}>Awared Free Bonus</button>
           <button className="menuButton2" onClick={()=> setOpenEvent(true)}>Send Special Event Invite</button>
           <DialogDefault open={openGift} handleOpen={setOpenGift}>
-            <BirthDayGift  handleOpen={setOpenGift}/>
+            <BirthDayGift  handleOpen={setOpenGift} setOpenInfo={setOpenInfo}/>
         </DialogDefault>
           <DialogDefault open={openOffer} handleOpen={setOpenOffer}>
             <CustomizedBGift  handleOpen={setOpenOffer}/>
@@ -30,10 +30,10 @@ const MenuCard = () => {
             <AwardCustomer  handleOpen={setOpenPromotions}/>
         </DialogDefault>
           <DialogDefault open={openBonus} handleOpen={setOpenBonus}>
-            <Bouns  handleOpen={setOpenBonus}/>
+            <Bouns  handleOpen={setOpenBonus} onClose={onClose}/>
         </DialogDefault>
           <DialogDefault open={openEvent} handleOpen={setOpenEvent}>
-            <Invitation  handleOpen={setOpenEvent}/>
+            <Invitation  handleOpen={setOpenEvent} onClose={onClose}/>
         </DialogDefault>
     </div>
   )

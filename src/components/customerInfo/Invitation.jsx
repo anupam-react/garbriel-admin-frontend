@@ -3,10 +3,10 @@ import "./index.scss";
 import { DialogDefault } from "../common/DilogBox";
 import CatalogueProduct from "./CatalogueProduct";
 import InvitationPreview from "./InvitationPreview";
-const Invitation = ({ handleOpen }) => {
+const Invitation = ({ handleOpen , onClose }) => {
   const [openAlert, setOpenAlert] = useState(false);
   return (
-    <div className="gift-container">
+    <div className="gift-container no-scrollbar">
       <div className="gift-main">
         <p className="title">Invitation Link</p>
         <img
@@ -86,7 +86,7 @@ const Invitation = ({ handleOpen }) => {
         </button>
       </div>
       <DialogDefault open={openAlert} handleOpen={setOpenAlert}>
-      <InvitationPreview handleOpen={setOpenAlert}/>
+      <InvitationPreview handleOpen={setOpenAlert} onClose={onClose}/>
       </DialogDefault>
       
     </div>

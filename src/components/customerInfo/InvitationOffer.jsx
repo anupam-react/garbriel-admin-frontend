@@ -3,7 +3,7 @@ import "./index.scss";
 import { DialogDefault } from "../common/DilogBox";
 
 
-const InvitationOffer = ({ handleOpen }) => {
+const InvitationOffer = ({ handleOpen , onClose }) => {
 
   const [openSuccess, setSuccess] = useState(false);
   const data = [
@@ -21,7 +21,7 @@ const InvitationOffer = ({ handleOpen }) => {
    
   ];
   return (
-    <div className="gift-container">
+    <div className="gift-container no-scrollbar">
       <div className="gift-main" >
         <p className="title">Invitation Link</p>
         <img
@@ -51,7 +51,12 @@ const InvitationOffer = ({ handleOpen }) => {
           </div>
 
           </div>
-           <button className="menuButton4" onClick={()=> setSuccess(true)}>Send to Customer’s Offer Folder</button>
+           <button className="menuButton4" onClick={()=>{ 
+            setSuccess(true)
+            setTimeout(()=>{
+              onClose()
+            },1000)
+            }}>Send to Customer’s Offer Folder</button>
 
       </div>
          

@@ -3,12 +3,12 @@ import "./index.scss";
 import { DialogDefault } from "../common/DilogBox";
 import InvitationOffer from "./InvitationOffer";
 
-const InvitationPreview = ({ handleOpen }) => {
+const InvitationPreview = ({ handleOpen , onClose}) => {
 
   const [openSuccess, setSuccess] = useState(false);
 
   return (
-    <div className="gift-container">
+    <div className="gift-container no-scrollbar">
     <div className="gift-main">
       <p className="title">
       Invitation Link
@@ -75,7 +75,7 @@ const InvitationPreview = ({ handleOpen }) => {
     </button>
 
     <DialogDefault open={openSuccess} handleOpen={setSuccess}>
-      <InvitationOffer handleOpen={setSuccess}/>
+      <InvitationOffer handleOpen={setSuccess} onClose={onClose}/>
     </DialogDefault>
   </div>
   );

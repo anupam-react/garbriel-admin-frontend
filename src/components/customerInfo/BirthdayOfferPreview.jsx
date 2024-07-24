@@ -21,7 +21,7 @@ const BirthdayOfferPreview = ({ handleOpen }) => {
    
   ];
   return (
-    <div className="gift-container">
+    <div className="gift-container no-scrollbar">
       <div className="gift-main" >
         <p className="title">Birthday Offer ( Preview )</p>
         <img

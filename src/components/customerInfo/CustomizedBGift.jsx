@@ -10,7 +10,7 @@ const CustomizedBGift = ({ handleOpen }) => {
   const [openUploadImage, setUploadImage] = useState(false);
 
   return (
-    <div className="gift-container  no-scrollbar">
+    <div className="gift-container no-scrollbar">
       <div className="gift-main">
         <p className="title">Send Customized Birthday Offer</p>
         <img

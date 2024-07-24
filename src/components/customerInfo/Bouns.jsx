@@ -3,11 +3,11 @@ import { DialogDefault } from "../common/DilogBox";
 import "./index.scss";
 import CatalogueProduct2 from "./CatalogueProduct2";
 import BounsPreview from "./BounsPreview";
-const Bouns = ({ handleOpen }) => {
+const Bouns = ({ handleOpen , onClose }) => {
   const [openSuccess, setSuccess] = useState(false);
   return (
-    <div className="gift-container">
-      <div className="gift-main">
+    <div className="gift-container no-scrollbar">
+      <div className="gift-main ">
         <p className="title">Award Free Bonus</p>
         <img
           src="./Mask group (2).png"
@@ -82,7 +82,7 @@ const Bouns = ({ handleOpen }) => {
         </button>
       </div>
       <DialogDefault open={openSuccess} handleOpen={setSuccess}>
-        <BounsPreview handleOpen={setSuccess} />
+        <BounsPreview handleOpen={setSuccess} onClose={onClose}/>
       </DialogDefault>
     </div>
   );

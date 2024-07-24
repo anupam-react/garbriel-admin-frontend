@@ -165,8 +165,9 @@
 }
 .menu-Main {
   position: absolute;
-  top: 50%;
-  left: 16%;
+  top: 10%;
+  left: 12%;
+  z-index: 10;
 }
 .menu-Main2 {
   position: absolute;
@@ -190,6 +191,7 @@
   background-color: white;
   padding: 10px;
   border-radius: 10px;
+  
 
 }
 .menu-container2 {

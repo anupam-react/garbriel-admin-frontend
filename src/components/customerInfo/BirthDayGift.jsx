@@ -5,11 +5,11 @@ import BirthdayOffer from "./BirthdayOffer";
 import CatalogueProduct from "./CatalogueProduct";
 const BirthDayGift = ({ handleOpen }) => {
   const [openOffer, setOffer] = useState(false);
-
+  const [openUploadImage, setUploadImage] = useState(false);
 
   return (
    
-    <div className="gift-container">
+    <div className="gift-container no-scrollbar">
     <div className="gift-main">
       <p className="title">Send Birthday Gift</p>
       <img
@@ -37,10 +37,11 @@ const BirthDayGift = ({ handleOpen }) => {
                <div
                  className="flex py-2 px-4 rounded-md text-white gap-2"
                  style={{ backgroundColor: "#00AAEA" }}
+                 onClick={()=>setUploadImage(true)}
                >
                  <p className="text-sm">UPLOAD</p>
                </div>
-               <input id="dropzone-file" type="file" className="hidden" />
+               {/* <input id="dropzone-file" type="file" className="hidden" /> */}
              </label>
            </div>
            </div>
@@ -81,6 +82,33 @@ const BirthDayGift = ({ handleOpen }) => {
     <DialogDefault open={openOffer} handleOpen={setOffer}>
   <BirthdayOffer handleOpen={setOffer}/>
     </DialogDefault>
+    <DialogDefault open={openUploadImage} handleOpen={setUploadImage}>
+        <div className="p-6">
+            <div className="flex justify-center items-center">
+                <img src="../Vector (40).png" alt="" className="cursor-pointer" onClick={()=>setUploadImage(false)}/>
+            </div>
+            <div className="flex justify-around mt-4">
+            <label id="dropzone-file" className="flex gap-2 cursor-pointer">
+              <input
+                id="dropzone-file"
+                type="file"
+                className="hidden"
+                // onChange={(e) =>
+                //   setOfferData({ ...offerData, image: e.target.files[0] })
+                // }
+              />
+              <img src="../Vector (41).png" alt="" />
+              <p className="underline text-black font-[500]">Browse Image</p>
+            </label>
+          
+            <div className="flex gap-2 cursor-pointer"  onClick={()=>setUploadImage(false)}>
+                <img src="../solar_gallery-bold.png" alt="" />
+                <p className="underline text-black font-[500]">Open Gallery</p>
+            </div>
+
+            </div>
+        </div>
+      </DialogDefault>
   </div>
   );
 };

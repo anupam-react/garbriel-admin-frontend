@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { DialogDefault } from "../common/DilogBox";
 import "./index.scss";
 
-const BounsPreview = ({ handleOpen }) => {
+const BounsPreview = ({ handleOpen , onClose}) => {
   const [openSuccess, setSuccess] = useState(false);
   return (
     <div className="gift-container no-scrollbar" style={{height:"400px"}}>
@@ -34,7 +34,12 @@ const BounsPreview = ({ handleOpen }) => {
         </div>
       </div>
       <div className="flex-center">
-        <button className="menuButton" onClick={() => setSuccess(true)}>
+        <button className="menuButton" onClick={() =>{ 
+          setSuccess(true)
+          setTimeout(()=>{
+            onClose()
+          }, 1000)
+          }}>
         SEND NOTIFICATION 
         </button>
       </div>

@@ -92,14 +92,18 @@ const PaginatedTable = () => {
             return (
               <tr>
                 <td className="">
-                  <div className="flex items-center gap-6 ml-4 my-2">
+                  <div className="flex items-center gap-6 ml-[100px] my-2 relative">
                     <div className="profile-image">
                       <img src="./carbon_user-avatar-filled.png" alt="" />
                       <img
                         src="./solar_menu-dots-bold (1).png"
                         alt=""
                         className="absolute top-1 right-1 cursor-pointer"
-                        onClick={() => setOpenMenu(!isOpenMenu)}
+                        onClick={() =>{
+
+                            if(isOpenMenu === i) setOpenMenu(false)
+                          else
+                          setOpenMenu(i)}}
                       />
                     </div>
                     <div className="flex flex-col gap-1 font-[500]">
@@ -111,9 +115,9 @@ const PaginatedTable = () => {
                     </p>
 
                     </div>
-                    {isOpenMenu && (
+                    {isOpenMenu === i && (
                       <div className="menu-Main">
-                        <MenuCard />
+                        <MenuCard onClose={()=> setOpenMenu(false)} setOpenInfo={setOpenInfo}/>
                       </div>
                     )}
                   </div>
