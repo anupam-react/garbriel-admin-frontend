@@ -65,6 +65,8 @@ import MarktingAdPreviewFeatured from "./components/Marketing/MarktingAdPreviewF
 import MarketingReviewCampaignFollower from "./components/Marketing/MarketingReviewCampaignFollower.jsx";
 import FollowerAdPreview from "./components/Marketing/FollowerAdPreview.jsx";
 import MarketingReviewCampaignShop from "./components/Marketing/MarketingReviewCampaignShop.jsx";
+import PrivateRoutes2 from "./utiils/PrivateRoutes2.js";
+import ReportSetting2 from "./components/Setting/ReportSetting2.jsx";
 
 function App() {
   return (
@@ -148,7 +150,7 @@ function App() {
             element={<ViewProduct isOfferCard={false} />}
           />
           <Route
-            path="/marketing/offer-view/:id"
+            path="/marketing/offer-view"
             element={<ViewProduct isOfferCard={true} />}
           />
           <Route
@@ -222,6 +224,9 @@ function App() {
           <Route path="/account" element={<Account />} />
           <Route path="/heatmap" element={<HeatMaps />} />
           <Route path="/notification" element={<Notification />} />
+        </Route>
+        <Route element={<PrivateRoutes2 />}>
+        <Route path="/report" element={<ReportSetting2 />} />
         </Route>
         <Route path="/" element={<Initialpage />} />
         <Route path="/login" element={<Login />} />

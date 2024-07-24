@@ -7,7 +7,7 @@ import TransactionCupon from "./TransactionCupon";
 import TransactionDiscount from "./TransactionDiscount";
 import ProductDetails3 from "./ProductDetails3";
 
-const Promotions = ({ handleOpen }) => {
+const Promotions = ({ handleOpen , onClose}) => {
   const [openProduct, setOpenproduct] = useState(false);
   const [openHistory, setOpenHistory] = useState(false);
   const [openCupon, setOpenCupon] = useState(false);
@@ -24,7 +24,7 @@ const Promotions = ({ handleOpen }) => {
         />
       </div>
       <hr className="hr2" />
-      <InfoHeader />
+      <InfoHeader onClose={onClose}/>
 
       <div style={{ paddingTop: "30px", paddingBottom: "20px" }}>
         <p

@@ -3,7 +3,7 @@ import './index.scss'
 import InfoHeader from './InfoHeader';
 import AppPurchase from './AppPurchase';
 import StorePurchase from './StorePurchase';
-const TransactionHistory = ({handleOpen}) => {
+const TransactionHistory = ({handleOpen , onClose}) => {
     const [activeLink, setActiveLink] = useState(0);
     const handleLinkClick = (index) => {
         setActiveLink(index);
@@ -20,7 +20,7 @@ const TransactionHistory = ({handleOpen}) => {
         />
       </div>
       <hr className="hr2" />
-          <InfoHeader />
+          <InfoHeader onClose={onClose}/>
           <div className='my-4'>
           <button className="menuButton2" onClick={() => handleLinkClick(0)}>Total Spent {activeLink === 0 ? "£2000" : "£3500"} </button>
               

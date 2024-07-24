@@ -19,7 +19,7 @@ const AwardCustomer = ({
     { label: "Stamps", value: "Stamps" },
   ];
   return (
-    <div className="gift-container">
+    <div className="gift-container no-scrollbar">
       <div className="gift-main">
         <p className="title">{title}</p>
         <img

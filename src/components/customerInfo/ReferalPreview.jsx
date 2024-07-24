@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./index.scss";
 import { useNavigate } from "react-router-dom";
 import { DialogDefault } from "../common/DilogBox";
-const ReferalPreview = ({handleOpen}) => {
+const ReferalPreview = ({handleOpen , onClose}) => {
   const navigate = useNavigate();
   const [openSuccess, setSuccess] = useState(false);
   return (
@@ -48,6 +48,7 @@ const ReferalPreview = ({handleOpen}) => {
                 setSuccess(true)
                 setTimeout(()=>{
                   setSuccess(false) 
+                  onClose()
                 },[1000])
               }}
             >

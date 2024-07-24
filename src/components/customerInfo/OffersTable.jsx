@@ -1,7 +1,7 @@
 import React from "react";
 import InfoHeader from "./InfoHeader";
 
-const OffersTable = ({ handleOpen }) => {
+const OffersTable = ({ handleOpen , onClose}) => {
   return (
     <div className="info-container">
       <div className="gift-main">
@@ -14,7 +14,7 @@ const OffersTable = ({ handleOpen }) => {
         />
       </div>
       <hr className="hr2" />
-      <InfoHeader />
+      <InfoHeader onClose={onClose}/>
       <div className="cursor-pointer" onClick={() => handleOpen(false)} style={{ paddingTop: "30px", paddingBottom: "20px" }}>
         <p style={{ color: "#0070BC", fontWeight: 600 }}>OFFERS</p>
         <hr className="hr3" style={{ width: "70px" }} />

@@ -18,7 +18,7 @@ const MenuCard2 = () => {
         Print
       </button>
       <DialogDefault open={openView} handleOpen={setOpenView}>
-        <TransactionDetails isButton={false} handleOpen={setOpenView} />
+        <TransactionDetails handleOpen={setOpenView} />
       </DialogDefault>
       <DialogDefault open={openShare} handleOpen={setOpenShare}>
         <div className="details-container">

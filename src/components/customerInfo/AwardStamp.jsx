@@ -4,6 +4,7 @@ import "./index.scss";
 
 const AwardStamp = ({handleOpen}) => {
     const [openSuccess, setSuccess] = useState(false);
+    const [openSuccess1, setSuccess1] = useState(false);
     const [active , setActive] = useState(0)
   return (
  <div className="px-[24px] py-[16px] text-[black] font-[600] no-scrollbar" >
@@ -21,13 +22,13 @@ const AwardStamp = ({handleOpen}) => {
           <hr className="hr" />
       
       <div className="button-group">
-        <button className={active === 0 ? "button2" : "button1"} style={{fontSize:"18px"}} onClick={()=> setActive(0)}>
+        <button className={active === 0 ? "button2" : "button1"} style={{fontSize:"18px"}} onClick={()=> setSuccess1(true)}>
           5 Stamps
         </button>
-        <button className={active === 1 ? "button2" : "button1"} style={{fontSize:"18px"}} onClick={()=> setActive(1)}>
+        <button className={active === 1 ? "button2" : "button1"} style={{fontSize:"18px"}} onClick={()=> setSuccess1(true)}>
           10 Stamps
         </button>
-        <button className={active === 2 ? "button2" : "button1"} style={{fontSize:"18px"}} onClick={()=> setActive(2)}>
+        <button className={active === 2 ? "button2" : "button1"} style={{fontSize:"18px"}} onClick={()=> setSuccess1(true)}>
           20 Stamps
         </button>
           </div>
@@ -79,6 +80,28 @@ const AwardStamp = ({handleOpen}) => {
           </div>
           <p className='text-center text-black text-[28px] font-[500]'>
           Stamps successfully awarded to the customer
+          </p>
+        </div>
+      </DialogDefault>
+      <DialogDefault open={openSuccess1} handleOpen={setSuccess1}>
+         <div className="p-6 ">
+          <div className="cross-image2">
+            <img
+              src="./Mask group (2).png"
+              alt=""
+              className=""
+              onClick={() => {
+                setSuccess1(false);
+              
+              }}
+            />
+          </div>
+          <div className='flex justify-center '>
+          <img src="./2fa7832afa749ffa404629da1ede8820.gif" alt="" className='w-[120px]' />
+
+          </div>
+          <p className='text-center text-black text-[28px] font-[500]'>
+          Your Birthday gift/ voucher, has been successfully sent to MC12345
           </p>
         </div>
       </DialogDefault>

@@ -7,7 +7,7 @@ import ProductDetails from "./ProductDetails";
 const CatalogueProduct = () => {
   const [isView , setView] = useState()
   const [openView , setOpenView] = useState()
-  const [isSelect , setSelect] = useState()
+  const [isSelect , setSelect] = useState([])
   const [openDetails , setDetails] = useState()
   const divRef = useRef(null);
   const product = [
@@ -16,6 +16,17 @@ const CatalogueProduct = () => {
      {id:1, image:"../img/image 713 (2).png" , name:"Oreo Coffee"},
      {id:1, image:"../img/image 711.png" , name:"Chai Oatmilk latte"},
     ]
+
+    const toggleProductSelection = (productId) => {
+      const isSelected = isSelect.includes(productId);
+      if (isSelected) {
+        setSelect(isSelect?.filter(id => id !== productId));
+        // setProductId(isSelect?.filter(id => id !== productId))
+      } else {
+        setSelect([...isSelect, productId]);
+        // setProductId([...isSelect, productId])
+      }
+    };
 
     useEffect(() => {
       const handleClickOutside = (event) => {
@@ -39,9 +50,9 @@ const CatalogueProduct = () => {
       <p className="view-all cursor-pointer" onClick={()=> setOpenView(true)} >View All</p>
       <div className="catalogue-flex">
         {product?.map((d, i)=>(
-        <div className="catelogue-main" key={i} onClick={()=> setSelect(i)}>
+        <div className="catelogue-main" key={i}  onClick={()=> toggleProductSelection(i)}>
           <div className="relative">
-            <img src={d?.image} alt="" className={isSelect === i  ? "border-4 rounded-xl  border-[#FE903C]" :"" }/>
+            <img src={d?.image} alt="" className={isSelect?.includes(i)  ? "border-4 rounded-xl  border-[#FE903C]" :"" }/>
             <img
               src="../Group (9).png"
               alt=""
@@ -54,7 +65,7 @@ const CatalogueProduct = () => {
                       </div>
                     )}
           </div>
-          <p className={isSelect === i  ? "prod-name2" : "text-[#000000B2] text-center"} style={{ fontSize: "14px" }}>
+          <p className={isSelect?.includes(i) ? "prod-name2" : "text-[#000000B2] text-center"} style={{ fontSize: "14px" }}>
            {d?.name}
           </p>
         </div>

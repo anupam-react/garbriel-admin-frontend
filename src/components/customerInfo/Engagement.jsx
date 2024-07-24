@@ -4,7 +4,7 @@ import "./index.scss";
 import { DialogDefault } from "../common/DilogBox";
 import HistoryDetails from "./HistoryDetails";
 
-const Engagement = ({ handleOpen }) => {
+const Engagement = ({ handleOpen , onClose }) => {
   const [openTransaction, setOpenTransaction] = useState(false);
   return (
     <div className="info-container">
@@ -18,7 +18,7 @@ const Engagement = ({ handleOpen }) => {
         />
       </div>
       <hr className="hr2" />
-      <InfoHeader />
+      <InfoHeader onClose={onClose}/>
       <div className="engagement-card">
         <div className="other">
           <p style={{ color: "#000000B2", fontWeight: 600 }}>

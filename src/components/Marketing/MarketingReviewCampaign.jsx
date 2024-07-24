@@ -14,36 +14,36 @@ const MarketingReviewCampaign = () => {
     {
       title: "Campaign Type",
       value: campaignData?.typeOfCampaign,
-      //   handleCLick: () => {
-      //     setOpenCustom(true);
-      //   },
+        handleCLick: () => {
+          navigate("/marketing/newCampaign");
+        },
     },
     {
       title: "Discount Value",
       value:  "50% discount coupon on all hot drinks",
-      //   handleCLick: () => {
-      //     setOpenCustom(true);
-      //   },
+        handleCLick: () => {
+            navigate("/marketing/newCampaign");
+        },
     },
     {
       title: "Expriy Date",
       value: "25-jan-2024",
-      //   handleCLick: () => {
-      //     setOpenCustom(true);
-      //   },
+        handleCLick: () => {
+            navigate("/marketing/newCampaign");
+        },
     },
     {
       title: "Add Conditions",
       value: "Select specific product attached to Coupon ( Burger)",
-      //   handleCLick: () => {
-      //     setOpenCustom(true);
-      //   },
+        handleCLick: () => {
+            navigate("/marketing/newCampaign");
+        },
     },
     // {
     //   title: "No of Points Reward",
     //   value: "500 POints",
     //   //   handleCLick: () => {
-    //   //     setOpenCustom(true);
+    //   //       navigate("/marketing/newCampaign");
     //   //   },
     // },
 
@@ -52,16 +52,16 @@ const MarketingReviewCampaign = () => {
     {
       title: "Target Location",
       value: "4517 Washington Ave. Manchester, Kentucky 39495",
-      //   handleCLick: () => {
-      //     setOpenCustom(true);
-      //   },
+        handleCLick: () => {
+            navigate("/marketing/newCampaign");
+        },
     },
     {
       title: "Estimated  Reach",
       value:  "5000 Customers",
-      //   handleCLick: () => {
-      //     setOpenCustom(true);
-      //   },
+        handleCLick: () => {
+            navigate("/marketing/newCampaign");
+        },
     },
   ];
   return (
@@ -89,7 +89,7 @@ const MarketingReviewCampaign = () => {
               <p>{d?.title}</p>
               <span>:</span>
               <p>{d?.value}</p>
-              <button className="edit-button2">Edit</button>
+              <button className="edit-button2" onClick={d?.handleCLick}>Edit</button>
             </div>
           ))}
           <div className="footer-container2">
@@ -106,7 +106,7 @@ const MarketingReviewCampaign = () => {
               <p>{d?.title}</p>
               <span>:</span>
               <p>{d?.value}</p>
-              <button className="edit-button2">Edit</button>
+              <button className="edit-button2" onClick={d?.handleCLick}>Edit</button>
             </div>
           ))}
         </div>

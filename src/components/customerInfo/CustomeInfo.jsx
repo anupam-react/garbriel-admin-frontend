@@ -172,7 +172,7 @@ It factors in the revenue generated from a customer, the duration of the relatio
       </div>
       <div className="pt-4 flex justify-between gap-6">
         <div>
-          <p className="text-xl font-[600] pb-4" style={{ color: "black" }}>
+          <p className="text-xl text-center font-[600] pb-4" style={{ color: "black" }}>
             Points System
           </p>
           <div className="flex flex-col gap-4">
@@ -212,7 +212,7 @@ It factors in the revenue generated from a customer, the duration of the relatio
           </div>
         </div>
         <div>
-          <p className="text-xl font-[600] pb-4" style={{ color: "black" }}>
+          <p className="text-xl text-center font-[600] pb-4" style={{ color: "black" }}>
             Stamp System
           </p>
           <div className="flex flex-col gap-4">
@@ -243,10 +243,10 @@ It factors in the revenue generated from a customer, the duration of the relatio
           </div>
         </div>
         <div>
-          <p className="text-xl font-[600] pb-4" style={{ color: "black" }}>
+          <p className="text-xl text-center font-[600] pb-4" style={{ color: "black" }}>
             Birthday
           </p>
-          <div className="rounded-lg shadow-md p-6 items-center bg-white flex h-32 gap-4 min-w-48 ">
+          <div className="rounded-lg shadow-md p-6 justify-center items-center bg-white flex h-32 gap-4 min-w-[300px] ">
             <img src="./image 700 (2).png" alt="" />
             <p style={{ color: "black", fontWeight: 600, fontSize: "24px" }}>
               12/08
@@ -254,11 +254,11 @@ It factors in the revenue generated from a customer, the duration of the relatio
           </div>
         </div>
         <div>
-          <p className="text-xl font-[600] pb-4" style={{ color: "black" }}>
-            Loaction
+          <p className="text-xl text-center font-[600] pb-4" style={{ color: "black" }}>
+            Location
           </p>
           <div>
-            <div className="rounded-lg shadow-md p-6 items-center bg-white flex h-32 gap-4 min-w-48 ">
+            <div className="rounded-lg shadow-md p-6 items-center bg-white flex h-32 gap-4  min-w-[300px] ">
               <img src="./image 700 (3).png" alt="" />
               <p style={{ color: "black", fontWeight: 600, fontSize: "24px" }}>
                 London UK
@@ -297,7 +297,7 @@ It factors in the revenue generated from a customer, the duration of the relatio
              {isView === i && (
                       <div className="absolute top-[50px] right-[40px] cursor-pointer" ref={divRef}>
                      {/* <p className="viewProd text-[14px]">View Product</p> */}
-                     <MenuCard4 />
+                     <MenuCard4 onClose={()=> handleOpen(false)}/>
                       </div>
                     )}
             </div>
@@ -369,34 +369,34 @@ It factors in the revenue generated from a customer, the duration of the relatio
         <ProductDetails handleOpen={setOpenProd} />
       </DialogDefault>
       <DialogDefault open={openDemographic} handleOpen={setOpenDemographic}>
-        <Demographic handleOpen={setOpenDemographic}  setOpenInfo={handleOpen}/>
+        <Demographic handleOpen={setOpenDemographic} onClose={()=> handleOpen(false)}  setOpenInfo={handleOpen}/>
       </DialogDefault>
       <DialogDefault open={openLoyality} handleOpen={setOpenLoyality}>
-        <Loyality handleOpen={setOpenLoyality} />
+        <Loyality handleOpen={setOpenLoyality} onClose={()=> handleOpen(false)} />
       </DialogDefault>
       <DialogDefault open={openEngagement} handleOpen={setOpenEngagement}>
-        <Engagement handleOpen={setOpenEngagement} />
+        <Engagement handleOpen={setOpenEngagement} onClose={()=> handleOpen(false)}/>
       </DialogDefault>
       <DialogDefault open={openPromotions} handleOpen={setOpenPromotions}>
-        <Promotions handleOpen={setOpenPromotions} />
+        <Promotions handleOpen={setOpenPromotions} onClose={()=> handleOpen(false)}/>
       </DialogDefault>
       <DialogDefault open={openReferral} handleOpen={setOpenReferral}>
-        <RefferalActivity handleOpen={setOpenReferral} />
+        <RefferalActivity handleOpen={setOpenReferral} onClose={()=> handleOpen(false)}/>
       </DialogDefault>
       <DialogDefault open={openTransaction} handleOpen={setOpenTransaction}>
-        <TransactionHistory handleOpen={setOpenTransaction} />
+        <TransactionHistory handleOpen={setOpenTransaction} onClose={()=> handleOpen(false)}/>
       </DialogDefault>
       <DialogDefault open={openBookmark} handleOpen={setOpenBookmark}>
-        <BookMark handleOpen={setOpenBookmark} />
+        <BookMark handleOpen={setOpenBookmark} onClose={()=> handleOpen(false)}/>
       </DialogDefault>
       <DialogDefault open={openVerification} handleOpen={setOpenVerification}>
-        <Verification handleOpen={setOpenVerification} />
+        <Verification handleOpen={setOpenVerification} onClose={()=> handleOpen(false)}/>
       </DialogDefault>
       <DialogDefault open={openOffer} handleOpen={setOpenOffer}>
-        <OffersTable handleOpen={setOpenOffer} />
+        <OffersTable handleOpen={setOpenOffer} onClose={()=> handleOpen(false)}/>
       </DialogDefault>
       <DialogDefault open={openReturn} handleOpen={setOpenReturn}>
-        <ReturnForm handleOpen={setOpenReturn} />
+        <ReturnForm handleOpen={setOpenReturn} onClose={()=> handleOpen(false)}/>
       </DialogDefault>
     </div>
   );

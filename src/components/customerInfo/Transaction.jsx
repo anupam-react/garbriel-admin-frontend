@@ -4,7 +4,7 @@ import { DialogDefault } from "../common/DilogBox";
 import Bouns from "./Bouns";
 import AwardCustomer from "./AwardCustomer";
 import TransactionDetails from "./TransactionDetails";
-const Transaction = () => {
+const Transaction = ({onClose}) => {
   const [openAward, setOpenAward] = useState(false);
   const [openPoint, setOpenPoint] = useState(false);
   const [openTransaction, setOpenTransaction] = useState(false);
@@ -102,7 +102,7 @@ const Transaction = () => {
         </tbody>
       </table>
       <DialogDefault open={openAward} handleOpen={setOpenAward}>
-                  <Bouns handleOpen={setOpenAward} />
+                  <Bouns handleOpen={setOpenAward} onClose={onClose}/>
                 </DialogDefault>
                 <DialogDefault open={openPoint} handleOpen={setOpenPoint}>
                   <AwardCustomer handleOpen={setOpenPoint} />

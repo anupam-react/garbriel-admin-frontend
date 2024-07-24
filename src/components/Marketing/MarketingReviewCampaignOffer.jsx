@@ -14,58 +14,58 @@ const MarketingReviewCampaignOffer = () => {
     {
       title: "Campaign Type",
       value: "Campaign Type",
-      //   handleCLick: () => {
-      //     setOpenCustom(true);
-      //   },
+       handleCLick: () => {
+            navigate("/marketing/newCampaign");
+        },
     },
     {
       title: "Offer Discount",
       value: "50 %",
-      //   handleCLick: () => {
-      //     setOpenCustom(true);
-      //   },
+       handleCLick: () => {
+            navigate("/marketing/newCampaign");
+        },
     },
     {
       title: "Reward Type",
       value: "Points",
-      //   handleCLick: () => {
-      //     setOpenCustom(true);
-      //   },
+       handleCLick: () => {
+            navigate("/marketing/newCampaign");
+        },
     },
     {
       title: "Description",
       value: "Descriptions",
-      //   handleCLick: () => {
-      //     setOpenCustom(true);
-      //   },
+       handleCLick: () => {
+            navigate("/marketing/newCampaign");
+        },
     },
     {
       title: "No of Points Reward",
       value: "500",
-      //   handleCLick: () => {
-      //     setOpenCustom(true);
-      //   },
+       handleCLick: () => {
+            navigate("/marketing/newCampaign");
+        },
     },
     {
       title: "Add Conditions",
       value: "",
-      //   handleCLick: () => {
-      //     setOpenCustom(true);
-      //   },
+       handleCLick: () => {
+            navigate("/marketing/newCampaign");
+        },
     },
         {
       title: "Customer",
       value: "Active",
-      //   handleCLick: () => {
-      //     setOpenCustom(true);
-      //   },
+       handleCLick: () => {
+            navigate("/marketing/newCampaign");
+        },
     },
     {
       title: "Expriy Date",
       value: "2024-05-15",
-      //   handleCLick: () => {
-      //     setOpenCustom(true);
-      //   },
+       handleCLick: () => {
+            navigate("/marketing/newCampaign");
+        },
     },
     
 
@@ -97,7 +97,7 @@ const MarketingReviewCampaignOffer = () => {
               <p>{d?.title}</p>
               <span>:</span>
               <p>{d?.value}</p>
-              <button className="edit-button2">Edit</button>
+              <button className="edit-button2"  onClick={d?.handleCLick}>Edit</button>
             </div>
           ))}
           <div className="footer-container2">

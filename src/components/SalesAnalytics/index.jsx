@@ -53,22 +53,7 @@ const SalesAnalytics = () => {
           className="h-8 w-8 cursor-pointer"
           onClick={handleLoader}
         />
-        <div
-          className="flex items-center px-6 h-12"
-          style={{
-            backgroundColor: "#FFFF",
-            width: "25rem",
-            borderRadius: "12px",
-            color: "#8BA3CB",
-          }}
-        >
-          <img src="./image 2 (3).svg" alt="search" className="w-6 h-6" />
-          <input
-            type="text"
-            className="border-none w-80 bg-transparent outline-none focus:ring-0 focus:shadow-none focus:border-none"
-            placeholder="Search in Transaction Data"
-          />
-        </div>
+        
         <div className="flex">
           <button className="export flex gap-2" onClick={() => setOpen(true)}>
             <img src="./Mask group (7).svg" alt="" className="w-5 h-5" />

@@ -4,7 +4,7 @@ import InfoHeader from "./InfoHeader";
 import { DialogDefault } from "../common/DilogBox";
 import BirthDayGift from "./BirthDayGift";
 import CustomizedBGift from "./CustomizedBGift";
-const Demographic = ({ handleOpen , setOpenInfo }) => {
+const Demographic = ({ handleOpen , onClose , setOpenInfo }) => {
   const [openGift, setOpenGift] = useState(false);
   const [openCGift, setOpenCGift] = useState(false);
   return (
@@ -19,7 +19,7 @@ const Demographic = ({ handleOpen , setOpenInfo }) => {
         />
       </div>
       <hr className="hr2" />
-      <InfoHeader />
+      <InfoHeader onClose={onClose}/>
       <div style={{ paddingTop: "30px", paddingBottom: "20px" , cursor:"pointer" }}  onClick={() => handleOpen(false)}>
         <p style={{ color: "#0070BC", fontWeight: 600 }}>CUSTOMER DEOGRAPHIC</p>
         <hr className="hr3" style={{ width: "205px" }} />
@@ -79,7 +79,7 @@ const Demographic = ({ handleOpen , setOpenInfo }) => {
         </tbody>
       </table>
       <DialogDefault open={openGift} handleOpen={setOpenGift}>
-        <BirthDayGift handleOpen={setOpenGift} setOpenInfo={setOpenInfo}/>
+        <BirthDayGift handleOpen={setOpenGift} onClose={onClose} setOpenInfo={setOpenInfo}/>
       </DialogDefault>
       <DialogDefault open={openCGift} handleOpen={setOpenCGift}>
         <CustomizedBGift handleOpen={setOpenCGift} />

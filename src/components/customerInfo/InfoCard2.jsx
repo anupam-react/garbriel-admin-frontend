@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import { DialogDefault } from "../common/DilogBox";
 
-const InfoCard = ({ data }) => {
+const InfoCard2 = ({ data }) => {
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(!open);
   return (
     <>
-      <div className="rounded-lg shadow p-6 items-center bg-white flex flex-col gap-4 w-full  min-w-[300px] relative">
+      <div className="rounded-lg shadow p-6 items-center bg-white flex flex-col gap-4 w-[200px] h-[150px] relative">
         <p className="text-[#000000B2] font-[500] text-xl text-center">{data?.title}</p>
         {data?.showInfo && (
           <img
@@ -30,4 +30,4 @@ const InfoCard = ({ data }) => {
   );
 };
 
-export default InfoCard;
+export default InfoCard2;

@@ -175,7 +175,7 @@ const DigitalReceipt = () => {
                         </div>
                         {isMenuOpen === i && (
                           <div className="absolute top-0 z-20 -right-[180px]">
-                            <MenuCard />
+                            <MenuCard onClose={()=>setOpenMenu(false)}/>
                           </div>
                         )}
                         <p

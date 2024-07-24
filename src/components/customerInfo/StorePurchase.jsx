@@ -6,6 +6,8 @@ import TransactionDetails from "./TransactionDetails";
 const StorePurchase = () => {
   const [openTransaction, setOpenTransaction] = useState(false);
   const [openMenu, setOpenMenu] = useState(false);
+  const [openMenu1, setOpenMenu1] = useState(false);
+  const [openMenu2, setOpenMenu2] = useState(false);
   return (
     <div>
       <table className="table2">
@@ -110,7 +112,7 @@ Location</th>
                 <img
                   src="./Group 38060.png"
                   alt=""
-                  onClick={() => setOpenMenu(!openMenu)}
+                  onClick={() => setOpenMenu1(!openMenu1)}
                   style={{
                     position: "absolute",
                     top: "18%",
@@ -118,7 +120,7 @@ Location</th>
                     cursor: "pointer",
                   }}
                 />
-                {/* {openMenu && <MenuCard2 />} */}
+                {openMenu1 && <MenuCard2 />}
               </div>
             </td>
           </tr>
@@ -159,7 +161,7 @@ Location</th>
                 <img
                   src="./Group 38060.png"
                   alt=""
-                //   onClick={() => setOpenMenu(!openMenu)}
+                  onClick={() => setOpenMenu2(!openMenu2)}
                   style={{
                     position: "absolute",
                     top: "18%",
@@ -167,7 +169,7 @@ Location</th>
                     cursor: "pointer",
                   }}
                 />
-                {/* {openMenu && <MenuCard2 />} */}
+                {openMenu2 && <MenuCard2 />}
               </div>
             </td>
           </tr>

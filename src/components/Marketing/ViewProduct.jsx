@@ -9,7 +9,7 @@ const ViewProduct = ({ isOfferCard = false, isPast = false }) => {
   return (
     <div>
       <div className="flex justify-between">
-      <p className="text-2xl font-bold">Live Campaign View</p>
+      <p className="text-2xl font-bold">{isPast ? "Past Campaign Manage" : "Live Campaign View"}</p>
       <button className="back" onClick={()=> navigate("/marketing")}> 
         <img src="../back.png" alt="" />
         Back</button>

@@ -4,7 +4,7 @@ import MenuCard3 from "./MenuCard3";
 import HistoryDetails from "./HistoryDetails";
 import { DialogDefault } from "../common/DilogBox";
 
-const BookMark = ({ handleOpen , setOpenInfo }) => {
+const BookMark = ({ handleOpen , setOpenInfo , onClose}) => {
     const [openMenu , setOpenMenu ] = useState(false)
     const [openTransaction , setOpenTransaction ] = useState(false)
   return (
@@ -19,7 +19,7 @@ const BookMark = ({ handleOpen , setOpenInfo }) => {
         />
       </div>
       <hr className="hr2" />
-      <InfoHeader />
+      <InfoHeader onClose={onClose}/>
       <div className="cursor-pointer" onClick={() => handleOpen(false)} style={{ paddingTop: "30px", paddingBottom: "20px" }}>
         <p style={{ color: "#0070BC", fontWeight: 600 }}>BOOK MARKS</p>
         <hr className="hr3" style={{ width: "120px" }} />

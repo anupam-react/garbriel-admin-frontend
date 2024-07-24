@@ -28,7 +28,7 @@ const ReportPage2 = ({ open, setOpen, handleOpen }) => {
                   src="./Mask group (7).png"
                   alt=""
                   className="w-6 h-6 cursor-pointer"
-                  onClick={() => navigate("/setting/report")}
+                  onClick={() => navigate("/report")}
                 />
                 <div onClick={() => setOpen(false)}>
                   <img
@@ -90,7 +90,7 @@ const ReportPage2 = ({ open, setOpen, handleOpen }) => {
             </select>
           </div>
           <div className="flex justify-center items-center gap-10 my-8">
-            <button className="sign-button w-48">EXPORT</button>
+            <button className="sign-button w-48"  onClick={() => setOpen(false)}>EXPORT</button>
             <div
               className="flex items-center gap-2 cursor-pointer"
               onClick={() => setOpen(false)}

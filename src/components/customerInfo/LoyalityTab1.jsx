@@ -6,9 +6,11 @@ import PromotionsTable from "./PromotionsTable";
 import MoneyTransferTable from "./MoneyTransferTable";
 import RedemptionHistoryTable from "./RedemptionHistoryTable";
 import ClaimHistoryTable from "./ClaimHistoryTable";
+import { useNavigate } from "react-router-dom";
 
 const LoyalityTab1 = ({handleOpen}) => {
   const [activeLink, setActiveLink] = useState(0);
+  const navigate = useNavigate()
   const handleLinkClick = (index) => {
     setActiveLink(index);
   };
@@ -19,7 +21,7 @@ const LoyalityTab1 = ({handleOpen}) => {
           style={{ paddingBottom: "30px" }}
           onClick={() =>{
             if(activeLink === 0) {
-              handleOpen(false)
+            navigate('/loyalty')
             }else{
               handleLinkClick(0)
             }
@@ -37,7 +39,7 @@ const LoyalityTab1 = ({handleOpen}) => {
           style={{ paddingBottom: "30px" }}
           onClick={() =>{
             if(activeLink === 1) {
-              handleOpen(false)
+              navigate('/loyalty')
             }else{
               handleLinkClick(1)
             }
@@ -55,7 +57,7 @@ const LoyalityTab1 = ({handleOpen}) => {
           style={{ paddingBottom: "30px" }}
           onClick={() =>{
             if(activeLink === 2) {
-              handleOpen(false)
+              navigate('/loyalty')
             }else{
               handleLinkClick(2)
             }
@@ -74,7 +76,7 @@ const LoyalityTab1 = ({handleOpen}) => {
             className={`${activeLink === 3 ? "activeButton1" : "normalButton"}`}
             onClick={() =>{
               if(activeLink === 3) {
-                handleOpen(false)
+                navigate('/loyalty')
               }else{
                 handleLinkClick(3)
               }
@@ -90,7 +92,7 @@ const LoyalityTab1 = ({handleOpen}) => {
             className={`${activeLink === 4 ? "activeButton1" : "normalButton"}`}
             onClick={() =>{
               if(activeLink === 4) {
-                handleOpen(false)
+                navigate('/loyalty')
               }else{
                 handleLinkClick(4)
               }
@@ -106,7 +108,7 @@ const LoyalityTab1 = ({handleOpen}) => {
             className={`${activeLink === 5 ? "activeButton1" : "normalButton"}`}
             onClick={() =>{
               if(activeLink === 5) {
-                handleOpen(false)
+                navigate('/loyalty')
               }else{
                 handleLinkClick(5)
               }
@@ -118,8 +120,8 @@ const LoyalityTab1 = ({handleOpen}) => {
           {activeLink === 5 && <hr className="hr4" />}
         </div>
       </div>
-      {activeLink === 0 && <Transaction />}
-      {activeLink === 1 && <RefferalTable />}
+      {activeLink === 0 && <Transaction onClose={handleOpen}/>}
+      {activeLink === 1 && <RefferalTable onClose={handleOpen}/>}
       {activeLink === 2 && <PromotionsTable />}
       {activeLink === 3 && <MoneyTransferTable />}
       {activeLink === 4 && <ClaimHistoryTable />}

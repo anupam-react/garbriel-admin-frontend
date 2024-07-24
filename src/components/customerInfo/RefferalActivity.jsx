@@ -6,7 +6,7 @@ import ProductDetails2 from "./ProductDeatils2";
 import TransactionDetails from "./TransactionDetails";
 
 
-const RefferalActivity = ({ handleOpen }) => {
+const RefferalActivity = ({ handleOpen , onClose}) => {
   const [openProduct, setOpenproduct] = useState(false);
   const [openHistory, setOpenHistory] = useState(false);
   return (
@@ -21,7 +21,7 @@ const RefferalActivity = ({ handleOpen }) => {
         />
       </div>
       <hr className="hr2" />
-      <InfoHeader />
+      <InfoHeader onClose={onClose}/>
 
       <div className="cursor-pointer" onClick={() => handleOpen(false)} style={{ paddingTop: "30px", paddingBottom: "20px" }}>
         <p

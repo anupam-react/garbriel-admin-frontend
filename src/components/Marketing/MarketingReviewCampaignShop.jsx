@@ -14,44 +14,44 @@ const MarketingReviewCampaignShop = () => {
     {
       title: "Campaign Type",
       value: "Get more shop visitors",
-      //   handleCLick: () => {
-      //     setOpenCustom(true);
-      //   },
+   handleCLick: () => {
+            navigate("/marketing/newCampaign");
+        },
     },
     {
       title: "Description",
       value: "New Winter Delight. Now available.",
-      //   handleCLick: () => {
-      //     setOpenCustom(true);
-      //   },
+   handleCLick: () => {
+            navigate("/marketing/newCampaign");
+        },
     },
     {
       title: "Audience",
       value: `1500`,
-      //   handleCLick: () => {
-      //     setOpenCustom(true);
-      //   },
+   handleCLick: () => {
+            navigate("/marketing/newCampaign");
+        },
     },
     {
       title: "Campaign Duration",
       value: `25-jan-2024`,
-      //   handleCLick: () => {
-      //     setOpenCustom(true);
-      //   },
+   handleCLick: () => {
+            navigate("/marketing/newCampaign");
+        },
     },
     {
       title: "Target Location",
       value: "4517 Washington Ave. Manchester, Kentucky 39495",
-      //   handleCLick: () => {
-      //     setOpenCustom(true);
-      //   },
+   handleCLick: () => {
+            navigate("/marketing/newCampaign");
+        },
     },
     {
       title: "Estimated  Reach",
       value: "5000 Customers",
-      //   handleCLick: () => {
-      //     setOpenCustom(true);
-      //   },
+   handleCLick: () => {
+            navigate("/marketing/newCampaign");
+        },
     },
     
   ];
@@ -81,7 +81,7 @@ const MarketingReviewCampaignShop = () => {
               <p>{d?.title}</p>
               <span>:</span>
               <p>{d?.value}</p>
-              <button className="edit-button2">Edit</button>
+              <button className="edit-button2"  onClick={d?.handleCLick}>Edit</button>
             </div>
           ))}
       

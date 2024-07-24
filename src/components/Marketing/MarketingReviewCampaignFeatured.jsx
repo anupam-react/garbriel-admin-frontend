@@ -14,16 +14,16 @@ const MarketingReviewCampaignFeatured = () => {
     {
       title: "Campaign Type",
       value: "Featured Deals",
-      //   handleCLick: () => {
-      //     setOpenCustom(true);
-      //   },
+      handleCLick: () => {
+            navigate("/marketing/newCampaign");
+        },
     },
     {
       title: "Product Title",
       value: "Dunkin Dozen Day",
-      //   handleCLick: () => {
-      //     setOpenCustom(true);
-      //   },
+      handleCLick: () => {
+            navigate("/marketing/newCampaign");
+        },
     },
     {
       title: "Description",
@@ -31,30 +31,30 @@ const MarketingReviewCampaignFeatured = () => {
 £12.Available all day in store
 on the 12th of every month.its
 the sweetest deal you can get.`,
-      //   handleCLick: () => {
-      //     setOpenCustom(true);
-      //   },
+      handleCLick: () => {
+            navigate("/marketing/newCampaign");
+        },
     },
     {
       title: "Location",
       value: "4517 Washington Ave. Manchester, Kentucky 39495",
-      //   handleCLick: () => {
-      //     setOpenCustom(true);
-      //   },
+      handleCLick: () => {
+            navigate("/marketing/newCampaign");
+        },
     },
     {
       title: "Estimated  Reach",
       value: "5000 Customers",
-      //   handleCLick: () => {
-      //     setOpenCustom(true);
-      //   },
+      handleCLick: () => {
+            navigate("/marketing/newCampaign");
+        },
     },
     {
       title: "Expriy Date",
       value: "25-jan-2025",
-      //   handleCLick: () => {
-      //     setOpenCustom(true);
-      //   },
+      handleCLick: () => {
+            navigate("/marketing/newCampaign");
+        },
     },
     
 
@@ -84,7 +84,7 @@ the sweetest deal you can get.`,
               <p>{d?.title}</p>
               <span>:</span>
               <p>{d?.value}</p>
-              <button className="edit-button2">Edit</button>
+              <button className="edit-button2" onClick={d?.handleCLick}>Edit</button>
             </div>
           ))}
       

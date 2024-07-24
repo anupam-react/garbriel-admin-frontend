@@ -3,7 +3,7 @@ import './index.scss'
 import InfoHeader from './InfoHeader'
 import LoyalityTab1 from './LoyalityTab1';
 import LoyalityTab2 from './LoyalityTab2';
-const Loyality = ({ handleOpen }) => {
+const Loyality = ({ handleOpen , onClose }) => {
       const [activeLink, setActiveLink] = useState(0);
   const handleLinkClick = (index) => {
     setActiveLink(index);
@@ -20,7 +20,7 @@ const Loyality = ({ handleOpen }) => {
         />
       </div>
       <hr className="hr2" />
-          <InfoHeader />
+          <InfoHeader onClose={onClose}/>
           <div className='layality-buttons'>
               <button className={`${activeLink === 0 ? "activeButton" : ""}`} onClick={() => handleLinkClick(0)}>Points System</button>
               <button className={`${activeLink === 1 ? "activeButton" : ""}`} onClick={() => handleLinkClick(1)}>Stamp System</button>

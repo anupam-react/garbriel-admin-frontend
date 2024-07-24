@@ -7,6 +7,7 @@ import { BarChart } from "./BarChart";
 import PaginatedTable from "./PaginatedTable";
 import Filter from "./Filter";
 import "./index.scss";
+import InfoCard2 from "./InfoCard2";
 const CustomerInfo = () => {
   const [isOpen, setIsOpen] = useState(false)
 
@@ -116,11 +117,11 @@ This metric is crucial for understanding revenue contributions per customer.`,
           ))}
         </div>
       </div>
-      <div className="pt-4 flex gap-4">
+      <div className="pt-4 flex w-full justify-between gap-4">
         <div>
-          <p className="text-xl font-[500] pb-4">Customers</p>
+          <p className="text-xl text-center font-[500] pb-4">Customers</p>
           <div className="flex flex-col gap-4">
-            <InfoCard
+            <InfoCard2
               data={{
                 title: "New Customers",
                 image: "./fluent_people-team-24-filled (1).png",
@@ -128,28 +129,28 @@ This metric is crucial for understanding revenue contributions per customer.`,
                 showInfo: false,
               }}
             />
-            <InfoCard
+            <InfoCard2
               data={{
                 title: "Active Customers",
                 image: "./fluent_people-team-24-filled (2).png",
-                amount: "1000",
+                amount: "5000",
                 showInfo: false,
               }}
             />
           </div>
         </div>
         <div>
-          <p className="text-xl font-[500] pb-4">Points System</p>
+          <p className="text-xl text-center font-[500] pb-4">Points System</p>
           <div className="flex flex-col gap-4">
-            <InfoCard
+            <InfoCard2
               data={{
                 title: "Total Points Redeemed",
                 image: "./image 699.png",
-                amount: "1000",
+                amount: "5000",
                 showInfo: false,
               }}
             />
-            <InfoCard
+            <InfoCard2
               data={{
                 title: "Total  Points Earned",
                 image: "./image 699 (3).png",
@@ -157,7 +158,7 @@ This metric is crucial for understanding revenue contributions per customer.`,
                 showInfo: false,
               }}
             />
-            <InfoCard
+            <InfoCard2
               data={{
                 title: "Total  Average Points Balance",
                 image: "./image 701.png",
@@ -168,9 +169,9 @@ This metric is crucial for understanding revenue contributions per customer.`,
           </div>
         </div>
         <div>
-          <p className="text-xl font-[500] pb-4">Stamp System</p>
+          <p className="text-xl text-center font-[500] pb-4">Stamp System</p>
           <div>
-            <InfoCard
+            <InfoCard2
               data={{
                 title: "Total Stamps Redeemed",
                 image: "./image 699 (1).png",
@@ -181,13 +182,13 @@ This metric is crucial for understanding revenue contributions per customer.`,
           </div>
         </div>
         <div>
-          <p className="text-xl font-[500] pb-4">CLV</p>
+          <p className="text-xl text-center font-[500] pb-4">CLV</p>
           <div>
-            <InfoCard
+            <InfoCard2
               data={{
                 title: "CLV",
                 image: "./image 699 (2).png",
-                amount: "1000",
+                amount: "£1500",
                 showInfo: true,
                 text: `Customer Lifetime Value (CLV) is a metric that estimates the total revenue a business can expect from a single customer account throughout the business relationship. 
 
@@ -197,9 +198,9 @@ It factors in the revenue generated from a customer, the duration of the relatio
           </div>
         </div>
         <div>
-          <p className="text-xl font-[500] pb-4">Basket Size</p>
+          <p className="text-xl text-center font-[500] pb-4">Basket Size</p>
           <div>
-            <InfoCard
+            <InfoCard2
               data={{
                 title: "Average Basket Size",
                 image: "./image 700 (1).png",
@@ -213,13 +214,12 @@ It's calculated by dividing the total number of items sold by the total number o
           </div>
         </div>
       </div>
-      <div className="flex justify-between my-6">
+      <div className="flex flex-wrap justify-between gap-2 my-6">
       <RotaionProgress />
       <LifeCycleStage />
+      <Promotion />
       </div>
-      <div>
-        <Promotion />
-      </div>
+  
       <div className="my-6">
         <BarChart />
       </div>

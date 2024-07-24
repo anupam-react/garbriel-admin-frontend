@@ -3,7 +3,7 @@ import { DialogDefault } from "../common/DilogBox";
 import TransactionDetails from "./TransactionDetails";
 import Referal from "./Referal";
 
-const RefferalTable = () => {
+const RefferalTable = ({onClose}) => {
   const [openAward, setOpenAward] = useState(false);
   const [openTransaction, setOpenTransaction] = useState(false);
   return (
@@ -49,7 +49,7 @@ const RefferalTable = () => {
                 Send Referal Reward
               </button>
               <DialogDefault open={openAward} handleOpen={setOpenAward}>
-                <Referal handleOpen={setOpenAward} />
+                <Referal handleOpen={setOpenAward} onClose={onClose}/>
               </DialogDefault>
               <DialogDefault
                 open={openTransaction}

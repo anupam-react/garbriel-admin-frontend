@@ -11,30 +11,30 @@ const ReviewCampaign2 = () => {
     {
       title: "Campaign Type",
       value: "Coupon",
-      //   handleCLick: () => {
-      //     setOpenCustom(true);
-      //   },
+        handleCLick: () => {
+          navigate("/marketing/newCampaign");
+        },
     },
     {
       title: "Discount Value",
       value: "",
-      //   handleCLick: () => {
-      //     setOpenCustom(true);
-      //   },
+      handleCLick: () => {
+        navigate("/marketing/newCampaign");
+      },
     },
     {
       title: "Expriy Date",
       value: "",
-      //   handleCLick: () => {
-      //     setOpenCustom(true);
-      //   },
+      handleCLick: () => {
+        navigate("/marketing/newCampaign");
+      },
     },
     {
       title: "Add Conditions",
       value: "",
-      //   handleCLick: () => {
-      //     setOpenCustom(true);
-      //   },
+      handleCLick: () => {
+        navigate("/marketing/newCampaign");
+      },
     },
     {
       title: "Customer",
@@ -80,7 +80,7 @@ const ReviewCampaign2 = () => {
               <p>{d?.title}</p>
               <span>:</span>
               <p>{d?.value}</p>
-              <button className="edit-button2">Edit</button>
+              <button className="edit-button2" onClick={d?.handleCLick}>Edit</button>
             </div>
           ))}
     

@@ -3,7 +3,7 @@ import "./index.scss";
 import { DialogDefault } from "../common/DilogBox";
 import ReferalPreview from "./ReferalPreview";
 
-const ReferalDetails = ({ handleOpen }) => {
+const ReferalDetails = ({ handleOpen , onClose}) => {
 
   const [openSuccess, setSuccess] = useState(false);
 
@@ -101,7 +101,7 @@ const ReferalDetails = ({ handleOpen }) => {
     </button>
 
     <DialogDefault open={openSuccess} handleOpen={setSuccess}>
-      <ReferalPreview handleOpen={setSuccess}/>
+      <ReferalPreview handleOpen={setSuccess} onClose={onClose}/>
     </DialogDefault>
   </div>
   );

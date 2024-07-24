@@ -3,11 +3,11 @@ import "./index.scss";
 import { DialogDefault } from "../common/DilogBox";
 import CatalogueProduct from "./CatalogueProduct";
 import ReferalDetails from "./ReferalDetails";
-const Referal = ({ handleOpen }) => {
+const Referal = ({ handleOpen , onClose }) => {
   const [openAlert, setOpenAlert] = useState(false);
   const [isActive, setActive] = useState(1);
   return (
-    <div className="gift-container">
+    <div className="gift-container no-scrollbar">
       <div className="gift-main">
         <p className="title">Referral Reward</p>
         <img
@@ -134,7 +134,7 @@ const Referal = ({ handleOpen }) => {
         </button>
       </div>
       <DialogDefault open={openAlert} handleOpen={setOpenAlert}>
-      <ReferalDetails handleOpen={setOpenAlert}/>
+      <ReferalDetails handleOpen={setOpenAlert} onClose={onClose}/>
       </DialogDefault>  
     </div>
   );

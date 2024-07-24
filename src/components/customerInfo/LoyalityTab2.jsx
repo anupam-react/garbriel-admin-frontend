@@ -3,11 +3,13 @@ import "./index.scss";
 import CurrentStamp from "./CurrentStamp";
 import RedeemedStamp from "./RedeemedStamp";
 import IncompleteStamp from "./IncompleteStamp";
+import { useNavigate } from "react-router-dom";
 const LoyalityTab2 = ({handleOpen}) => {
   const [activeLink, setActiveLink] = useState(0);
   const handleLinkClick = (index) => {
     setActiveLink(index);
   };
+  const navigate = useNavigate()
   return (
     <div>
       <div className="tabs2-container">
@@ -15,7 +17,7 @@ const LoyalityTab2 = ({handleOpen}) => {
           style={{ paddingBottom: "30px" }}
           onClick={() =>{
             if(activeLink === 0) {
-              handleOpen(false)
+              navigate('/loyalty')
             }else{
               handleLinkClick(0)
             }
@@ -33,7 +35,7 @@ const LoyalityTab2 = ({handleOpen}) => {
           style={{ paddingBottom: "30px" }}
           onClick={() =>{
             if(activeLink === 1) {
-              handleOpen(false)
+              navigate('/loyalty')
             }else{
               handleLinkClick(1)
             }
@@ -51,7 +53,7 @@ const LoyalityTab2 = ({handleOpen}) => {
           style={{ paddingBottom: "30px" }}
           onClick={() =>{
             if(activeLink === 2) {
-              handleOpen(false)
+              navigate('/loyalty')
             }else{
               handleLinkClick(2)
             }

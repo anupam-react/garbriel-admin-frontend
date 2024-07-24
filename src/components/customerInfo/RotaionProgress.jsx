@@ -8,7 +8,7 @@ const RotaionProgress = () => {
   return (
     <div>
       <p className="font-semibold text-xl pb-4">Retention Rate</p>
-      <div className="rounded-lg shadow-md flex justify-center items-center bg-white p-4 w-80">
+      <div className="rounded-lg shadow-md flex justify-center items-center bg-white p-4 w-80 h-[330px]">
       <CircularProgressbar
         value={60}
         text={`${60}%`}

@@ -28,8 +28,8 @@ const HeatMaps = () => {
       <div className="flex justify-between items-center gap-6 my-6">
         <img src="./Ellipse 13.png" alt="" />
         <p className="font-bold text-[20px]">
-          Total <span className="text-[#FD575B]">57</span> Outlets{" "}
-          <span className="text-[#000000B2]">all over the World</span>
+          Total <span className="text-[#FD575B]">12</span> Outlets{" "}
+          <span className="text-[#000000B2]">Outlets all over the India</span>
         </p>
         <div className="flex gap-4">
           <div className="relative">

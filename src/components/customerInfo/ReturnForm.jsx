@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import InfoHeader from "./InfoHeader";
 import "./index.scss";
-const ReturnForm = ({ handleOpen }) => {
+const ReturnForm = ({ handleOpen , onClose }) => {
   const [isAddEmp, setAddEmp] = useState(false);
   return (
     <div className="info-container">
@@ -15,7 +15,7 @@ const ReturnForm = ({ handleOpen }) => {
         />
       </div>
       <hr className="hr2" />
-      <InfoHeader />
+      <InfoHeader onClose={onClose}/>
       <p className="heading-title">Customer Information</p>
       <div className="form-container">
         <div className="input-container">

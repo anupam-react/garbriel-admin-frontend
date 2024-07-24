@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./index.scss";
 import { useNavigate } from "react-router-dom";
 import { DialogDefault } from "../common/DilogBox";
-const ReportSetting = () => {
+const ReportSetting2 = () => {
   const [selectedOption, setSelectedOption] = useState("");
   const [isAddEmp, setAddEmp] = useState(false);
   const [openAddEmp, setOpenAddEmp] = useState(false);
@@ -23,17 +23,15 @@ const ReportSetting = () => {
     <div>
       <div className="flex justify-between items-center mb-6">
         <p className="text-[#0070BC] font-semibold">
-          <span className="cursor-pointer" onClick={() => navigate("/setting")}>
-            Settings {">"}{" "}
-          </span>
-          <span className="text-[#000000] text-lg">Report Settings</span>{" "}
+        
+          <span className="text-[#000000] text-[28px]">Report Settings</span>{" "}
         </p>
-        <button className="back" onClick={() => navigate("/setting")}>
+        {/* <button className="back" onClick={() => navigate("/setting")}>
           <img src="../back.png" alt="" />
           Back
-        </button>
+        </button> */}
       </div>
-      <div className="notificationConatiner">
+      <div className="notificationConatiner shadow">
         <p className="text-[#0070BC] font-semibold">MANUAL REPORT GENERATION</p>
         <div>
           <p className="text-[#000000B2] pb-4">Export Location</p>
@@ -181,7 +179,7 @@ const ReportSetting = () => {
               </label>
               <div className="flex flex-col gap-4">
                 <span className="font-semibold text-black dark:text-gray-300 ">
-                  Maximum Number Of Transaction Crossed
+                Maximum Transaction Count Crossed
                 </span>
                 <div className="flex items-center gap-4">
                   <input
@@ -201,7 +199,7 @@ const ReportSetting = () => {
               </label>
               <div className="flex flex-col gap-4">
                 <span className="font-semibold text-black dark:text-gray-300">
-                  Maximum Transaction Value Crossed
+                Maximum Transaction Value Crossed
                 </span>
                 <div className="flex items-center gap-4">
                   <input
@@ -216,14 +214,7 @@ const ReportSetting = () => {
             </div>
           </div>
         </div>
-        <div className="flex justify-center">
-          <button
-            className="back2 text-center"
-            onClick={() => navigate("/setting")}
-          >
-            SAVE
-          </button>
-        </div>
+       
       </div>
 
       <DialogDefault open={openAddEmp} handleOpen={setOpenAddEmp}>
@@ -339,4 +330,4 @@ const ReportSetting = () => {
   );
 };
 
-export default ReportSetting;
+export default ReportSetting2;
