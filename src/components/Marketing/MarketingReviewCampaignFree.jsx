@@ -13,7 +13,7 @@ const MarketingReviewCampaignFree = () => {
   const data1 = [
     {
       title: "Campaign Type",
-      value: 'Campaign Type',
+      value: 'Buu 1 Get 1 Free',
       //   handleCLick: () => {
       //     setOpenCustom(true);
       //   },
@@ -41,7 +41,7 @@ const MarketingReviewCampaignFree = () => {
     },
     {
       title: "Add Conditions",
-      value: "",
+      value: "Select specific product attached to Coupon ( Burger)",
       //   handleCLick: () => {
       //     setOpenCustom(true);
       //   },
@@ -58,7 +58,7 @@ const MarketingReviewCampaignFree = () => {
   const data2 = [
     {
       title: "Target Location",
-      value: "Kolkata",
+      value: "4517 Washington Ave. Manchester, Kentucky 39495",
       //   handleCLick: () => {
       //     setOpenCustom(true);
       //   },
@@ -103,8 +103,8 @@ const MarketingReviewCampaignFree = () => {
             <p>Customer</p>
             <span>:</span>
             <p className="flex items-center gap-3">
-             Active
-              <span className="live-dots"></span>
+            New
+              {/* <span className="live-dots"></span> */}
             </p>
             <button className="edit-button2">Edit</button>
           </div>

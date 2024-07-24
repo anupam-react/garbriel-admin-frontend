@@ -13,7 +13,7 @@ const MarketingReviewCampaignShop = () => {
   const data1 = [
     {
       title: "Campaign Type",
-      value: "Campaign Type",
+      value: "Get more shop visitors",
       //   handleCLick: () => {
       //     setOpenCustom(true);
       //   },
@@ -41,7 +41,7 @@ const MarketingReviewCampaignShop = () => {
     },
     {
       title: "Target Location",
-      value: "Kolkata",
+      value: "4517 Washington Ave. Manchester, Kentucky 39495",
       //   handleCLick: () => {
       //     setOpenCustom(true);
       //   },

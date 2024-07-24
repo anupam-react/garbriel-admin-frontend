@@ -13,7 +13,7 @@ const MarketingReviewCampaignFeatured = () => {
   const data1 = [
     {
       title: "Campaign Type",
-      value: "Campaign Type",
+      value: "Featured Deals",
       //   handleCLick: () => {
       //     setOpenCustom(true);
       //   },
@@ -37,7 +37,7 @@ the sweetest deal you can get.`,
     },
     {
       title: "Location",
-      value: "Kolkata",
+      value: "4517 Washington Ave. Manchester, Kentucky 39495",
       //   handleCLick: () => {
       //     setOpenCustom(true);
       //   },
@@ -51,7 +51,7 @@ the sweetest deal you can get.`,
     },
     {
       title: "Expriy Date",
-      value: "2024-04-15",
+      value: "25-jan-2025",
       //   handleCLick: () => {
       //     setOpenCustom(true);
       //   },

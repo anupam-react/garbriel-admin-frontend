@@ -1,7 +1,10 @@
 import React from "react";
 import "./index.scss";
 import { useNavigate } from "react-router-dom";
+import useCampaign from "../../hooks/useCampaign";
+import { formatDate } from "../../utiils";
 const MarktingAdPreview = ({ isPay = false }) => {
+  const { campaignData } = useCampaign()
   const navigate = useNavigate();
   const handleSubmit = () => {
     isPay ? navigate("/marketing/payment") : navigate("/marketing/ad-confirm");
@@ -10,9 +13,9 @@ const MarktingAdPreview = ({ isPay = false }) => {
     <div>
       <div className="flex justify-between items-center mb-6">
         <p className="text-2xl font-bold">
-          {isPay ? "Run Campaign" : "DIscount Ad Preview"}
+          {isPay ? "Run Campaign" : campaignData?.typeOfCampaign === "Coupon" ? "Coupon Ad Preview" : campaignData?.typeOfCampaign === "Percentage Discount" ?  "Discount Ad Preview" : "Offer Ad Preview"}
         </p>
-        <button className="back" onClick={()=> navigate("/marketing")}> 
+        <button className="back" onClick={()=>  isPay ? navigate("/marketing/ad-preview") : navigate("/marketing/review-campaign")}> 
         <img src="../back.png" alt="" />
         Back</button>
       </div>
@@ -26,7 +29,7 @@ const MarktingAdPreview = ({ isPay = false }) => {
             <img src="../image 720 (2).png" alt="" className="h-fit" />
             <div>
               <div className="">
-                <img src="../Group 38237.png" alt="" />
+              <img src="../Group 38237.png" alt="" />
               </div>
               <div className="flex justify-end gap-2 mt-2">
                 <img src="../mdi_gift.png" alt="" />

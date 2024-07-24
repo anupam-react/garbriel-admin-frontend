@@ -13,28 +13,28 @@ const MarketingReviewCampaign = () => {
   const data1 = [
     {
       title: "Campaign Type",
-      value: "Percentage Discount",
+      value: campaignData?.typeOfCampaign,
       //   handleCLick: () => {
       //     setOpenCustom(true);
       //   },
     },
     {
       title: "Discount Value",
-      value:  "50%",
+      value:  "50% discount coupon on all hot drinks",
       //   handleCLick: () => {
       //     setOpenCustom(true);
       //   },
     },
     {
       title: "Expriy Date",
-      value: "2024-10-16",
+      value: "25-jan-2024",
       //   handleCLick: () => {
       //     setOpenCustom(true);
       //   },
     },
     {
       title: "Add Conditions",
-      value: "",
+      value: "Select specific product attached to Coupon ( Burger)",
       //   handleCLick: () => {
       //     setOpenCustom(true);
       //   },
@@ -51,7 +51,7 @@ const MarketingReviewCampaign = () => {
   const data2 = [
     {
       title: "Target Location",
-      value: "Kolkata",
+      value: "4517 Washington Ave. Manchester, Kentucky 39495",
       //   handleCLick: () => {
       //     setOpenCustom(true);
       //   },

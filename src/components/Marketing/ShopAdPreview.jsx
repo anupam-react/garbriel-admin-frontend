@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import "./index.scss";
 import { useNavigate } from "react-router-dom";
+import { DialogDefault } from "../common/DilogBox";
 const ShopAdPreview = ({ isPay = false }) => {
+  const [isSuccess, setSuccess] = useState(false);
   const navigate = useNavigate();
   const handleSubmit = () => {
     isPay
@@ -58,7 +60,14 @@ const ShopAdPreview = ({ isPay = false }) => {
                   {!isPay ? (
                     <button
                       className="shop-now2"
-                      onClick={() => navigate("/marketing/shop-ad")}
+                      onClick={() =>{ 
+                        
+                        setSuccess(true)
+                        setTimeout(()=>{
+                          setSuccess(false)
+                          navigate("/marketing/shop-ad")
+                        },2000)
+                      }}
                     >
                       Shop Now
                     </button>
@@ -84,6 +93,15 @@ const ShopAdPreview = ({ isPay = false }) => {
           </div>
         </div>
       </div>
+      <DialogDefault open={isSuccess} handleOpen={setSuccess}>
+      <div className="alert">
+          <img src="../emojione-monotone_hourglass-not-done.png" alt="" />
+          <p className="text-center text-[20px]">
+          Redirecting to the brand Shop...
+          </p>
+        </div>
+      
+      </DialogDefault>
     </div>
   );
 };

@@ -160,30 +160,11 @@ const NewCampaign = () => {
             onChange={handleChange}
           ></textarea>
         </div>
-        <div className="mt-4">
-          <p className="text-lg font-semibold pb-2">Min Estimated Reach</p>
-          <input type="text" className="input-loyalty2" name="estimateReachMin"  value={campaignData?.estimateReachMin}
-            onChange={handleChange} />
-        </div>
-        <div className="mt-4">
-          <p className="text-lg font-semibold pb-2">Max Estimated Reach</p>
-          <input type="text" className="input-loyalty2" name="estimateReachMax"  value={campaignData?.estimateReachMax}
-            onChange={handleChange} />
-        </div>
-        <div className="mt-4">
-          <p className="text-lg font-semibold pb-2">Location Long</p>
-          <input type="text" className="input-loyalty2" name="locationLat"  value={campaignData?.locationLat}
-            onChange={handleChange} />
-        </div>
-        <div className="mt-4">
-          <p className="text-lg font-semibold pb-2">Location Lat</p>
-          <input type="text" className="input-loyalty2" name="locationLong"  value={campaignData?.locationLong}
-            onChange={handleChange} />
-        </div>
+     
         <div className="mt-4">
           <div className="input-loyalty2 p-4">
             <p className="font-semibold pb-2">
-            {campaignData?.targetLocation}
+            4517 Washington Ave. Manchester, Kentucky 39495
             </p>
             <img src="../image 724.png" alt="" />
             <button
@@ -192,7 +173,7 @@ const NewCampaign = () => {
               // onClick={handleSubmit}
             >
               <p className="text-[14px]">Estimated Reach</p>
-              <p className="text-[20px]"> {campaignData?.estimateReachMin + "-"+campaignData?.estimateReachMax}</p>
+              <p className="text-[20px]">2500-5000</p>
             </button>
           </div>
         </div>
@@ -295,30 +276,11 @@ const NewCampaign = () => {
             onChange={handleChange}
           ></textarea>
         </div>
-        <div className="mt-4">
-          <p className="text-lg font-semibold pb-2">Min Estimated Reach</p>
-          <input type="text" className="input-loyalty2" name="estimateReachMin"  value={campaignData?.estimateReachMin}
-            onChange={handleChange} />
-        </div>
-        <div className="mt-4">
-          <p className="text-lg font-semibold pb-2">Max Estimated Reach</p>
-          <input type="text" className="input-loyalty2" name="estimateReachMax"  value={campaignData?.estimateReachMax}
-            onChange={handleChange} />
-        </div>
-        <div className="mt-4">
-          <p className="text-lg font-semibold pb-2">Location Long</p>
-          <input type="text" className="input-loyalty2" name="locationLat"  value={campaignData?.locationLat}
-            onChange={handleChange} />
-        </div>
-        <div className="mt-4">
-          <p className="text-lg font-semibold pb-2">Location Lat</p>
-          <input type="text" className="input-loyalty2" name="locationLong"  value={campaignData?.locationLong}
-            onChange={handleChange} />
-        </div>
+     
         <div className="mt-4">
           <div className="input-loyalty2 p-4">
             <p className="font-semibold pb-2">
-            {campaignData?.targetLocation}
+            4517 Washington Ave. Manchester, Kentucky 39495
             </p>
             <img src="../image 724.png" alt="" />
             <button
@@ -327,7 +289,7 @@ const NewCampaign = () => {
               // onClick={handleSubmit}
             >
               <p className="text-[14px]">Estimated Reach</p>
-              <p className="text-[20px]"> {campaignData?.estimateReachMin + "-"+campaignData?.estimateReachMax}</p>
+              <p className="text-[20px]">2500-5000</p>
             </button>
           </div>
         </div>
@@ -473,30 +435,11 @@ const NewCampaign = () => {
           <input type="text" className="input-loyalty2" name="expireDate"  value={campaignData?.expireDate}
             onChange={handleChange} />
         </div>
-        <div className="mt-4">
-          <p className="text-lg font-semibold pb-2">Min Estimated Reach</p>
-          <input type="text" className="input-loyalty2" name="estimateReachMin"  value={campaignData?.estimateReachMin}
-            onChange={handleChange} />
-        </div>
-        <div className="mt-4">
-          <p className="text-lg font-semibold pb-2">Max Estimated Reach</p>
-          <input type="text" className="input-loyalty2" name="estimateReachMax"  value={campaignData?.estimateReachMax}
-            onChange={handleChange} />
-        </div>
-        <div className="mt-4">
-          <p className="text-lg font-semibold pb-2">Location Long</p>
-          <input type="text" className="input-loyalty2" name="locationLat"  value={campaignData?.locationLat}
-            onChange={handleChange} />
-        </div>
-        <div className="mt-4">
-          <p className="text-lg font-semibold pb-2">Location Lat</p>
-          <input type="text" className="input-loyalty2" name="locationLong"  value={campaignData?.locationLong}
-            onChange={handleChange} />
-        </div>
+     
         <div className="mt-4">
           <div className="input-loyalty2 p-4">
             <p className="font-semibold pb-2">
-            {campaignData?.targetLocation}
+            4517 Washington Ave. Manchester, Kentucky 39495
             </p>
             <img src="../image 724.png" alt="" />
             <button
@@ -505,7 +448,7 @@ const NewCampaign = () => {
               // onClick={handleSubmit}
             >
               <p className="text-[14px]">Estimated Reach</p>
-              <p className="text-[20px]"> {campaignData?.estimateReachMin + "-"+campaignData?.estimateReachMax}</p>
+              <p className="text-[20px]">2500-5000</p>
             </button>
           </div>
         </div>
@@ -620,30 +563,11 @@ const NewCampaign = () => {
           ></textarea>
         </div>
      
-        <div className="mt-4">
-          <p className="text-lg font-semibold pb-2">Min Estimated Reach</p>
-          <input type="text" className="input-loyalty2" name="estimateReachMin"  value={campaignData?.estimateReachMin}
-            onChange={handleChange} />
-        </div>
-        <div className="mt-4">
-          <p className="text-lg font-semibold pb-2">Max Estimated Reach</p>
-          <input type="text" className="input-loyalty2" name="estimateReachMax"  value={campaignData?.estimateReachMax}
-            onChange={handleChange} />
-        </div>
-        <div className="mt-4">
-          <p className="text-lg font-semibold pb-2">Location Long</p>
-          <input type="text" className="input-loyalty2" name="locationLat"  value={campaignData?.locationLat}
-            onChange={handleChange} />
-        </div>
-        <div className="mt-4">
-          <p className="text-lg font-semibold pb-2">Location Lat</p>
-          <input type="text" className="input-loyalty2" name="locationLong"  value={campaignData?.locationLong}
-            onChange={handleChange} />
-        </div>
+     
         <div className="mt-4">
           <div className="input-loyalty2 p-4">
             <p className="font-semibold pb-2">
-            {campaignData?.targetLocation}
+            4517 Washington Ave. Manchester, Kentucky 39495
             </p>
             <img src="../image 724.png" alt="" />
             <button
@@ -652,7 +576,7 @@ const NewCampaign = () => {
               // onClick={handleSubmit}
             >
               <p className="text-[14px]">Estimated Reach</p>
-              <p className="text-[20px]"> {campaignData?.estimateReachMin + "-"+campaignData?.estimateReachMax}</p>
+              <p className="text-[20px]">2500-5000</p>
             </button>
           </div>
         </div>
@@ -740,30 +664,11 @@ const NewCampaign = () => {
           ></textarea>
         </div>
      
-        <div className="mt-4">
-          <p className="text-lg font-semibold pb-2">Min Estimated Reach</p>
-          <input type="text" className="input-loyalty2" name="estimateReachMin"  value={campaignData?.estimateReachMin}
-            onChange={handleChange} />
-        </div>
-        <div className="mt-4">
-          <p className="text-lg font-semibold pb-2">Max Estimated Reach</p>
-          <input type="text" className="input-loyalty2" name="estimateReachMax"  value={campaignData?.estimateReachMax}
-            onChange={handleChange} />
-        </div>
-        <div className="mt-4">
-          <p className="text-lg font-semibold pb-2">Location Long</p>
-          <input type="text" className="input-loyalty2" name="locationLat"  value={campaignData?.locationLat}
-            onChange={handleChange} />
-        </div>
-        <div className="mt-4">
-          <p className="text-lg font-semibold pb-2">Location Lat</p>
-          <input type="text" className="input-loyalty2" name="locationLong"  value={campaignData?.locationLong}
-            onChange={handleChange} />
-        </div>
+     
         <div className="mt-4">
           <div className="input-loyalty2 p-4">
             <p className="font-semibold pb-2">
-            {campaignData?.targetLocation}
+            4517 Washington Ave. Manchester, Kentucky 39495
             </p>
             <img src="../image 724.png" alt="" />
             <button
@@ -772,7 +677,7 @@ const NewCampaign = () => {
               // onClick={handleSubmit}
             >
               <p className="text-[14px]">Estimated Reach</p>
-              <p className="text-[20px]"> {campaignData?.estimateReachMin + "-"+campaignData?.estimateReachMax}</p>
+              <p className="text-[20px]">2500-5000</p>
             </button>
           </div>
         </div>
@@ -854,29 +759,9 @@ const NewCampaign = () => {
         </div>
      
         <div className="mt-4">
-          <p className="text-lg font-semibold pb-2">Min Estimated Reach</p>
-          <input type="text" className="input-loyalty2" name="estimateReachMin"  value={campaignData?.estimateReachMin}
-            onChange={handleChange} />
-        </div>
-        <div className="mt-4">
-          <p className="text-lg font-semibold pb-2">Max Estimated Reach</p>
-          <input type="text" className="input-loyalty2" name="estimateReachMax"  value={campaignData?.estimateReachMax}
-            onChange={handleChange} />
-        </div>
-        <div className="mt-4">
-          <p className="text-lg font-semibold pb-2">Location Long</p>
-          <input type="text" className="input-loyalty2" name="locationLat"  value={campaignData?.locationLat}
-            onChange={handleChange} />
-        </div>
-        <div className="mt-4">
-          <p className="text-lg font-semibold pb-2">Location Lat</p>
-          <input type="text" className="input-loyalty2" name="locationLong"  value={campaignData?.locationLong}
-            onChange={handleChange} />
-        </div>
-        <div className="mt-4">
           <div className="input-loyalty2 p-4">
             <p className="font-semibold pb-2">
-            {campaignData?.targetLocation}
+            4517 Washington Ave. Manchester, Kentucky 39495
             </p>
             <img src="../image 724.png" alt="" />
             <button
@@ -885,7 +770,7 @@ const NewCampaign = () => {
               // onClick={handleSubmit}
             >
               <p className="text-[14px]">Estimated Reach</p>
-              <p className="text-[20px]"> {campaignData?.estimateReachMin + "-"+campaignData?.estimateReachMax}</p>
+              <p className="text-[20px]">2500-5000</p>
             </button>
           </div>
         </div>
@@ -966,30 +851,11 @@ const NewCampaign = () => {
           ></textarea>
         </div>
      
-        <div className="mt-4">
-          <p className="text-lg font-semibold pb-2">Min Estimated Reach</p>
-          <input type="text" className="input-loyalty2" name="estimateReachMin"  value={campaignData?.estimateReachMin}
-            onChange={handleChange} />
-        </div>
-        <div className="mt-4">
-          <p className="text-lg font-semibold pb-2">Max Estimated Reach</p>
-          <input type="text" className="input-loyalty2" name="estimateReachMax"  value={campaignData?.estimateReachMax}
-            onChange={handleChange} />
-        </div>
-        <div className="mt-4">
-          <p className="text-lg font-semibold pb-2">Location Long</p>
-          <input type="text" className="input-loyalty2" name="locationLat"  value={campaignData?.locationLat}
-            onChange={handleChange} />
-        </div>
-        <div className="mt-4">
-          <p className="text-lg font-semibold pb-2">Location Lat</p>
-          <input type="text" className="input-loyalty2" name="locationLong"  value={campaignData?.locationLong}
-            onChange={handleChange} />
-        </div>
+     
         <div className="mt-4">
           <div className="input-loyalty2 p-4">
             <p className="font-semibold pb-2">
-            {campaignData?.targetLocation}
+            4517 Washington Ave. Manchester, Kentucky 39495
             </p>
             <img src="../image 724.png" alt="" />
             <button
@@ -998,7 +864,7 @@ const NewCampaign = () => {
               // onClick={handleSubmit}
             >
               <p className="text-[14px]">Estimated Reach</p>
-              <p className="text-[20px]"> {campaignData?.estimateReachMin + "-"+campaignData?.estimateReachMax}</p>
+              <p className="text-[20px]">2500-5000</p>
             </button>
           </div>
         </div>
