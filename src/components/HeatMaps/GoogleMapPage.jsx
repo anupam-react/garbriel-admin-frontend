@@ -65,7 +65,8 @@ export function GoogleMapPage() {
       onUnmount={onUnmount}
     >
       <Marker
-        onClick={onMarkerClick}
+        // onClick={onMarkerClick}
+        onMouseOver={onMarkerClick}
         icon={{
           url: "./Component 62.png",
         }}

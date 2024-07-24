@@ -21,15 +21,15 @@ const CustomerFeedBack = ({ open, setOpen, handleOpen }) => {
               </div>
             </div>
             <hr className="bg-[#00000099] w-full my-6" />
-            <div className="rounded-lg shadow p-[16px] h-[50vh] overflow-auto bg-white">
+            <div className="rounded-lg shadow p-[16px] h-[50vh] overflow-auto bg-white no-scrollbar">
               <div className="flex justify-between">
-                <p className="font-bold">Lorem Ipsum Heading!</p>
-                <p>
+                <p className="font-bold text-[20px]">Lorem Ipsum Heading!</p>
+                <p className="font-semibold text-[#000000B2]">
                   DD/MM/YYYY <span className="text-[#0070BC]">(6:30 AM)</span>
                 </p>
               </div>
               <div className="flex items-center gap-3 mb-[24px] mt-3">
-                <p className="text-[#3BB54A]">4.5</p>
+                <p className="text-[#3BB54A] font-semibold">4.5</p>
                 <img src="./Group 409.png" alt="" className="h-fit" />
               </div>
               <p className="text-sm">

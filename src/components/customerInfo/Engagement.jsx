@@ -80,7 +80,8 @@ const Engagement = ({ handleOpen , onClose }) => {
                 <span
                   style={{ color: "#0070BC", textDecoration: "underline" }}
                   className="cursor-pointer"
-                  onClick={() => setOpenTransaction(true)}
+                  onMouseOver={()=> setOpenTransaction(true)}
+                  // onClick={() => setOpenTransaction(true)}
                 >
                   4 visits
                 </span>{" "}
@@ -94,7 +95,7 @@ const Engagement = ({ handleOpen , onClose }) => {
                 <span
                   style={{ color: "#0070BC", textDecoration: "underline" }}
                   className="cursor-pointer"
-                  onClick={() => setOpenTransaction(true)}
+                  onMouseOver={()=> setOpenTransaction(true)}
                 >
                   4 visits
                 </span>{" "}
@@ -117,7 +118,7 @@ const Engagement = ({ handleOpen , onClose }) => {
                   <span
                     style={{ color: "#0070BC", textDecoration: "underline" }}
                     className="cursor-pointer"
-                    onClick={() => setOpenTransaction(true)}
+                    onMouseOver={()=> setOpenTransaction(true)}
                   >
                     2 visits
                   </span>
@@ -131,7 +132,7 @@ const Engagement = ({ handleOpen , onClose }) => {
                   <span
                     style={{ color: "#0070BC", textDecoration: "underline" }}
                     className="cursor-pointer"
-                    onClick={() => setOpenTransaction(true)}
+                    onMouseOver={()=> setOpenTransaction(true)}
                   >
                     2 visits
                   </span>
@@ -145,7 +146,7 @@ const Engagement = ({ handleOpen , onClose }) => {
                   <span
                     style={{ color: "#0070BC", textDecoration: "underline" }}
                     className="cursor-pointer"
-                    onClick={() => setOpenTransaction(true)}
+                    onMouseOver={()=> setOpenTransaction(true)}
                   >
                     2 visits
                   </span>
