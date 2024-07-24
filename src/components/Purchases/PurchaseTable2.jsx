@@ -37,7 +37,7 @@ const PurchaseTable2 = () => {
               return (
                 <tr>
                    <td>
-                      <div className="flex items-center justify-center gap-6">
+                      <div className="flex items-center justify-center gap-6 relative">
                         <div className="profile-image">
                           <img src="./carbon_user-avatar-filled.png" alt="" />
                           <img
@@ -60,8 +60,8 @@ const PurchaseTable2 = () => {
                           ID:MC12345
                         </p>
                         {isOpenMenu === i && (
-                          <div className="menu-Main">
-                            <MenuCard />
+                          <div className="menu-Main3">
+                            <MenuCard onClose={()=> setOpenMenu(false)} setOpenInfo={setOpenInfo}/>
                           </div>
                         )}
                       </div>
