@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Select from "../common/Select";
+import Select2 from "../common/Select2";
 import { DatePickerComp } from "../common/DatePickerComp";
 import { BarChart3 } from "./BarChart3";
 import { LineChart4 } from "./LineChart4";
@@ -63,7 +64,7 @@ const Comparison = () => {
           <Select />
         </div>
         <p className="text-[#0070BC] font-semibold text-xl uppercase">
-          Sales Comparison (Compare Sales)
+        Sales Comparisons 
         </p>
         <div className="w-[600px]">
           <BarChart3 />
@@ -89,19 +90,20 @@ const Comparison = () => {
           </div>
         </div>
         <div className="flex justify-between items-center w-full">
-        <Select />
+        <Select2 />
           <div className="flex gap-4">
             <p className="text-[#000000B2]">To :</p>
           <DatePickerComp />
           </div>
         </div>
+        <p className="text-[#0070BC] text-[18px] font-semibold">ROAS VS CAMPAIGN TYPE</p>
         <div className="w-full">
           <LineChart4 />
         </div>
       </div>
       <div className="shadow-xl rounded-lg bg-white flex flex-col items-center gap-3 py-4 px-6">
         <div className="flex justify-between items-center w-full">
-        <Select />
+        <Select2 />
          
           <select
             id="countries"
@@ -112,6 +114,7 @@ const Comparison = () => {
             <option className="font-semibold">Breverages</option>
           </select>
         </div>
+        <p className="text-[#0070BC] text-[18px] font-semibold">Total Sales VS Product SubCategories</p>
         <div className="w-full">
           <BarChart4 />
         </div>

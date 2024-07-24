@@ -33,7 +33,7 @@ const CreatePromo = ({ open, setOpen, handleOpen, edit=false }) => {
     <div>
       <DialogDefault open={open} handleOpen={handleOpen}>
         <div className="">
-          <div className="p-8 rounded-md text-black bg-[#F5F5F5] h-[70vh] overflow-auto">
+          <div className="p-8 rounded-md text-black bg-[#F5F5F5] h-[70vh] overflow-auto no-scrollbar">
             <div className="flex justify-between">
               <div className="flex items-center gap-4">
                 <img src="./image 681.png" alt="" />
@@ -262,7 +262,13 @@ const CreatePromo = ({ open, setOpen, handleOpen, edit=false }) => {
             </div>
           </div>
           <div className="flex justify-center items-center gap-10 my-8">
-            <button className="sign-button w-48" >
+            <button className="sign-button w-48" onClick={()=>{
+              setOpenSuccess(true)
+              setTimeout(()=>{
+                setOpenSuccess(false)
+                handleOpen(false)
+              },1000)
+              }}>
             { edit ? "UPDATE" :  "CREATE"}
               
             </button>

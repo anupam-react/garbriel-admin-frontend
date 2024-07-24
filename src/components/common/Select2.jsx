@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { DialogDefault } from "./DilogBox";
 import { DatePickerComp } from "./DatePickerComp";
 
-const Select = ({selectedOption , handleChange , open , setOpen }) => {
+const Select2 = ({selectedOption , handleChange , open , setOpen }) => {
 
   const handleOpen = () => setOpen(!open);
 
@@ -20,7 +20,7 @@ const Select = ({selectedOption , handleChange , open , setOpen }) => {
         id="countries"
         value={selectedOption}
         onChange={handleChange}
-        className="rounded shadow-md text-gray-900 text-sm  border-none block w-36 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+        className="rounded shadow-md bg-[#EEEEEE80] text-[#000000B2] font-semibold text-sm  border-none block w-[300px] p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
       >
         {MonthOptions?.map((data, i) => (
           <>
@@ -66,4 +66,4 @@ const Select = ({selectedOption , handleChange , open , setOpen }) => {
   );
 };
 
-export default Select;
+export default Select2;

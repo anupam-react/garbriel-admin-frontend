@@ -184,11 +184,19 @@ const PromoCode = () => {
                                 <img src="./image 119 (2).png" alt="" />
                                 <p>De-Activate</p>
                               </div>
-                              <div className="flex items-center gap-6" onClick={()=>setEdit(true)}>
+                              <div className="flex items-center gap-6" onClick={()=>{
+                                setEdit(true)
+                                setTimeout(()=>{ 
+                                  setActive(-1)
+                                },500)
+                                }}>
                                 <img src="./image 119 (3).png" alt="" />
                                 <p>Edit Details</p>
                               </div>
-                              <div className="flex items-center gap-6"  onClick={()=> setDelete(true)}>
+                              <div className="flex items-center gap-6"  onClick={()=>{ 
+                                setDelete(true)
+                               
+                                }}>
                                 <img src="./image 118.png" alt="" />
                                 <p>Delete Promo Code</p>
                               </div>
@@ -200,7 +208,10 @@ const PromoCode = () => {
                                 <p>Re-Activate</p>
                               </div>
 
-                              <div className="flex items-center gap-6"  onClick={()=> setDelete(true)}>
+                              <div className="flex items-center gap-6"  onClick={()=>{
+                                 setDelete(true)
+                            
+                                 }}>
                                 <img src="./image 118.png" alt="" />
                                 <p>Delete Promo Code</p>
                               </div>
@@ -212,7 +223,10 @@ const PromoCode = () => {
                                 <p>Re-Activate</p>
                               </div>
 
-                              <div className="flex items-center gap-6" onClick={()=> setDelete(true)}>
+                              <div className="flex items-center gap-6" onClick={()=>{ 
+                                setDelete(true)
+                               
+                                }}>
                                 <img src="./image 118.png" alt="" />
                                 <p>Delete Promo Code</p>
                               </div>
@@ -250,8 +264,17 @@ const PromoCode = () => {
           Do you want to delete this product ?
           </p>
           <div className='button-container3'>
-            <button className='promoButton' onClick={()=>{setSuccess(true)}}>Yes</button>
-            <button className='promoButton' onClick={()=>setDelete(false)}>No</button>
+            <button className='promoButton' onClick={()=>{
+              setSuccess(true)
+              setTimeout(()=>{
+                setSuccess(false)
+                setActive(-1)
+              },1000)
+              }}>Yes</button>
+            <button className='promoButton' onClick={()=>{
+              setDelete(false)
+              setActive(-1)
+              }}>No</button>
           </div>
         </div>
       </DialogDefault>
@@ -271,9 +294,14 @@ const PromoCode = () => {
           </p>
           <div className='button-container3'>
             <button className='promoButton' onClick={()=>{{
+              setActive(-1)
               setDeactive(false)
+        
               }}}>Yes</button>
-            <button className='promoButton' onClick={()=>setDeactive(false)}>No</button>
+            <button className='promoButton' onClick={()=>{
+              setDeactive(false)
+              setActive(-1)
+              }}>No</button>
           </div>
         </div>
       </DialogDefault>
@@ -287,7 +315,10 @@ const PromoCode = () => {
               </p>
             
             </div>
-            <div onClick={() => setReactive(false)}>
+            <div onClick={() =>{
+               setReactive(false)
+               setActive(-1)
+               }}>
               <img
                 src="./Mask group (2).png"
                 alt=""
@@ -309,8 +340,14 @@ const PromoCode = () => {
           </div>
           <div className="text-[#000000B2] py-4">VALIDITY : <span className="text-[black]">6 MONTHS</span></div>
           <div className="flex justify-around items-center mt-4">
-            <button className="sign-button w-48" onClick={() => setReactive(false)}>RE-ACTIVATE</button>
-            <div className="flex  items-center gap-2 cursor-pointer" onClick={() => setReactive(false)}>
+            <button className="sign-button w-48" onClick={() => {
+              setReactive(false)
+              setActive(-1)
+              }}>RE-ACTIVATE</button>
+            <div className="flex  items-center gap-2 cursor-pointer" onClick={() =>{
+               setReactive(false)
+               setActive(-1)
+               }}>
               <img src="./Mask group (4).svg" alt="" className="w-6 h-6" />
               <p className="text-[24px] cancel underline">Cancel</p>
             </div>
