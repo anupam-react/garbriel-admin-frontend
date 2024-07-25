@@ -29,7 +29,7 @@ const Payment = () => {
       <div className="flex justify-between items-center mb-6">
         <p className="text-2xl font-bold">Payment</p>
         <button className="back" onClick={()=> navigate("/marketing")}> 
-        <img src="../back.png" alt="" />
+        <img src="../../back.png" alt="" />
         Back</button>
       
       </div>

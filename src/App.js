@@ -67,6 +67,7 @@ import FollowerAdPreview from "./components/Marketing/FollowerAdPreview.jsx";
 import MarketingReviewCampaignShop from "./components/Marketing/MarketingReviewCampaignShop.jsx";
 import PrivateRoutes2 from "./utiils/PrivateRoutes2.js";
 import ReportSetting2 from "./components/Setting/ReportSetting2.jsx";
+import MarktingAdPreviewCoupon from "./components/Marketing/MarktingAdPreviewCoupon.jsx";
 
 function App() {
   return (
@@ -190,12 +191,20 @@ function App() {
             path="/marketing/review-campaign-cupon"
             element={<ReviewCampaign2 />}
           />
+          <Route
+            path="/marketing/ad-preview-coupon"
+            element={<MarktingAdPreviewCoupon />}
+          />
           <Route path="/marketing/ad-preview" element={<MarktingAdPreview />} />
           <Route path="/marketing/ad-preview-follower" element={<FollowerAdPreview />} />
           <Route path="/marketing/ad-preview-featured" element={<MarktingAdPreviewFeatured />} />
           <Route
             path="/marketing/ad-confirm"
             element={<MarktingAdPreview isPay={true} />}
+          />
+          <Route
+            path="/marketing/ad-confirm-coupon"
+            element={<MarktingAdPreviewCoupon isPay={true} />}
           />
           <Route
             path="/marketing/ad-follower-confirm"

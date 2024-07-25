@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 const ReviewCampaign2 = () => {
   const navigate = useNavigate();
   const handleSubmit = () => {
-    navigate("/marketing/ad-preview");
+    navigate("/marketing/ad-preview-coupon");
   };
 
   const data1 = [
@@ -56,9 +56,9 @@ const ReviewCampaign2 = () => {
     <div>
       <div className="flex justify-between items-center mb-6">
         <p className="text-2xl font-bold">Review Campaign</p>
-        <button className="back" onClick={()=> navigate("/marketing")}> 
+        {/* <button className="back" onClick={()=> navigate("/marketing")}> 
         <img src="../back.png" alt="" />
-        Back</button>
+        Back</button> */}
         
       </div>
       <div className="loyalty-form-container" style={{padding:"30px 50px"}}>
