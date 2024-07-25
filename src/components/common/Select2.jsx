@@ -4,6 +4,10 @@ import { DatePickerComp } from "./DatePickerComp";
 
 const Select2 = ({selectedOption , handleChange , open , setOpen }) => {
 
+  const [startDate, setStartDate] = useState(new Date());
+  const [endDate, setEndDate] = useState(new Date());
+
+
   const handleOpen = () => setOpen(!open);
 
   const MonthOptions = [
