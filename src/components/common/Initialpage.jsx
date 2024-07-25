@@ -10,7 +10,7 @@ const Initialpage = () => {
 
   return (
     <div className="w-full h-[90vh] flex justify-center items-center">
-      <img src="./image 2 (1).png" alt="" />
+      <img src="./MoneyChat_Limited_104640_page-0001.jpg" alt="" className="w-[50vw]" />
     </div>
   );
 };

@@ -2,26 +2,32 @@ import React, { useEffect, useRef, useState } from "react";
 import { DialogDefault } from "../common/DilogBox";
 import ReportPage from "./ReportPage";
 
-const AvailableProduct = ({ open, setOpen, handleOpen }) => {
+const AvailableProduct = ({ open, setOpenProduct, handleOpen }) => {
   const [isReportopen, setReportOpen] = useState(false);
   const [isReport, setReport] = useState(false);
   const handleReportOpen = () => setReportOpen(!open);
-    const handleReport = () => setReport(!open);
-    
-      const divRef = useRef();
+  const handleReport = () => setReport(!open);
+
+  const divRef = useRef();
+
 
   useEffect(() => {
     function handleClickOutside(event) {
       if (divRef.current && !divRef.current.contains(event.target)) {
-        setReportOpen(false);
+        setOpenProduct(-1);
       }
     }
+    if (open !== -1) {
+      document.addEventListener("mousedown", handleClickOutside);
+    } else {
+      document.removeEventListener("mousedown", handleClickOutside);
+    }
 
-    document.addEventListener('mousedown', handleClickOutside);
+    document.addEventListener("mousedown", handleClickOutside);
     return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
+      document.removeEventListener("mousedown", handleClickOutside);
     };
-  }, []);
+  }, [open]);
 
   const productData = [
     { name: "Butter Croissant", price: "£5", image: "./Rectangle 8765.png" },
@@ -35,14 +41,13 @@ const AvailableProduct = ({ open, setOpen, handleOpen }) => {
   return (
     <div>
       <DialogDefault open={open} handleOpen={handleOpen}>
-        <div className="p-8 rounded-md text-black bg-[#F5F5F5] w-[60vw] overflow-auto" >
+        <div className="p-8 rounded-md text-black bg-[#F5F5F5] w-[60vw] overflow-auto">
           <div className="flex justify-between" ref={divRef}>
             {productData?.map((data, i) => (
               <div className="relative">
                 <div
                   className="bg-[#FFFFFF] shadow rounded-md p-4 w-[250px]"
-                        key={i}
-                    
+                  key={i}
                 >
                   <div className="flex justify-between">
                     <div className="flex gap-2 bg-[#0070BC33] px-4 py-1 rounded-full w-fit">
@@ -67,8 +72,7 @@ const AvailableProduct = ({ open, setOpen, handleOpen }) => {
                 {isReportopen && (
                   <button
                     className="export flex gap-2 absolute top-0"
-                            onClick={() => setReport(true)}
-                       
+                    onClick={() => setReport(true)}
                   >
                     <img
                       src="./Mask group (7).svg"
@@ -77,8 +81,12 @@ const AvailableProduct = ({ open, setOpen, handleOpen }) => {
                     />
                     <p>REPORT</p>
                   </button>
-                    )}
-                    <ReportPage open={isReport} setOpen={setReport} handleOpen={handleReport} />
+                )}
+                <ReportPage
+                  open={isReport}
+                  setOpenReport={setReport}
+                  handleOpen={handleReport}
+                />
               </div>
             ))}
           </div>

@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import { DialogDefault } from "../common/DilogBox";
 import TransactionDetails from "./TransactionDetails";
+import ProductDetails from "./ProductDetails";
 
 const MoneyTransferTable = () => {
   const [openTransaction, setOpenTransaction] = useState(false);
+  const [openDetails, setOpenDetails] = useState(false);
   return (
     <div>
       <table className="table2">
@@ -26,8 +28,8 @@ const MoneyTransferTable = () => {
             <td>30/11/2023</td>
             <td>
               <div className="table-flex">
-                <img src="./Group 527.png" alt="" style={{ width: "100px" }} />
-                <p>
+                <img src="./Group 527.png" alt="" className="cursor-pointer" style={{ width: "100px" }} onClick={() => setOpenDetails(true)}/>
+                <p className="cursor-pointer" onClick={() => setOpenTransaction(true)}>
                   <span
                     style={{ color: "#3BB54A", textDecoration: "underline" }}
                   >
@@ -37,7 +39,7 @@ const MoneyTransferTable = () => {
                   HoneyComb Mocha 09/12/2023,11:00 am{" "}
                   <span
                     className="id-link"
-                    onClick={() => setOpenTransaction(true)}
+                    
                   >
                     {" "}
                     See transaction
@@ -56,8 +58,8 @@ const MoneyTransferTable = () => {
             <td>30/11/2023</td>
             <td>
               <div className="table-flex">
-                <img src="./Group 527.png" alt="" style={{ width: "100px" }} />
-                <p>
+                <img src="./Group 527.png" alt="" className="cursor-pointer" style={{ width: "100px" }} onClick={() => setOpenDetails(true)}/>
+                <p className="cursor-pointer" onClick={() => setOpenTransaction(true)}>
                   <span
                     style={{ color: "#3BB54A", textDecoration: "underline" }}
                   >
@@ -67,7 +69,7 @@ const MoneyTransferTable = () => {
                   HoneyComb Mocha 09/12/2023,11:00 am{" "}
                   <span
                     className="id-link"
-                    onClick={() => setOpenTransaction(true)}
+                    
                   >
                     {" "}
                     See transaction
@@ -80,6 +82,9 @@ const MoneyTransferTable = () => {
       </table>
       <DialogDefault open={openTransaction} handleOpen={setOpenTransaction}>
         <TransactionDetails handleOpen={setOpenTransaction} />
+      </DialogDefault>
+      <DialogDefault open={openDetails} handleOpen={setOpenDetails}>
+        <ProductDetails handleOpen={setOpenDetails} />
       </DialogDefault>
     </div>
   );

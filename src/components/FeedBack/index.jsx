@@ -70,7 +70,7 @@ const FeedBack = () => {
                     <td>
                       <div className="flex items-center justify-center gap-6 relative">
                         <div className="profile-image">
-                          <img src="./carbon_user-avatar-filled.png" alt="" />
+                          <img src="./carbon_user-avatar-filled.png" alt="" className="cursor-pointer"  onClick={() => setOpenInfo(true)}/>
                           <img
                             src="./solar_menu-dots-bold (1).png"
                             alt=""
@@ -91,7 +91,7 @@ const FeedBack = () => {
                           ID:MC12345
                         </p>
                         {isOpenMenu === i && (
-                          <div className="menu-Main3">
+                          <div className="absolute top-0 z-20 md:-right-[260px] lg:-right-[250px] xl:-right-[230px]">
                             <MenuCard onClose={()=> setOpenMenu(false)} setOpenInfo={setOpenInfo}/>
                           </div>
                         )}

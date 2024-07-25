@@ -45,7 +45,7 @@ const BookMark = ({ handleOpen , setOpenInfo , onClose}) => {
                               </div>
                               <img src="./charm_menu-meatball.png" alt="" className="dot-image" onClick={()=>setOpenMenu(!openMenu)}/>
                           </div>
-                          {openMenu && <MenuCard3 setOpenInfo={setOpenInfo}/>}
+                          {openMenu && <MenuCard3 onClose={()=> setOpenMenu(false)}/>}
             </td>
             <td>10/12/2023</td>
             <td>

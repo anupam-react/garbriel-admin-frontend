@@ -39,8 +39,8 @@ const ReferalPreview = ({handleOpen , onClose}) => {
               </div>
             </div>
       </div>
-      <p className="text-[#00000080] text-left font-[600] w-[270px]">Your slice awaits you. Received a cake voucher when you refer a friend and make your first transaction with us.</p>
-          <p className="text-[#0070BC] w-[270px]">http://Www.Moneychat.com//Slice/refferalvoucher</p>
+      <p className="text-[#00000080] text-left font-[600] w-[260px]">Your slice awaits you. Received a cake voucher when you refer a friend and make your first transaction with us.</p>
+          <p className="text-[#0070BC] w-[270px]">http://www.Moneychat.com//Slice/refferalvoucher</p>
             <button
               className="loyalty-button1 mt-6"
               style={{ width: "fit-content" }}

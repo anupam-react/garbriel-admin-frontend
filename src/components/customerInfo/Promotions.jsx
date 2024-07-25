@@ -6,12 +6,14 @@ import HistoryDetails from "./HistoryDetails";
 import TransactionCupon from "./TransactionCupon";
 import TransactionDiscount from "./TransactionDiscount";
 import ProductDetails3 from "./ProductDetails3";
+import TransactionDetails from "./TransactionDetails";
 
 const Promotions = ({ handleOpen , onClose}) => {
   const [openProduct, setOpenproduct] = useState(false);
   const [openHistory, setOpenHistory] = useState(false);
   const [openCupon, setOpenCupon] = useState(false);
   const [openDiscount, setOpenDiscount] = useState(false);
+  const [openTransaction, setOpenTransaction] = useState(false);
   return (
     <div className="info-container">
       <div className="gift-main">
@@ -231,7 +233,7 @@ const Promotions = ({ handleOpen , onClose}) => {
                   style={{ cursor: "pointer", width: "180px" }}
                   onClick={() => setOpenproduct(true)}
                 />
-                <div className="text-left">
+                <div className="text-left cursor-pointer" onClick={()=> setOpenTransaction(true)}>
                   Bought 2 times,
                   <span
                     style={{
@@ -261,7 +263,7 @@ const Promotions = ({ handleOpen , onClose}) => {
                   style={{ cursor: "pointer", width: "180px" }}
                   onClick={() => setOpenproduct(true)}
                 />
-                <div className="text-left">
+                <div className="text-left cursor-pointer" onClick={()=> setOpenTransaction(true)}>
                   Bought 2 times,
                   <span
                     style={{
@@ -291,6 +293,9 @@ const Promotions = ({ handleOpen , onClose}) => {
       </DialogDefault>
       <DialogDefault open={openDiscount} handleOpen={setOpenDiscount}>
         <TransactionDiscount handleOpen={setOpenDiscount} />
+      </DialogDefault>
+      <DialogDefault open={openTransaction} handleOpen={setOpenTransaction}>
+        <TransactionDetails handleOpen={setOpenTransaction} />
       </DialogDefault>
     </div>
   );

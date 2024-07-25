@@ -6,6 +6,40 @@ import ReferalPreview from "./ReferalPreview";
 const ReferalDetails = ({ handleOpen , onClose}) => {
 
   const [openSuccess, setSuccess] = useState(false);
+  const data1 = [
+    {
+      title: "Custom Message",
+      value: "Your slice awaits you. Received a cake voucher when you refer a friend and make your first transaction with us.",
+      handleCLick: () => {
+        handleOpen(false);
+    },
+    },
+  
+  ];
+  const data2 = [
+    {
+      title: "Expiration Date",
+      value: "01-10-24",
+      handleCLick: () => {
+        handleOpen(false);
+    },
+    },
+    {
+      title: "Reward Type",
+      value: "Points",
+      handleCLick: () => {
+        handleOpen(false);
+    },
+    },
+    {
+      title: "Reward Value",
+      value: "200",
+      handleCLick: () => {
+        handleOpen(false);
+    },
+    },
+  
+  ];
 
   return (
     <div className="gift-container no-scrollbar">
@@ -28,74 +62,37 @@ const ReferalDetails = ({ handleOpen , onClose}) => {
       <p>70% Birthday Special Discount</p>
     </div>
     <div className="footer-Main">
-        <div className="footer-container">
-          <p style={{width:"fit-content"}}>Custom Message</p>
-          <p>:</p>
-          <p style={{width:"200px"}}>Your slice awaits you. Received a cake voucher when you refer a friend and make your first transaction with us.</p>
-          <button
-            className="edit-button"
-            onClick={() => {
-              handleOpen(false);
-            }}
-          >
-            Edit
-          </button>
+          {data1?.map((d, i) => (
+            <div className="footer-container">
+              <p>{d?.title}</p>
+              <span>:</span>
+              <p>{d?.value}</p>
+              <button className="edit-button2" onClick={d?.handleCLick}>
+                Edit
+              </button>
+            </div>
+          ))}
+          <div className="footer-container">
+              <p>Exclusive Link</p>
+              <span>:</span>
+              <p className="text-[#0070BC]">http://
+                www.Moneychat.com/
+                Slice/refferalvoucher</p>
+              <button className="edit-button2" onClick={()=> handleOpen(false)}>
+                Edit
+              </button>
+            </div>
+            {data2?.map((d, i) => (
+            <div className="footer-container">
+              <p>{d?.title}</p>
+              <span>:</span>
+              <p>{d?.value}</p>
+              <button className="edit-button2" onClick={d?.handleCLick}>
+                Edit
+              </button>
+            </div>
+          ))}
         </div>
-        <div className="footer-container">
-          <p style={{width:"fit-content"}}>Exclusive Link</p>
-          <p>:</p>
-          <p style={{width:"200px", color:"#0070BC"}}>http://
-            Www.Moneychat.com
-            //Slice/refferalvoucher</p>
-          <button
-            className="edit-button"
-            onClick={() => {
-              handleOpen(false);
-            }}
-          >
-            Edit
-          </button>
-        </div>
-        <div className="footer-container">
-          <p style={{width:"fit-content"}}>Expiration Date</p>
-          <p>:</p>
-          <p style={{width:"200px"}}>01-10-24</p>
-          <button
-            className="edit-button"
-            onClick={() => {
-              handleOpen(false);
-            }}
-          >
-            Edit
-          </button>
-        </div>
-        <div className="footer-container">
-          <p style={{width:"fit-content"}}>Reward Type</p>
-          <p>:</p>
-          <p style={{width:"200px"}}>Points</p>
-          <button
-            className="edit-button"
-            onClick={() => {
-              handleOpen(false);
-            }}
-          >
-            Edit
-          </button>
-        </div>
-        <div className="footer-container">
-          <p style={{width:"fit-content"}}>Reward Value</p>
-          <p>:</p>
-          <p style={{width:"200px"}}>200</p>
-          <button
-            className="edit-button"
-            onClick={() => {
-              handleOpen(false);
-            }}
-          >
-            Edit
-          </button>
-        </div>
-    </div>
     <button className="menuButton" onClick={() => setSuccess(true)}>
     See Referral Reward Preview
     </button>

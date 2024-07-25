@@ -1,18 +1,77 @@
-import React from "react";
+import React, { useState } from "react";
 import "./index.css";
 import { DialogDefault } from "../common/DilogBox";
 import Select from "../common/Select";
 import { useNavigate } from "react-router-dom";
 
-const ReportPage = ({ open, setOpen, handleOpen }) => {
+const ReportPage = ({ open, setOpenReport, handleOpen }) => {
   const navigate = useNavigate();
-  const reportData = [
-    { title: "Total Sales Volume" },
-    { title: "Transaction Count" },
-    { title: "Average Transaction Value" },
-    { title: "Top Selling items" },
-    { title: "TIME BASED ANALYSIS" },
-  ];
+  const [selectedOption1, setSelectedOption1] = useState("");
+  const [selectedOption2, setSelectedOption2] = useState("");
+  const [selectedOption3, setSelectedOption3] = useState("");
+  const [selectedOption4, setSelectedOption4] = useState("");
+  const [selectedOption5, setSelectedOption5] = useState("");
+  const [selectedOption6, setSelectedOption6] = useState("");
+  const [openCustom1, setOpenCustom1] = useState(false);
+  const [openCustom2, setOpenCustom2] = useState(false);
+  const [openCustom3, setOpenCustom3] = useState(false);
+  const [openCustom4, setOpenCustom4] = useState(false);
+  const [openCustom5, setOpenCustom5] = useState(false);
+  const [openCustom6, setOpenCustom6] = useState(false);
+
+  const handleChange1 = (event) => {
+    setSelectedOption1(event.target.value);
+    if (event.target.value === "custom") {
+      setOpenCustom1(true);
+    }else{
+      
+    }
+  };
+  const handleChange2 = (event) => {
+    setSelectedOption2(event.target.value);
+    if (event.target.value === "custom") {
+      setOpenCustom2(true);
+    }else{
+     
+
+    }
+  };
+  const handleChange3 = (event) => {
+    setSelectedOption3(event.target.value);
+    if (event.target.value === "custom") {
+      setOpenCustom3(true);
+    }else{
+     
+
+    }
+  };
+  const handleChange4 = (event) => {
+    setSelectedOption4(event.target.value);
+    if (event.target.value === "custom") {
+      setOpenCustom4(true);
+    }else{
+     
+
+    }
+  };
+  const handleChange5 = (event) => {
+    setSelectedOption5(event.target.value);
+    if (event.target.value === "custom") {
+      setOpenCustom5(true);
+    }else{
+      
+
+    }
+  };
+  const handleChange6 = (event) => {
+    setSelectedOption5(event.target.value);
+    if (event.target.value === "custom") {
+      setOpenCustom6(true);
+    }else{
+    }
+  };
+
+
   return (
     <div>
       <DialogDefault open={open} handleOpen={handleOpen}>
@@ -29,7 +88,7 @@ const ReportPage = ({ open, setOpen, handleOpen }) => {
                   className="w-6 h-6 cursor-pointer"
                   onClick={() => navigate("/report")}
                 />
-                <div onClick={() => setOpen(false)}>
+                <div onClick={() => setOpenReport(false)}>
                   <img
                     src="./Mask group (2).png"
                     alt=""
@@ -57,7 +116,7 @@ const ReportPage = ({ open, setOpen, handleOpen }) => {
               <span class="checkmark"></span>
             </label>
             <div className="flex flex-col gap-4 mb-4">
-              {reportData?.map((data, i) => (
+              {/* {reportData?.map((data, i) => ( */}
                 <div className="flex items-start gap-6">
                   <label className="inline-flex items-center me-5 cursor-pointer">
                     <input type="checkbox" value="" className="sr-only peer" />
@@ -65,15 +124,75 @@ const ReportPage = ({ open, setOpen, handleOpen }) => {
                   </label>
                   <div className="flex flex-col gap-4">
                     <span className="font-semibold text-[#0070BC] dark:text-gray-300 uppercase">
-                      {data?.title}
+                    Total Sales Volume
                     </span>
                     <div className="flex items-center gap-4">
                       <p className="text-[#000000B2] font-[600]">Date Range</p>
-                      <Select />
+                      <Select selectedOption={selectedOption1} handleChange={handleChange1} open={openCustom1} setOpen={setOpenCustom1}/>
                     </div>
                   </div>
                 </div>
-              ))}
+                <div className="flex items-start gap-6">
+                  <label className="inline-flex items-center me-5 cursor-pointer">
+                    <input type="checkbox" value="" className="sr-only peer" />
+                    <div className="relative w-11 h-6 bg-gray-200 rounded-full peer dark:bg-gray-700 peer-focus:ring-4 peer-focus:ring-green-300 dark:peer-focus:ring-green-800 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-green-600"></div>
+                  </label>
+                  <div className="flex flex-col gap-4">
+                    <span className="font-semibold text-[#0070BC] dark:text-gray-300 uppercase">
+                    Transaction Count
+                    </span>
+                    <div className="flex items-center gap-4">
+                      <p className="text-[#000000B2] font-[600]">Date Range</p>
+                      <Select selectedOption={selectedOption2} handleChange={handleChange2} open={openCustom2} setOpen={setOpenCustom2}/>
+                    </div>
+                  </div>
+                </div>
+                <div className="flex items-start gap-6">
+                  <label className="inline-flex items-center me-5 cursor-pointer">
+                    <input type="checkbox" value="" className="sr-only peer" />
+                    <div className="relative w-11 h-6 bg-gray-200 rounded-full peer dark:bg-gray-700 peer-focus:ring-4 peer-focus:ring-green-300 dark:peer-focus:ring-green-800 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-green-600"></div>
+                  </label>
+                  <div className="flex flex-col gap-4">
+                    <span className="font-semibold text-[#0070BC] dark:text-gray-300 uppercase">
+                    Average Transaction Value
+                    </span>
+                    <div className="flex items-center gap-4">
+                      <p className="text-[#000000B2] font-[600]">Date Range</p>
+                      <Select selectedOption={selectedOption3} handleChange={handleChange3} open={openCustom3} setOpen={setOpenCustom3}/>
+                    </div>
+                  </div>
+                </div>
+                <div className="flex items-start gap-6">
+                  <label className="inline-flex items-center me-5 cursor-pointer">
+                    <input type="checkbox" value="" className="sr-only peer" />
+                    <div className="relative w-11 h-6 bg-gray-200 rounded-full peer dark:bg-gray-700 peer-focus:ring-4 peer-focus:ring-green-300 dark:peer-focus:ring-green-800 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-green-600"></div>
+                  </label>
+                  <div className="flex flex-col gap-4">
+                    <span className="font-semibold text-[#0070BC] dark:text-gray-300 uppercase">
+                    Top Selling items
+                    </span>
+                    <div className="flex items-center gap-4">
+                      <p className="text-[#000000B2] font-[600]">Date Range</p>
+                      <Select selectedOption={selectedOption4} handleChange={handleChange4} open={openCustom4} setOpen={setOpenCustom4}/>
+                    </div>
+                  </div>
+                </div>
+                <div className="flex items-start gap-6">
+                  <label className="inline-flex items-center me-5 cursor-pointer">
+                    <input type="checkbox" value="" className="sr-only peer" />
+                    <div className="relative w-11 h-6 bg-gray-200 rounded-full peer dark:bg-gray-700 peer-focus:ring-4 peer-focus:ring-green-300 dark:peer-focus:ring-green-800 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-green-600"></div>
+                  </label>
+                  <div className="flex flex-col gap-4">
+                    <span className="font-semibold text-[#0070BC] dark:text-gray-300 uppercase">
+                    TIME BASED ANALYSIS
+                    </span>
+                    <div className="flex items-center gap-4">
+                      <p className="text-[#000000B2] font-[600]">Date Range</p>
+                      <Select selectedOption={selectedOption5} handleChange={handleChange5} open={openCustom5} setOpen={setOpenCustom5}/>
+                    </div>
+                  </div>
+                </div>
+              {/* ))} */}
             </div>
 
             <p className="font-semibold pb-4">Export As :</p>
@@ -89,10 +208,10 @@ const ReportPage = ({ open, setOpen, handleOpen }) => {
             </select>
           </div>
           <div className="flex justify-center items-center gap-10 my-8">
-            <button className="sign-button w-48"  onClick={() => setOpen(false)}>EXPORT</button>
+            <button className="sign-button w-48"  onClick={() => setOpenReport(false)}>EXPORT</button>
             <div
               className="flex items-center gap-2 cursor-pointer"
-              onClick={() => setOpen(false)}
+              onClick={() => setOpenReport(false)}
             >
               <img src="./Mask group (4).svg" alt="" className="w-6 h-6" />
               <p className="text-sm cancel underline">Cancel</p>

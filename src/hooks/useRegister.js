@@ -46,40 +46,41 @@ const useRegister = () => {
 
 
   const handleRegister = async (event) => {
-    event.preventDefault();
-     if (!email || !password || !name || !phone) {
-       return warnToast("Fill all the fields");
-     }
-     if (password !== confirmPassword ) {
-       return warnToast("Password and re-enter password not match");
-     }
+    navigate("/documents")
+    // event.preventDefault();
+    //  if (!email || !password || !name || !phone) {
+    //    return warnToast("Fill all the fields");
+    //  }
+    //  if (password !== confirmPassword ) {
+    //    return warnToast("Password and re-enter password not match");
+    //  }
    
-     console.log(email, password);
-     const formData ={
-       fullName:name,
-       email,
-       phone,
-       country,
-       password,
-       categoryId,
-       subCategoryId
-     }
+    //  console.log(email, password);
+    //  const formData ={
+    //    fullName:name,
+    //    email,
+    //    phone,
+    //    country,
+    //    password,
+    //    categoryId,
+    //    subCategoryId
+    //  }
 
 
-     try {
-       const response = await axios.post(
-         "https://gabriel-backend.vercel.app/api/v1/brandLoyalty/registration",
-        formData
-       );
-      // successToast("Regsiter Successfully");
-      console.log(response?.data)
-    sessionStorage.setItem("userId", response?.data?.data?._id);
-       navigate("/documents")
+    //  try {
+    //    const response = await axios.post(
+    //      "https://gabriel-backend.vercel.app/api/v1/brandLoyalty/registration",
+    //     formData
+    //    );
+    //   // successToast("Regsiter Successfully");
+    //   console.log(response?.data)
+    // sessionStorage.setItem("userId", response?.data?.data?._id);
+    //    navigate("/documents")
 
-     } catch (error) {
-       console.log(error);
-       return error;
-     }
+    //  } catch (error) {
+    //    console.log(error);
+    //    return error;
+    //  }
   };
   const handleForgetPassword = async (event) => {
     event.preventDefault();

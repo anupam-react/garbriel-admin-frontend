@@ -172,9 +172,10 @@
 .menu-Main3 {
   position: absolute;
   top: 0%;
-  right: -70%;
+  right: -200px;
   z-index: 10;
 }
+
 .menu-Main2 {
   position: absolute;
   top: 20%;
@@ -699,11 +700,14 @@
   border: none;
   border-radius: 8px;
   box-shadow: 0 4px 8px 0 gray, 0 6px 10px 0 white;
-  width: 250px;
+  width: 25vw;
   height: 150px;
+  padding: 10px;
   display: flex;
   flex-direction: column;
   gap: 10px;
+  font-size: 20px;
+  text-align: center;
   justify-content: center;
   align-items: center;
 }

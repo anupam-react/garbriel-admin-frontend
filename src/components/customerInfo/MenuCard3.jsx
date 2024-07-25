@@ -4,7 +4,7 @@ import BirthDayGift from './BirthDayGift'
 import CustomizedBGift from './CustomizedBGift'
 import AwardCustomer from './AwardCustomer'
 
-const MenuCard3 = ({setOpenInfo}) => {
+const MenuCard3 = ({onClose}) => {
     const [openGift , setOpenGift] = useState(false)
     const [openOffer , setOpenOffer] = useState(false)
     const [openPromotions , setOpenPromotions] = useState(false)
@@ -14,7 +14,7 @@ const MenuCard3 = ({setOpenInfo}) => {
        <button className="menuButton2" onClick={()=> setOpenOffer(true)}>Send Customized Offer</button>
        <button className="menuButton2"  onClick={()=> setOpenPromotions(true)}>Send Promotions to Customer</button>
           <DialogDefault open={openGift} handleOpen={setOpenGift}>
-            <BirthDayGift  handleOpen={setOpenGift} setOpenInfo={setOpenInfo}/>
+            <BirthDayGift  handleOpen={setOpenGift} onClose={onClose}/>
         </DialogDefault>
           <DialogDefault open={openOffer} handleOpen={setOpenOffer}>
             <CustomizedBGift  handleOpen={setOpenOffer}/>

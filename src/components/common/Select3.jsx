@@ -1,20 +1,19 @@
 import React, { useState } from "react";
 import { DialogDefault } from "./DilogBox";
-import {DatePickerComp} from "./DatePickerComp";
-import { formatDate2 } from "../../utiils";
+import { DatePickerComp } from "./DatePickerComp";
 
+const Select3 = ({selectedOption , handleChange , open , setOpen }) => {
 
-const Select = ({selectedOption , handleChange , open , setOpen=()=>{} , handleSave=()=>{} }) => {
-  
   const [startDate, setStartDate] = useState(new Date());
   const [endDate, setEndDate] = useState(new Date());
+
 
   const handleOpen = () => setOpen(!open);
 
   const MonthOptions = [
-    { label: "ALL TIME", value: "All" },
-    { label: "THIS WEEK", value: "weekly" },
-    { label: "THIS MONTH", value: "month" },
+    { label: "WEEKLY", value: "All" },
+    { label: "MONTHLY", value: "weekly" },
+    { label: "YEARLY", value: "month" },
     { label: "CUSTOM", value: "custom" },
    
   ];
@@ -25,7 +24,7 @@ const Select = ({selectedOption , handleChange , open , setOpen=()=>{} , handleS
         id="countries"
         value={selectedOption}
         onChange={handleChange}
-        className="rounded shadow-md text-gray-900 text-sm  border-none block w-36 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+        className="rounded shadow-md bg-[#EEEEEE80] text-[#000000B2] font-semibold text-sm  border-none block w-[300px] p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
       >
         {MonthOptions?.map((data, i) => (
           <>
@@ -54,15 +53,12 @@ const Select = ({selectedOption , handleChange , open , setOpen=()=>{} , handleS
           </div>
           <p className="text-[#0070BC] py-4">FROM</p>
           <div className="flex gap-6">
-            <DatePickerComp startDate={startDate} setStartDate={setStartDate}/>
-            <DatePickerComp startDate={endDate} setStartDate={setEndDate}/>
+            <DatePickerComp />
+            <DatePickerComp />
           </div>
          
           <div className="flex justify-center items-center gap-10 mt-8">
-            <button className="sign-button w-48" onClick={()=>{
-              handleSave(selectedOption, formatDate2(startDate), formatDate2(endDate))
-              setOpen(false)
-              }}>SAVE</button>
+            <button className="sign-button w-48">SAVE</button>
             <div className="flex items-center gap-2 cursor-pointer" onClick={() => setOpen(false)}>
               <img src="./Mask group (4).svg" alt="" className="w-6 h-6" />
               <p className="text-sm cancel underline">Cancel</p>
@@ -74,4 +70,4 @@ const Select = ({selectedOption , handleChange , open , setOpen=()=>{} , handleS
   );
 };
 
-export default Select;
+export default Select3;

@@ -49,7 +49,7 @@ const RefferalTable = ({onClose}) => {
                 Send Referal Reward
               </button>
               <DialogDefault open={openAward} handleOpen={setOpenAward}>
-                <Referal handleOpen={setOpenAward} onClose={onClose}/>
+                <Referal handleOpen={setOpenAward} onClose={()=>setOpenAward(false)}/>
               </DialogDefault>
               <DialogDefault
                 open={openTransaction}

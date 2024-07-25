@@ -7,6 +7,9 @@ const MarketingEdit = () => {
   const navigate = useNavigate();
   const handleSubmit = () => {
     setOpenSuccess(true);
+    setTimeout(()=> {
+      navigate('/marketing')
+    },1500)
   };
 
   const data1 = [
