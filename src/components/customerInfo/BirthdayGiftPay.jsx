@@ -48,7 +48,7 @@ const BirthdayGiftPay = ({ handleOpen }) => {
           </div>
         ))}
           </div>
-           <button className="menuButton" onClick={()=> navigate('/inventory/payment')}>Pay £1</button>
+           <button className="menuButton" onClick={()=> navigate('/inventory/payment/customer')}>Pay £1</button>
 
       </div>
          

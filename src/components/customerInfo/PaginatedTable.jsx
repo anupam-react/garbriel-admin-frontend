@@ -93,8 +93,10 @@ const PaginatedTable = () => {
               <tr>
                 <td className="">
                   <div className="flex items-center gap-6 ml-[100px] my-2 relative">
-                    <div className="profile-image">
-                      <img src="./carbon_user-avatar-filled.png" alt="" />
+                    <div className="relative">
+                    <div className="profile-image cursor-pointer" onClick={() => setOpenInfo(true)}>
+                      <img src="./carbon_user-avatar-filled.png" alt=""/>
+                    </div>
                       <img
                         src="./solar_menu-dots-bold (1).png"
                         alt=""

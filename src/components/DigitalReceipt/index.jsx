@@ -161,18 +161,20 @@ const DigitalReceipt = () => {
                   </td>
                   <td>
                   <div className="flex items-center justify-center gap-6 relative">
-                        <div className="profile-image">
-                          <img src="./carbon_user-avatar-filled.png" alt="" className="cursor-pointer"  onClick={() => setOpenInfo(true)}/>
-                          <img
-                            src="./solar_menu-dots-bold (1).png"
-                            alt=""
-                            className="absolute top-1 right-1 cursor-pointer"
-                            onClick={() => {
-                              if(isMenuOpen === i)  setOpenMenu(-1)
-                                else setOpenMenu(i)
-                              }}
-                          />
-                        </div>
+                  <div className="relative">
+                    <div className="profile-image cursor-pointer" onClick={() => setOpenInfo(true)}>
+                      <img src="./carbon_user-avatar-filled.png" alt=""/>
+                    </div>
+                      <img
+                        src="./solar_menu-dots-bold (1).png"
+                        alt=""
+                        className="absolute top-1 right-1 cursor-pointer"
+                        onClick={() =>{
+                            if(isMenuOpen === i) setOpenMenu(false)
+                          else setOpenMenu(i)
+                        }}
+                      />
+                    </div>
                         {isMenuOpen === i && (
                           <div className="absolute top-0 z-20 md:-right-[250px] lg:-right-[230px] xl:-right-[200px]">
                             <MenuCard onClose={()=>setOpenMenu(false)}/>

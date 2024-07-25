@@ -44,7 +44,7 @@ const PromotionPreview = ({handleOpen, isPay = false }) => {
               className="loyalty-button1 mt-6"
               style={{ width: "fit-content" , width:"300px" }}
               onClick={()=>{
-                isPay ? navigate("/marketing/payment") :  setSuccess(true)
+                isPay ? navigate(`/marketing/payment/customer`) :  setSuccess(true)
               }}
             >
               {isPay ? "Pay £1" : "Send to Customer’s Offer Folder"}

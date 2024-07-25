@@ -5,7 +5,7 @@ const FollowerAdPreview = ({ isPay = false }) => {
   const navigate = useNavigate();
   const handleSubmit = () => {
     isPay
-      ? navigate("/marketing/payment")
+      ? navigate("/marketing/payment/customer")
       : navigate("/marketing/ad-follower-confirm");
   };
   return (

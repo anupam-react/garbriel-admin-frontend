@@ -137,7 +137,7 @@ function App() {
             path="/inventory/ad-confirm"
             element={<AdPreview isPay={true} />}
           />
-          <Route path="/inventory/payment" element={<Payment />} />
+          <Route path="/inventory/payment/:path" element={<Payment />} />
           <Route path="/comparison" element={<Comparison />} />
           <Route path="/promo-code" element={<PromoCode />} />
           <Route path="/purchases" element={<Purchases />} />

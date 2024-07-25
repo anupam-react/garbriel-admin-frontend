@@ -7,7 +7,7 @@ const MarktingAdPreview = ({ isPay = false }) => {
   const { campaignData } = useCampaign()
   const navigate = useNavigate();
   const handleSubmit = () => {
-    isPay ? navigate("/marketing/payment") : navigate("/marketing/ad-confirm");
+    isPay ? navigate("/marketing/payment/marketing") : navigate("/marketing/ad-confirm");
   };
   return (
     <div>

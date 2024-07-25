@@ -139,7 +139,7 @@ function App() {
             path="/inventory/ad-confirm"
             element={<AdPreview isPay={true} />}
           />
-          <Route path="/inventory/payment" element={<Payment />} />
+          <Route path="/inventory/payment/:path" element={<Payment />} />
           <Route path="/comparison" element={<Comparison />} />
           <Route path="/promo-code" element={<PromoCode />} />
           <Route path="/purchases" element={<Purchases />} />
@@ -201,7 +201,8 @@ function App() {
             path="/marketing/ad-follower-confirm"
             element={<FollowerAdPreview isPay={true} />}
           />
-          <Route path="/marketing/payment" element={<Payment />} />
+          <Route path="/marketing/payment/:path" element={<Payment />} />
+
           <Route path="/marketing/edit-marketing" element={<MarketingEdit />} />
           <Route
             path="/marketing/edit-followers-marketing"

@@ -7,7 +7,7 @@ const ShopAdPreview = ({ isPay = false }) => {
   const navigate = useNavigate();
   const handleSubmit = () => {
     isPay
-      ? navigate("/marketing/payment")
+      ? navigate("/marketing/payment/marketing")
       : navigate("/marketing/shop-campaign");
   };
   return (

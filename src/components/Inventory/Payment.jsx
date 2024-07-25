@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import "./index.scss";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { DialogDefault } from "../common/DilogBox";
 const Payment = () => {
+  const {path} = useParams()
   const [isSuccess, setSuccess] = useState(false);
   const [isReview, setReview] = useState(false);
   const [isLive, setLive] = useState(false);
@@ -19,7 +20,7 @@ const Payment = () => {
     }, 2000);
     setTimeout(() => {
       setLive(false);
-      navigate("/inventory");
+      navigate(`/${path}`);
     }, 3000);
   };
 
@@ -53,7 +54,7 @@ const Payment = () => {
               value="9870 3456 7890 6473"
               className="cardN-input"
             />
-            <img src="../mastercard 1.png" alt="" className="visa-logo" />
+            <img src="../../mastercard 1.png" alt="" className="visa-logo" />
           </div>
           <div className="flex justify-between">
             <div className="payment-input-container">
@@ -85,7 +86,7 @@ const Payment = () => {
       </div>
       <DialogDefault open={isSuccess} handleOpen={setSuccess}>
         <div className="alert">
-          <img src="../Vector (2).png" alt="" />
+          <img src="../../Vector (2).png" alt="" />
           <p className="text-center text-[20px]">
           Payment Successfully
           </p>
@@ -93,7 +94,7 @@ const Payment = () => {
       </DialogDefault>
       <DialogDefault open={isReview} handleOpen={setReview}>
         <div className="alert">
-          <img src="../emojione-monotone_hourglass-not-done.png" alt="" />
+          <img src="../../emojione-monotone_hourglass-not-done.png" alt="" />
           <p className="text-center text-[20px]">
           Thank you! Your ad is under review. We will let you know when it is Live.
           </p>
@@ -101,7 +102,7 @@ const Payment = () => {
       </DialogDefault>
       <DialogDefault open={isLive} handleOpen={setLive}>
         <div className="alert">
-          <img src="../Vector (2).png" alt="" />
+          <img src="../../Vector (2).png" alt="" />
           <p className="text-center text-[20px]">
           Congratulations! Your ad is now Live.
           </p>

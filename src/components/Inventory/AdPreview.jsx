@@ -9,12 +9,12 @@ const AdPreview = ({ isPay = false }) => {
   };
   const navigate = useNavigate();
   const handleSubmit = () => {
-    isPay ? navigate("/inventory/payment") : navigate("/inventory/ad-confirm");
+    isPay ? navigate("/inventory/payment/inventory") : navigate("/inventory/ad-confirm");
   };
   return (
     <div>
       <div className="flex justify-between items-center mb-6">
-        <p className="text-2xl font-bold">DIscount Ad Preview</p>
+        <p className="text-2xl font-bold">Discount Ad Preview</p>
         <div
           className="flex items-center px-6 h-12"
           style={{
