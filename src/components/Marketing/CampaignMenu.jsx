@@ -69,15 +69,15 @@ const CampaignMenu = ({
             className="cursor-pointer"
             onClick={() => {
               if (isOfferCard){ 
-                getMarketingCampaignById(id)
+          
                 naviagte("/marketing/review-offer")
               }
               else if(isShop) {
-                getMarketingCampaignById(id)
+               
                 naviagte("/marketing/review-shop");
               }
               else{ 
-                getMarketingCampaignById(id)
+            
                 naviagte("/marketing/review-campaign")
 
               }
