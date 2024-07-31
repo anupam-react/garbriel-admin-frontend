@@ -1,7 +1,10 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 const Sidebar = () => {
+  const location = useLocation();
+  const rootPath = location.pathname.split('/')[1];
+  console.log(rootPath)
   const [activeLink, setActiveLink] = useState(0);
   const handleLinkClick = (index) => {
     setActiveLink(index);
@@ -20,7 +23,7 @@ const Sidebar = () => {
               <Link
                 to="/transaction"
                 className={`flex items-center add-hover ${
-                  activeLink === 0 && "text-[#0070BC]"
+                  rootPath === "transaction" && "text-[#0070BC]"
                 }`}
                 onClick={() => handleLinkClick(0)}
               >
@@ -32,7 +35,7 @@ const Sidebar = () => {
               <Link
                 to="/customer"
                 className={`flex items-center add-hover dark:text-white  dark:hover:bg-gray-700 group ${
-                  activeLink === 1 && "text-[#0070BC]"
+                  rootPath === "customer" && "text-[#0070BC]"
                 }`}
                 onClick={() => handleLinkClick(1)}
               >
@@ -48,7 +51,7 @@ const Sidebar = () => {
               <Link
                 to="/sales"
                 className={`flex items-center add-hover dark:text-white  dark:hover:bg-gray-700 group ${
-                  activeLink === 2 && "text-[#0070BC]"
+                  rootPath === "sales" && "text-[#0070BC]"
                 }`}
                 onClick={() => handleLinkClick(2)}
               >
@@ -64,7 +67,7 @@ const Sidebar = () => {
               <Link
                 to="/loyalty"
                 className={`flex items-center add-hover dark:text-white  dark:hover:bg-gray-700 group ${
-                  activeLink === 3 && "text-[#0070BC]"
+                  rootPath === "loyalty" && "text-[#0070BC]"
                 }`}
                 onClick={() => handleLinkClick(3)}
               >
@@ -76,7 +79,7 @@ const Sidebar = () => {
               <Link
                 to="/marketing"
                 className={`flex items-center add-hover dark:text-white  dark:hover:bg-gray-700 group ${
-                  activeLink === 4 && "text-[#0070BC]"
+                  rootPath === "marketing" && "text-[#0070BC]"
                 }`}
                 onClick={() => handleLinkClick(4)}
               >
@@ -88,7 +91,7 @@ const Sidebar = () => {
               <Link
                 to="/receipt"
                 className={`flex items-center add-hover dark:text-white  dark:hover:bg-gray-700 group ${
-                  activeLink === 5 && "text-[#0070BC]"
+                  rootPath === "receipt" && "text-[#0070BC]"
                 }`}
                 onClick={() => handleLinkClick(5)}
               >
@@ -104,7 +107,7 @@ const Sidebar = () => {
               <Link
                 to="/inventory"
                 className={`flex items-center add-hover dark:text-white  dark:hover:bg-gray-700 group ${
-                  activeLink === 6 && "text-[#0070BC]"
+                  rootPath === "inventory" && "text-[#0070BC]"
                 }`}
                 onClick={() => handleLinkClick(6)}
               >
@@ -120,7 +123,7 @@ const Sidebar = () => {
               <Link
                 to="/comparison"
                 className={`flex items-center add-hover dark:text-white  dark:hover:bg-gray-700 group ${
-                  activeLink === 7 && "text-[#0070BC]"
+                  rootPath === "comparison" && "text-[#0070BC]"
                 }`}
                 onClick={() => handleLinkClick(7)}
               >
@@ -136,7 +139,7 @@ const Sidebar = () => {
               <Link
                 to="/promo-code"
                 className={`flex items-center add-hover dark:text-white  dark:hover:bg-gray-700 group ${
-                  activeLink === 8 && "text-[#0070BC]"
+                  rootPath === "promo-code" && "text-[#0070BC]"
                 }`}
                 onClick={() => handleLinkClick(8)}
               >
@@ -152,7 +155,7 @@ const Sidebar = () => {
               <Link
                 to="/purchases"
                 className={`flex items-center add-hover dark:text-white  dark:hover:bg-gray-700 group ${
-                  activeLink === 9 && "text-[#0070BC]"
+                  rootPath === "purchases" && "text-[#0070BC]"
                 }`}
                 onClick={() => handleLinkClick(9)}
               >
@@ -164,7 +167,7 @@ const Sidebar = () => {
               <Link
                 to="/heatmap"
                 className={`flex items-center add-hover dark:text-white  dark:hover:bg-gray-700 group ${
-                  activeLink === 10 && "text-[#0070BC]"
+                  rootPath === "heatmap" && "text-[#0070BC]"
                 }`}
                 onClick={() => handleLinkClick(10)}
               >
@@ -176,7 +179,7 @@ const Sidebar = () => {
               <Link
                 to="/feedback"
                 className={`flex items-center add-hover dark:text-white  dark:hover:bg-gray-700 group ${
-                  activeLink === 11 && "text-[#0070BC]"
+                  rootPath === "feedback" && "text-[#0070BC]"
                 }`}
                 onClick={() => handleLinkClick(11)}
               >

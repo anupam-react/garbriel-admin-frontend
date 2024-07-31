@@ -69,6 +69,10 @@ const MarketingEdit = () => {
         navigate("/marketing/newCampaign");
       },
     },
+   
+  ];
+
+  const data2 = [
     {
       title: "Campaign Duration",
       value: "5 Days",
@@ -123,6 +127,22 @@ const MarketingEdit = () => {
         </div>
         <div className="footer-Main2">
           {data1?.map((d, i) => (
+            <div className="footer-container2">
+              <p>{d?.title}</p>
+              <span>:</span>
+              <p>{d?.value}</p>
+              <button className="edit-button2" onClick={d?.handleCLick}>
+                Edit
+              </button>
+            </div>
+          ))}
+           <div className="footer-container2">
+              <p>Estimated  Reach</p>
+              <span>:</span>
+              <p>5000 Cutomers</p>
+              <button className="edit-button2 invisible">Edit</button>
+            </div>
+          {data2?.map((d, i) => (
             <div className="footer-container2">
               <p>{d?.title}</p>
               <span>:</span>

@@ -82,12 +82,12 @@ const ViewProduct = ({ isOfferCard = false, isPast = false }) => {
           <p className="text-xl font-bold text-[#1BB4F0]">Daily Performance</p>
           <div className="flex justify-between">
             <p className="text-[#131313]">Growth</p>
-            <p>Yearly</p>
+            
           </div>
           <PerformanceChart />
-          <p className="text-[#131313] underline text-center">
+          {/* <p className="text-[#131313] underline text-center">
             A day of the week
-          </p>
+          </p> */}
         </div>
         <div className="campaign-view-main">
           <p className="text-xl font-bold text-[#1BB4F0]">

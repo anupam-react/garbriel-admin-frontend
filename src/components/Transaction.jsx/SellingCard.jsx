@@ -109,8 +109,9 @@ const SellingCard = ({selectedOption, handleChange , open , setOpen , }) => {
                   </div>
                 </div>
                 {isReportopen === i && (
+                 
                   <button
-                    className="export flex gap-2 absolute top-0"
+                    className="export flex gap-2 absolute top-[80px] right-10 "
                     onClick={() => setReport(i)}
                   >
                     <img

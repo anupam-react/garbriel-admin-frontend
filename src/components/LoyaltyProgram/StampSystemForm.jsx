@@ -80,9 +80,7 @@ const StampSystemForm = ({ isReview = false }) => {
           <button
             className="loyalty-button1"
             onClick={() => {
-              !isReview
-                ? navigate("/loyalty/stamp-system/review")
-                : navigate("/loyalty/stamp-system/preview");
+                 navigate("/loyalty/stamp-system/preview");
             }}
           >
             {!isReview ? "See Stamp System review" : "See Stamp System Preview"}

@@ -7,6 +7,7 @@ const ReportSetting = () => {
   const [isAddEmp, setAddEmp] = useState(false);
   const [openAddEmp, setOpenAddEmp] = useState(false);
   const [openSuccess , setOpenSuccess] = useState(false)
+  const [isEditing, setIsEditing] = useState(false);
 
   const handleChange = (event) => {
     setSelectedOption(event.target.value);
@@ -183,15 +184,39 @@ const ReportSetting = () => {
                 <span className="font-semibold text-black dark:text-gray-300 ">
                   Maximum Number Of Transaction Crossed
                 </span>
-                <div className="flex items-center gap-4">
-                  <input
-                    type="text"
-                    name=""
-                    id=""
-                    value="Add Value ( e.g 1,00,000 )"
-                    className="rounded shadow-md text-[#000000B2] text-sm  border-none block w-[500px] p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                  />
-                </div>
+                <div className="relative w-[500px] group ">
+          
+          <input
+            type="name"
+            name="name"
+            id="name"
+    placeholder="Add Value ( e.g 1,00,000 )"
+            className="rounded shadow-md text-[#000000B2] text-sm  border-none block w-[500px] p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            required
+        
+            onClick={() => {
+              setIsEditing(1);
+            }}
+            // onChange={(e) => setPassword(e.target.value)}
+          />
+          {isEditing === 1 ? (
+            <span
+              onClick={() => setIsEditing(false)}
+              className="text-green-500 font-semibold absolute top-2 right-4 cursor-pointer"
+            >
+              SAVE
+            </span>
+          ) : (
+            <img
+              src="../Mask group (16).png"
+              alt=""
+              onClick={() => {
+                setIsEditing(1);
+              }}
+              className="w-5 h-5 absolute top-2 right-4 cursor-pointer opacity-0 group-hover:opacity-100"
+            />
+          )}
+        </div>
               </div>
             </div>
             <div className="flex items-start gap-6">
@@ -203,15 +228,40 @@ const ReportSetting = () => {
                 <span className="font-semibold text-black dark:text-gray-300">
                   Maximum Transaction Value Crossed
                 </span>
-                <div className="flex items-center gap-4">
-                  <input
-                    type="text"
-                    name=""
-                    id=""
-                    value="Add Value ( e.g 1,00,000 )"
-                    className="rounded shadow-md text-[#000000B2] text-sm  border-none block w-[500px] p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                  />
-                </div>
+                <div className="relative w-[500px] group ">
+          
+          <input
+            type="name"
+            name="name"
+            id="name"
+    placeholder="Add Value ( e.g 1,00,000 )"
+            className="rounded shadow-md text-[#000000B2] text-sm  border-none block w-[500px] p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            required
+        
+            onClick={() => {
+              setIsEditing(2);
+            }}
+            // onChange={(e) => setPassword(e.target.value)}
+          />
+          {isEditing === 2 ? (
+            <span
+              onClick={() => setIsEditing(false)}
+              className="text-green-500 font-semibold absolute top-2 right-4 cursor-pointer"
+            >
+              SAVE
+            </span>
+          ) : (
+            <img
+              src="../Mask group (16).png"
+              alt=""
+              onClick={() => {
+                setIsEditing(2);
+              }}
+              className="w-5 h-5 absolute top-2 right-4 cursor-pointer opacity-0 group-hover:opacity-100"
+            />
+          )}
+        </div>
+             
               </div>
             </div>
           </div>
@@ -244,19 +294,20 @@ const ReportSetting = () => {
           </div>
           <p className="text-[#000000B2] text-[18px] font-[500] pb-2 mt-6">
             Add Employee
-          </p>
-          <div className="relative w-full mb-6">
+          </p> 
+          <div className="relative w-full mb-6 cursor-pointer" onClick={() => setAddEmp(!isAddEmp)}>
             <input
               id="countries"
               //   value={selectedOption}
               //   onChange={handleChange}
-              className="report-input w-full"
+              className="report-input w-full "
               placeholder="Search Employee"
+              
             />
 
             <img
               src="../Arrow 6.png"
-              onClick={() => setAddEmp(!isAddEmp)}
+              
               alt=""
               className="absolute top-3 right-2 cursor-pointer"
             />
