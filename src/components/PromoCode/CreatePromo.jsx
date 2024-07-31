@@ -265,8 +265,9 @@ const CreatePromo = ({ open, setOpen, handleOpen, edit=false }) => {
             <button className="sign-button w-48" onClick={()=>{
               setOpenSuccess(true)
               setTimeout(()=>{
+                setOpen(false)
                 setOpenSuccess(false)
-                handleOpen(false)
+               
               },1000)
               }}>
             { edit ? "UPDATE" :  "CREATE"}

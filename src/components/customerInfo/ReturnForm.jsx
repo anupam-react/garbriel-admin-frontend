@@ -308,7 +308,7 @@ const ReturnForm = ({ handleOpen , onClose }) => {
         </div>
       </div>
       <div className="flex justify-center my-6">
-        <button className="menuButton3"  onClick={() => handleOpen(false)}>DONE</button>
+        <button className="menuButton3"  onClick={() => onClose()}>DONE</button>
       </div>
     </div>
   );

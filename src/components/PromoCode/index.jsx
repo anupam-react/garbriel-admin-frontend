@@ -269,6 +269,7 @@ const PromoCode = () => {
               setTimeout(()=>{
                 setSuccess(false)
                 setActive(-1)
+                setDelete(false)
               },1000)
               }}>Yes</button>
             <button className='promoButton' onClick={()=>{

@@ -115,7 +115,7 @@ const AwardCustomer = ({
       </div>
       <div className="flex-center">
         <button className="menuButton" onClick={() => setOpenOffer(true)}>
-          See Promotion preview
+          See Promotion Review
         </button>
       </div>
       <DialogDefault open={openOffer} handleOpen={setOpenOffer}>
