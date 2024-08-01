@@ -54,9 +54,9 @@ const AwardStamp = ({handleOpen}) => {
       <div className="flex-center">
         <button className="menuButton" onClick={() => {
           setSuccess(true)
-          setTimeout(()=>{
-            setSuccess(false)
-          },2000)
+          // setTimeout(()=>{
+          //   setSuccess(false)
+          // },2000)
           }}>
           SEND NOTIFICATION
         </button>
