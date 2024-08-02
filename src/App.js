@@ -211,7 +211,7 @@ function App() {
             element={<FollowerAdPreview isPay={true} />}
           />
           <Route path="/marketing/payment/:path" element={<Payment />} />
-
+          <Route path="/customer/payment/:path" element={<Payment />} />
           <Route path="/marketing/edit-marketing" element={<MarketingEdit />} />
           <Route
             path="/marketing/edit-followers-marketing"
