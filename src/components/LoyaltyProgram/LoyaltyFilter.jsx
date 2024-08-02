@@ -114,6 +114,19 @@ const LoyaltyFilter = ({ closeDrawer, open }) => {
                 </select>
               </div>
               <div className="mt-4">
+                <p className="text-lg font-semibold pb-4">Choose Outlate</p>
+                <select
+                  id="countries"
+                  // value={selectedOption}
+                  // onChange={handleChange}
+                  className="input-loyalty"
+                >
+                  <option className="font-semibold" value="custom">
+                    Coffee, Burger , etc..
+                  </option>
+                </select>
+              </div>
+              <div className="mt-4">
                 <p className="text-lg font-semibold pb-4">Amount</p>
                 <div class="relative mb-10">
               
